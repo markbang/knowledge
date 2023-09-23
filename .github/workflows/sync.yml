@@ -20,7 +20,7 @@ jobs:
           destination-repo: "git@gitee.com:bang-wu/bang-wu.git"
 
     - name: Build Gitee Pages
-      uses: yanglbme/gitee-pages-action@master
+      uses: yanglbme/gitee-pages-action@main
       with:
           # 注意替换为你的 Gitee 用户名
           gitee-username: bang-wu
@@ -28,3 +28,4 @@ jobs:
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
           # 注意替换为你的 Gitee 仓库
           gitee-repo: bang-wu
+          branch: gh-pages
