@@ -18,11 +18,11 @@ const members = [
     ]
   },
   {
-    avatar: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202305102251074.jpg',
+    avatar: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309231544678.jpg',
     name: 'Hui',
     title: 'Creator',
     links: [
-      { icon: 'github', link: 'https://github.com/markbang' },
+      { icon: 'github', link: 'https://github.com/Hui-hub507' },
     ]
   },
 ]
