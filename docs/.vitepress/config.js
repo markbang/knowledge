@@ -2,7 +2,10 @@ export default {
     title: '🤡😡', //站点标题
     description: '一个小白友好的教程网站',//mate标签description，多用于搜索引擎抓取摘要
     lang: 'zh-CN', //语言
-    ignoreDeadLinks: true,
+    ignoreDeadLinks: true, //忽略死链接
+    head: [
+      ['link', { rel: 'icon', href: '/favicon.ico' }],
+  ],
     themeConfig: {
         siteTItle: '🤡😡',
         logo: '/logo.png',
