@@ -14,8 +14,8 @@ hero:
       text: 去学习
       link: /code/index.md
     - theme: alt
-      text: 去GitHub查看
-      link: https://github.com/markbang
+      text: 国内(Gitee)
+      link: https://bang-wu.gitee.io
 
 features:
   - icon: 🛠️
