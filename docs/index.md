@@ -7,7 +7,7 @@ hero:
   text: '专注 & 细节 & 分享'
   tagline: 详细的教程
   image:
-    src: /logo.png
+    src: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309222148103.png'
     alt: 🤡😡
   actions:
     - theme: brand

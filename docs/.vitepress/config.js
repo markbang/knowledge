@@ -8,7 +8,7 @@ export default {
     ],
     themeConfig: {
         siteTItle: '🤡😡',
-        logo: '/logo.png',
+        logo: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309222148103.png',
         search:{
           provider: 'local'
         },
