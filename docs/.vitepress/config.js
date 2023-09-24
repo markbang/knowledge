@@ -52,7 +52,7 @@ export default {
                   text: "推荐软件",
                   items: [
                     {
-                      text: "Typora",
+                      text: "Typora(写MarkDown)",
                       link: "/software/Typora",
                     },
                     { text: "WattToolkit", link: "/software/WattToolkit" },
