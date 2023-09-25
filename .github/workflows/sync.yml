@@ -41,12 +41,28 @@ jobs:
       # 6、打包
       - name: Build
         run: pnpm docs:build
+      - name: Push dist to branch gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/.vuepress/dist
+          publish_branch: gh-pages
+          force_orphan: true
+          enable_jekyll: false
+          keep_files: true
+          commit_message: auto deploy from github actions
+          commit_user_name: markbang
+          commit_user_email: 3137972908@qq.com
+          cname: bangtool.top
+          custom_domain: bangtool.top
+          fqdn: bangtool.top
+        
       # 7、部署 GitHub Pages
       - name: Deploy GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           BRANCH: gh-pages
-          FOLDER: docs/.vitepress/dist
+          FOLDER: /root
   deploy-gitee-pages:
     runs-on: ubuntu-latest
     steps:
