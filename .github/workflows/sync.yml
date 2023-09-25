@@ -37,21 +37,15 @@ jobs:
       # 5、安装依赖
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
-      - name: delete old files
-        run: rm -rf docs/.vitepress/dist
       # 6、打包
       - name: Build
         run: pnpm docs:build
 
-      - name: Deploy
-        run: |
-          git config --global user.email "3137972908@qq.com"
-          git config --global user.name "markbang"
-          cd docs/.vitepress/dist
-          git init
-          git add -A
-          git commit -m "Update website content"
-          git push https://github.com/markbang/markbang.github.io.git master:gh-pages --force
+      - name: Deploy GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          BRANCH: gh-pages
+          FOLDER: docs/.vitepress/dist
 
   deploy-gitee-pages:
     runs-on: ubuntu-latest
