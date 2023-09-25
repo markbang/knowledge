@@ -23,6 +23,7 @@ jobs:
         with:
           branch: gh-pages
           folder: docs/.vitepress/dist
+          token: ${{ secrets.GITHUB_TOKEN }}
   deploy-gitee-pages:
     runs-on: ubuntu-latest
     steps:
