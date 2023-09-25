@@ -2,7 +2,7 @@ name: Sync
 
 on:
   push:
-    branches: [ main,gh-pages ]
+    branches: [ gh-pages ]
 
 jobs:
   build:
