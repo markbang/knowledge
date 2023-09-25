@@ -47,9 +47,11 @@ jobs:
         run: |
           git config --global user.email "3137972908@qq.com"
           git config --global user.name "markbang"
-          git add docs/.vitepress/dist
+          cd docs/.vitepress/dist
+          git init
+          git add -A
           git commit -m "Update website content"
-          git push docs/.vitepress/dist origin gh-pages
+          git push https://github.com/markbang/markbang.github.io.git main:gh-pages --force
 
   deploy-gitee-pages:
     runs-on: ubuntu-latest
