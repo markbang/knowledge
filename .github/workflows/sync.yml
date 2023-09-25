@@ -49,7 +49,7 @@ jobs:
           git config --global user.name "markbang"
           git add docs/.vitepress/dist
           git commit -m "Update website content"
-          git subtree push --prefix docs/.vitepress/dist origin gh-pages -f
+          git subtree push --prefix docs/.vitepress/dist origin gh-pages
 
   deploy-gitee-pages:
     runs-on: ubuntu-latest
