@@ -1,14 +1,16 @@
 # Python笔记
 
-1.pd.DataFrame,这是Pandas创建DataFrame的格式,记得大写
+## 1.pd.DataFrame,
 
+这是Pandas创建DataFrame的格式,记得大写
 DF的每一列就是一个Serious
 
-2.读入文本格式数据文件
+## 2.读入文本格式数据文件
 
-pandas.read_table():更通用的文本读取代码<br>	主要的区别在于默认的sep="/t",即tab	
+pandas.read_table():更通用的文本读取代码
+主要的区别在于默认的sep="/t",即tab	
 
-3.pd.read_excel(<br>	filepath_or_buffer: 要读入的文件路径<br>	sheet_name:要读入的表单，字符串或者数字序号均可，默认读入第一个<br>)
+## pd.read_csv()
 
 ```python
 pd.read_csv(
@@ -28,3 +30,20 @@ pd.read_csv(
 ```
 
 4.![image-20230924212132039](https://bangwu.oss-cn-shanghai.aliyuncs.com/img/image-20230924212132039.png)
+
+## describe命令
+
+一次性输出常用的集中趋势和离散趋势汇总指标
+百分位数的输出为其特色功能
+
+```python
+df.describe(
+    percentiles:需要输出的百分位数，列表格式提供，如[.25, .5, .75]
+    include = "None" :要求纳入分析的变量类型白名单
+    	None (default) :只纳入数值变量列
+    	A list0-like of dtypes :列表格式提供希望纳入的类型
+    	"all": 全部纳入
+    exclude: 要求剔除分析的变量类型黑名单，选项同上
+)
+```
+
