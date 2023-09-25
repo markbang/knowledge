@@ -3,7 +3,7 @@
 ## 1.pd.DataFrame,
 
 这是Pandas创建DataFrame的格式,记得大写
-DF的每一列就是一个Serious
+DF的每一列就是一个Series
 
 ## 2.读入文本格式数据文件
 
@@ -45,5 +45,41 @@ df.describe(
     	"all": 全部纳入
     exclude: 要求剔除分析的变量类型黑名单，选项同上
 )
+```
+
+## 单变量的评数统计
+
+```python
+Series.value_counts(
+	normalize = False: 是否返回构成比例而不是原始频数
+	sort = True:是否按照频数排序（否则按照原始顺序排列）
+	ascending = False:是否升序排列
+	bins: 对数值变量直接进行分段。可看作是判断pd.cut的简易用法
+	dropna = True: 结果中是否包括NaN
+)
+```
+
+## 交叉表
+
+```python
+pd.crosstab(
+	行列设定
+		index / columns: 行变量/列变量，多个时以list形式提供
+		rownames / colnames = None: 交叉表的行列名称
+	单元格设定
+		Values: 在单元格中需要汇总的变量列，需要进一步指定aggfunc
+		aggfunc: 相应的汇总函数
+	行列百分比计算
+		normalize = False: {"all","index", "columns"}, or {0,1}
+		"all" / True: 总计百分比
+		"index" / 0:分行计算百分比
+		"columns" / 1: 分列计算百分比
+		当margins = True时，也同时计算边际汇总的百分比
+	汇总设定
+		margins = False : 是否加入行列汇总
+		margins_name = "All": 汇总行/列的名称
+		dropna = True: 
+		
+	)
 ```
 

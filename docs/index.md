@@ -26,6 +26,8 @@ features:
   - icon: 🤡
     title: 丰富的知识
     details: 本站文章很多，由两个人连载，涉及面也很广
+    link: /code/
+    linkText: 查看知识
   - icon: 😡
     title: 完全原创
     details: 由于看到了国内一些社区上很多人盗用文章，乱复制，导致社区乌烟瘴气，该站文章皆是经过学习后产出的高质量文章，可以放心阅读

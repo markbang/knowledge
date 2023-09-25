@@ -18,10 +18,16 @@ export default {
             { text: "环境", link: "/environment/" },
             { text: "编程手册",
             items: [
-              { text: 'Python', link: '/code/Python/' },
+              
+              {
+                items:[{ text: 'Python', link: '/code/Python/' },
               { text: 'MySQL', link: '/code/MySQL/' },
               { text: '小程序开发', link: '/code/小程序开发/' },
-              { text: '前端', link: '/code/前端/'}
+              { text: '前端', link: '/code/前端/'}]
+              },
+              {
+                items: [{text: '其他教程列表', link: '/code/'}]
+              }
             ]},
             { text: "关于",
             items: [
