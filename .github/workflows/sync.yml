@@ -47,6 +47,8 @@ jobs:
         run: |
           git config --global user.email "3137972908@qq.com"
           git config --global user.name "markbang"
+          git add docs/.vitepress/dist
+          git commit -m "Update website content"
           git subtree push --prefix docs/.vitepress/dist origin gh-pages -f
 
   deploy-gitee-pages:
