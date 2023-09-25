@@ -43,8 +43,8 @@ jobs:
 
       - name: Deploy
         run: |
-          git config --global user.email "your-email@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.email "3137972908@qq.com"
+          git config --global user.name "markbang"
           git subtree push --prefix docs/.vitepress/dist origin gh-pages
 
   deploy-gitee-pages:
