@@ -51,7 +51,7 @@ jobs:
           git init
           git add -A
           git commit -m "Update website content"
-          git push https://github.com/markbang/markbang.github.io.git main:gh-pages --force
+          git push https://github.com/markbang/markbang.github.io.git master:gh-pages --force
 
   deploy-gitee-pages:
     runs-on: ubuntu-latest
