@@ -10,9 +10,8 @@ export default {
         siteTItle: '🤡😡',
         logo: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309222148103.png',
         footer: {
-          message: '皖ICP备2023007339号-1',
-          link: 'https://beian.miit.gov.cn/#/Integrated/index',
-          copyright: 'Copyright © 2019-present Mark Bang'
+          message: '<a href="https://beian.miit.gov.cn/#/Integrated/recordQuery">皖ICP备2023007339号-1</a>',
+          copyright: 'Copyright © 2019-present <a href="https://github.com/markbang">Mark Bang</a>'
         },
         search:{
           provider: 'local'
