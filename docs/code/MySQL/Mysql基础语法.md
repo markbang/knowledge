@@ -44,7 +44,7 @@
 
 > 所有的语句都要以分号结尾;
 
-```mysql
+```sql
 show databases;	-- 查看当前所有的数据库
 use 数据库名;	-- 打开指定的数据库
 show tables;	-- 查看所有的表
@@ -53,7 +53,7 @@ create database 数据库名;	-- 创建一个数据库
 exit	-- 退出连接
 ```
 
-```mysql
+```sql
 --		-- 单行注释
 #		-- 单行注释
 /*...*/		-- 多行注释
@@ -63,7 +63,7 @@ exit	-- 退出连接
 
 ## 操作数据库
 
-```mysql
+```sql
 -- 创建数据库
 CREATE DATABASE [IF NOT EXISTS] 数据库名;    CREATE SCHEMA
 
@@ -160,7 +160,7 @@ SHOW DATABASES;
 
 ## 创建数据库表
 
-```mysql
+```sql
 CREATE TABLE IF NOT EXISTS `student`(
 	`id` INT(4)	NOT NULL AUTO_INCREMENT COMMENT '学号',
 	`name` VARCHAR(30) NOT NULL DEFAULT '匿名' COMMENT '姓名',
@@ -184,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `student`(
 
 > 格式：
 
-```mysql
+```sql
 CREATE TABLE IF NOT EXISTS `student`(
 	'字段名' 列类型 [属性] [索引] [注释],
     '字段名' 列类型 [属性] [索引] [注释],
@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `student`(
 
 `常用命令`
 
-```mysql
+```sql
 SHOW CREATE DATABASE 数据库名;-- 查看创建数据库的语句
 SHOW CREATE TABLE 表名;-- 查看表的定义语句
 DESC 表名;-- 显示表的具体结构
@@ -239,7 +239,7 @@ DESC 表名;-- 显示表的具体结构
 
 > **修改**
 
-```mysql
+```sql
 -- 修改表名
 -- ALTER TABLE 旧表名 RENAME AS 新表名
 ALTER TABLE teacher RENAME AS teachers;
@@ -512,7 +512,7 @@ FROM table_name [as table_alias]
 
 `前提配置`：
 
-```mysql
+```sql
 -- 创建学校数据库
 CREATE DATABASE IF NOT EXISTS `school`;
 
@@ -593,7 +593,7 @@ SELECT 查询列表 FROM 表名;
 - 查询列表可以是：表中的（一个或多个）字段，常量，变量，表达式，函数
 - 查询结果是一个虚拟表格
 
-```mysql
+```sql
 -- 查询全部学生
 SELECT * FROM student;
 
@@ -625,11 +625,11 @@ SELECT DISTINCT `StudentNo` FROM result;
 
 **语法**：
 
-```mysql
+```sql
 select 查询列表 from 表名 where 筛选条件;
 ```
 
-```mysql
+```sql
 -- 查询考试成绩在95~100之间的
 SELECT `StudentNo`,`StudentResult` FROM result
 WHERE `StudentResult`>=95 AND `StudentResult`<=100;
@@ -664,7 +664,7 @@ WHERE `StudentNo` IN (1000,1001);
 
 `语法`：
 
-```mysql
+```sql
 select 分组函数，分组后的字段
 from 表
 【where 筛选条件】
@@ -722,7 +722,7 @@ where SubjectName='课程设计';
 
 自己的表和自己的表链接，核心：**一张表拆分为两张一样的表即可**
 
-```sqlite
+```sql
 -- 创建一个表
 CREATE TABLE `course` (
 `courseid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '课程id',
@@ -779,7 +779,7 @@ WHERE a.`courseid`=b.`pid`;
 
 `语法`：
 
-```mysql
+```sql
 select 查询列表
 from 表
 where 筛选条件
@@ -804,7 +804,7 @@ ORDER BY `StudentNo` DESC;
 
 `语法`：
 
-```mysql
+```sql
 select 查询列表
 from 表
 limit offset,pagesize;
@@ -830,7 +830,7 @@ limit offset,pagesize;
 
 ``本质``在`where`子句中嵌套一个子查询语句
 
-```mysql
+```sql
 -- 查询‘课程设计’的所有考试结果（学号，科目编号，成绩）降序排列
 
 -- 方式一:使用连接查询
@@ -853,7 +853,7 @@ WHERE SubjectNo=(
 
 ### 常用函数
 
-```mysql
+```sql
 -- 数学运算
 SELECT ABS(-8); -- 绝对值
 SELECT CEIL(5.1); -- 向上取整
@@ -920,7 +920,7 @@ SELECT MIN(`StudentResult`) FROM result;
 - MD5由MD4、MD3、MD2改进而来，主要增强算法复杂度和不可逆性
 - MD5破解网站的原理，背后有一个字典，MD5加密后的值，加密前的值
 
-```mysql
+```sql
 CREATE TABLE `testMD5`(
 	`id` INT(4) NOT NULL,
 	`name` VARCHAR(20) NOT NULL,
@@ -947,7 +947,7 @@ SELECT * FROM `testMD5` WHERE `name`='barry' AND `pwd`=MD5('654321');
 
 > **要么都成功，要么都失败**
 
-```note
+```sql
 SQL执行：A转账给B
 SQL执行：B收到A的钱
 ```
@@ -1167,7 +1167,7 @@ EXPLAIN SELECT * FROM student WHERE MATCH(StudentName) AGAINST('d'); -- 全文�
 
 - 在创建表的时候给字段增加索引
 
-```mysql
+```sql
 CREATE TABLE 表名 (
     字段名1 数据类型 [完整性约束条件…],
     字段名2 数据类型 [完整性约束条件…],
@@ -1177,7 +1177,7 @@ CREATE TABLE 表名 (
 
 - 创建完毕后，增加索引
 
-```mysql
+```sql
 -- 方法一：CREATE在已存在的表上创建索引
        CREATE [UNIQUE|FULLTEXT|SPATIAL] INDEX 索引名
        ON 表名 (字段名[(长度)] [ASC |DESC]) ;
@@ -1189,7 +1189,7 @@ CREATE TABLE 表名 (
 
 ### 索引的删除
 
-```mysql
+```sql
 -- 删除索引
 	DROP INDEX 索引名 ON 表名;
 -- 删除主键索引
