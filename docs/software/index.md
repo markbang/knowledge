@@ -1,20 +1,9 @@
-# My Page
+# Markdown文档标题
 
-<button @click="loadEditor">打开编辑器</button>
+Markdown文档的内容可以在这里填写。
 
-<div v-if="editorLoaded" ref="editorContainer"></div>
+下面是嵌入的编辑器示例：
 
-<script setup>
-const { ref } = Vue;
+<iframe src="https://markbang.github.io/my-custom-deployment/repl/?kernel=python&toolbar=1&code=print('正在加载......')" style="width: 100%; height: 500px; border: none;"></iframe>
 
-const editorLoaded = ref(false);
-
-const loadEditor = () => {
-  const iframe = document.createElement('iframe');
-  iframe.src = "https://markbang.github.io/my-custom-deployment/repl/?kernel=python&toolbar=1";
-  iframe.width = '100%';
-  iframe.height = '500px';
-  editorContainer.value.appendChild(iframe);
-  editorLoaded.value = true;
-}
-</script>
+您可以根据需要调整iframe的宽度、高度和其他样式属性。
