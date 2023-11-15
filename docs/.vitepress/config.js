@@ -24,13 +24,12 @@ export default {
             items: [
               
               {
-                items:[{ text: 'Python', link: '/code/Python/' },
-              { text: 'MySQL', link: '/code/MySQL/' },
-              { text: '小程序开发', link: '/code/小程序开发/' },
-              { text: '前端', link: '/code/前端/'}]
+                items:[{ text: '前端', link: '/code/前端/' },
+              { text: '后端', link: '/code/后端/' },
+              { text: '算法', link: '/code/算法/' }]
               },
               {
-                items: [{text: '其他教程列表', link: '/code/'}]
+                items: [{text: '其他', link: '/code/'}]
               }
             ]},
             { text: "关于",
@@ -119,7 +118,7 @@ export default {
                     ]
                   }
             ],
-            "/code/Python/": [
+            "/code/后端/Python/": [
                 {
                     text: "Python",
                     items: [
@@ -139,13 +138,13 @@ export default {
                     ]
                 },
             ],
-            "/code/MySQL/": [
+            "/code/后端/MySQL/": [
                 {
                     text: "基础语法",
                     link: "/code/MySQL/Mysql基础语法"
                 }
             ],
-            "/code/小程序开发/": [
+            "/code/前端/小程序开发/": [
                 {
                     text: "未知",
                     link: ""
@@ -153,10 +152,38 @@ export default {
             ],
             "/code/前端/": [
                 {
+                    text: "Vue",
+                    link: "/code/前端/Vue/"
+                },
+                {
+                    text: "React",
+                    link: "/code/前端/React/"
+                },
+                {
+                    text: "Bootstrap",
+                    link: "/code/前端/Bootstrap/"
+                },
+                {
+                    text: "小程序",
+                    link: "/code/前端/小程序开发/"
+                }
+            ],
+            "/code/算法/": [
+                {
                     text: "未知",
                     link: ""
                 }
-            ]
+            ],
+            "/code/后端/": [
+              {
+                text: "Python",
+                link: "/code/后端/Python/"
+              },
+              {
+                text: "MySQL",
+                link: "/code/后端/MySQL/"
+              }
+            ],
     }
   }
 }
