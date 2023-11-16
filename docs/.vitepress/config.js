@@ -1,4 +1,4 @@
-import replace from '@rollup/plugin-replace';
+import { defineConfig } from 'vite';
 
 export default {
     title: '🤡😡', //站点标题
@@ -8,12 +8,7 @@ export default {
     head:[
       ['link', { rel: 'icon', href: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309231456350.ico' }]
     ],
-    plugins: [
-      replace({
-        '"/assets': '"https://cdn.jsdelivr.net/gh/markbang/markbang.github.io@gh-pages',
-        delimiters: ['', '']
-      })
-    ],
+    base: 'https://cdn.jsdelivr.net/gh/markbang/markbang.github.io@gh-pages/',
     lastUpdated: true,
     themeConfig: {
         siteTItle: '🤡😡',
