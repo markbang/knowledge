@@ -1,3 +1,5 @@
+import replace from '@rollup/plugin-replace';
+
 export default {
     title: '🤡😡', //站点标题
     description: '一个小白友好的教程网站',//mate标签description，多用于搜索引擎抓取摘要
@@ -5,6 +7,12 @@ export default {
     ignoreDeadLinks: true, //忽略死链接
     head:[
       ['link', { rel: 'icon', href: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309231456350.ico' }]
+    ],
+    plugins: [
+      replace({
+        '"/assets': '"https://cdn.jsdelivr.net/gh/markbang/markbang.github.io@gh-pages',
+        delimiters: ['', '']
+      })
     ],
     lastUpdated: true,
     themeConfig: {
