@@ -8,7 +8,6 @@ export default {
     head:[
       ['link', { rel: 'icon', href: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309231456350.ico' }]
     ],
-    base: 'https://cdn.jsdelivr.net/gh/markbang/markbang.github.io@gh-pages/',
     lastUpdated: true,
     themeConfig: {
         siteTItle: '🤡😡',
