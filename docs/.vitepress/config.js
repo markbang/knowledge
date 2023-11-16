@@ -6,12 +6,12 @@ export default {
     lang: 'zh-CN', //语言
     ignoreDeadLinks: true, //忽略死链接
     head:[
-      ['link', { rel: 'icon', href: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309231456350.ico' }]
+      ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
     lastUpdated: true,
     themeConfig: {
         siteTItle: '🤡😡',
-        logo: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309222148103.png',
+        logo: '/site.png',
         footer: {
           message: '<a href="https://beian.miit.gov.cn/#/Integrated/recordQuery">皖ICP备2023007339号-1</a>',
           copyright: 'Copyright © 2019-present <a href="https://github.com/yyx990803">Evan you</a>'
