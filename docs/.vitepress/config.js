@@ -6,6 +6,7 @@ export default {
     head:[
       ['link', { rel: 'icon', href: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309231456350.ico' }]
     ],
+    lastUpdated: true,
     themeConfig: {
         siteTItle: '🤡😡',
         logo: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309222148103.png',
@@ -15,6 +16,11 @@ export default {
         },
         search:{
           provider: 'local'
+        },
+        lastUpdatedtext: '上次更新',
+        editLink: {
+          pattern: 'https://github.com/markbang/markbang.github.io/edit/main/docs/:path',
+          text: '给出修改建议'
         },
         nav: [
             { text: "首页", link: "index" },

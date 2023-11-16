@@ -41,6 +41,3 @@ const members = [
     :members="members"
   />
 </VPTeamPage>
-
-
-由于我们是大学生，正常来说也会面临死亡期末周，所以每学期都会挣扎捏
