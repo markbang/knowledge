@@ -10,7 +10,7 @@ import {
 
 const members = [
   {
-    avatar: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202305102251074.jpg',
+    avatar: 'https://s2.loli.net/2023/11/20/LIjPU1eO2iH9Wvm.png',
     name: 'Mark Bang',
     title: 'Creator',
     links: [
@@ -18,7 +18,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202309231544678.jpg',
+    avatar: 'https://s2.loli.net/2023/11/20/pfyosLlMWNU3Xak.jpg',
     name: 'Hui',
     title: 'Creator',
     links: [
