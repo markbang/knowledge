@@ -10,7 +10,7 @@ import {
 
 const members = [
   {
-    avatar: 'https://z1.ax1x.com/2023/11/21/piat9y9.jpg',
+    avatar: '../head.jpg',
     name: 'Mark Bang',
     title: 'Creator',
     links: [
