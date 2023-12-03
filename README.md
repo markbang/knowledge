@@ -6,4 +6,6 @@
 
 - Gitee访问地址(国内访问快)：https://bang-wu.gitee.io
 
+discord: https://discord.gg/PcvF4B3E
+
 遇到问题欢迎联系我 markbang35@gmail.com 
