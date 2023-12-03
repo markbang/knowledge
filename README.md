@@ -1,6 +1,6 @@
 # markbang.github.io
 用vitepress搭建的详细教程网站🤡😡
-- Vercel: https:blog.bangwu.top (推荐)
+- Vercel: https://blog.bangwu.top (推荐)
 
 - GitHub访问地址：https://markbang.github.io
 
