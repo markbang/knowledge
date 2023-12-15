@@ -16,11 +16,11 @@
 ## [JsDelivr cdn](https://www.jsdelivr.com/)
 ![](https://cdn.jsdelivr.net/gh/markbang35/blogimg@mian/test.jpg)
 
-## [jsd国内镜像]
+## [jsd国内镜像](https://jsd.cdn.zzko.cn/)
 ![](https://jsd.cdn.zzko.cn/gh/markbang35/blogimg@mian/test.jpg)
 
-## [Fastly Jsdelivr]
+## [Fastly Jsdelivr](https://www.jsdelivr.com/)
 ![](https://fastly.jsdelivr.net/gh/markbang35/blogimg@mian/test.jpg)
 
-## [gitmirror]
+## [gitmirror](https://gitmirror.com)
 ![](https://raw.gitmirror.com/markbang35/blogimg/mian/test.jpg)
