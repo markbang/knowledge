@@ -1,6 +1,10 @@
 # 图床测试页面
 以下测试图片为2.86MB jpg图片
 
+::: info
+本站教程中用到的图片很少，没有滥用这些图床。 PS:非常感谢这些图床服务
+:::
+
 ## [SM.MS](https://sm.ms/)
 ![test.jpg](https://s2.loli.net/2023/12/15/DwiJQyVYsh7voI8.jpg)
 
