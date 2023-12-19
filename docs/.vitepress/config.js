@@ -6,7 +6,9 @@ export default {
     lang: 'zh-CN', //语言
     ignoreDeadLinks: true, //忽略死链接
     head:[
-      ['link', { rel: 'icon', href: '/favicon.ico' }]
+      ['link', { rel: 'icon', href: '/favicon.ico' }],
+      ['script', {}, `window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };`],
+      ['script', { defer:'', src: '/_vercel/insights/script.js' }]
     ],
     lastUpdated: true,
     themeConfig: {
