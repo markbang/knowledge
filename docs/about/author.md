@@ -41,3 +41,8 @@ const members = [
     :members="members"
   />
 </VPTeamPage>
+<center style="font-size: 14px; color: #666;">
+  <a href="https://cnblogs.com/bangwu" target="_blank">
+    点击查看大学生期末复习
+  </a>
+</center>
