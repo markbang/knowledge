@@ -18,7 +18,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://s2.loli.net/2023/11/20/pfyosLlMWNU3Xak.jpg',
+    avatar: 'https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/ooTNdfzqzIGSFaFbeuIHBqnL2Fy8DBReCAAR5J',
     name: 'Hui',
     title: 'Creator',
     links: [
