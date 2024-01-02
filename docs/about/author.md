@@ -10,7 +10,7 @@ import {
 
 const members = [
   {
-    avatar: 'https://jsd.cdn.zzko.cn/gh/markbang35/blogimg@mian/202312131408907.jpg',
+    avatar: 'https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/oMVjVzThZD9NDg6s0gBeSEGkEJ9lmAzRH6HAfB',
     name: 'Mark Bang',
     title: 'Creator',
     links: [
