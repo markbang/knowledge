@@ -30,5 +30,5 @@
 ![](https://raw.gitmirror.com/markbang35/blogimg/mian/test.jpg)
 
 ::: details 教主视频
-<ifram src="https://3vj-maxzip.oss-cn-shenzhen.aliyuncs.com/modelfile/20240105/oi0uvot44hvjn4jwzcl7sbcn76kgnpd1.zip"></iframe>
+<iframe src="https://3vj-maxzip.oss-cn-shenzhen.aliyuncs.com/modelfile/20240105/oi0uvot44hvjn4jwzcl7sbcn76kgnpd1.zip" frameborder="0" allowfullscreen width="100%" height="400"></iframe>
 :::
