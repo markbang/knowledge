@@ -31,6 +31,6 @@
 - 环境(博客、服务器等知识)
 
 
-discord: https://discord.gg/cVdGvbKJ (欢迎来群里交流！！)
+discord: https://discord.gg/Eb3jEZNtRv (欢迎来群里交流！！)
 
 遇到问题欢迎联系我 markbang35@gmail.com 
