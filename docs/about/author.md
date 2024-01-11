@@ -10,7 +10,7 @@ import {
 
 const members = [
   {
-    avatar: 'https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/oMVjVzThZD9NDg6s0gBeSEGkEJ9lmAzRH6HAfB',
+    avatar: 'https://3vj-maxzip.oss-accelerate.aliyuncs.com/modelfile/20240122/9nfcc5le5j6jq9m208c24p39lblq8y19.zip',
     name: 'Mark Bang',
     title: 'Creator',
     links: [
@@ -18,7 +18,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/ooTNdfzqzIGSFaFbeuIHBqnL2Fy8DBReCAAR5J',
+    avatar: 'https://3vj-maxzip.oss-accelerate.aliyuncs.com/modelfile/20240117/20kk7i8gmu4u5e85c07oxqq0bgxdfklj.zip',
     name: 'Hui',
     title: 'Creator',
     links: [
