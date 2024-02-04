@@ -10,7 +10,7 @@ import {
 
 const members = [
   {
-    avatar: 'https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/oMVjVzThZD9NDg6s0gBeSEGkEJ9lmAzRH6HAfB',
+    avatar: '../head.jpg',
     name: 'Mark Bang',
     title: 'Creator',
     links: [
@@ -18,7 +18,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/ooTNdfzqzIGSFaFbeuIHBqnL2Fy8DBReCAAR5J',
+    avatar: 'https://s2.loli.net/2023/11/20/pfyosLlMWNU3Xak.jpg',
     name: 'Hui',
     title: 'Creator',
     links: [
