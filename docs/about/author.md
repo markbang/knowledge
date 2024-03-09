@@ -10,7 +10,7 @@ import {
 
 const members = [
   {
-    avatar: '../head.jpg',
+    avatar: 'https://txmov2.a.yximgs.com/ufile/atlas/NTE5MTgwNjAzNTM5OTUyNTg1N18xNjY3NTQwNzIxMDUw_9.jpg',
     name: 'Mark Bang',
     title: 'Creator',
     links: [

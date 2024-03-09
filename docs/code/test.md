@@ -29,6 +29,7 @@
 ## [gitmirror](https://gitmirror.com)
 ![](https://raw.gitmirror.com/markbang35/blogimg/mian/test.jpg)
 
-::: details 教主视频
-<iframe src="https://3vj-maxzip.oss-cn-shenzhen.aliyuncs.com/modelfile/20240105/oi0uvot44hvjn4jwzcl7sbcn76kgnpd1.zip" frameborder="0" allowfullscreen width="100%" height="400"></iframe>
+::: details 壁纸视频
+<iframe src="https://img.sobot.com/chatres/5d7e332c4f994cf295cbfb0e81851038/ticket/20240304/c14bbd9829354f7f9fe3daa2b101d0b1/43_1709565372394.mp4" frameborder="0" allowfullscreen width="100%" height="400"></iframe>
+
 :::
