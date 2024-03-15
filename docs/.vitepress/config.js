@@ -225,6 +225,12 @@ export default {
                     link: ""
                 }
             ],
+            "/code/前端/Vue/NaiveUI/": [
+                {
+                    text: "未知",
+                    link: ""
+                }
+            ],
             "/code/前端/TailwindCSS/": [
               {
                 text: "未知",
