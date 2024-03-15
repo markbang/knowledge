@@ -42,6 +42,7 @@ export default {
                 items: [{text: '其他', link: '/code/'}]
               }
             ]},
+            { text: "一人之下", link: "/yrzx/"},
             { text: "关于",
             items: [
                 {
