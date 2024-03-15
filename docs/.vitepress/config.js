@@ -28,9 +28,9 @@ export default {
         },
         nav: [
             { text: "首页", link: "index" },
-            { text: "软件", link: "/software/" },
-            { text: "环境", link: "/environment/" },
-            { text: "编程手册",
+            { text: "⚒️软件", link: "/software/" },
+            { text: "🌍环境", link: "/environment/" },
+            { text: "🧑‍💻编程手册",
             items: [
               
               {
@@ -129,6 +129,26 @@ export default {
                     ]
                   }
             ],
+            "/yrzx/" :[
+              {
+                text: "一人之下中的立场",
+                link: "/yrzx/立场"
+              }
+            ],
+            "/code/后端/": [
+              {
+                text: "Python",
+                link: "/code/后端/Python/"
+              },
+              {
+                text: "数据库",
+                link: "/code/后端/数据库/"
+              },
+              {
+                text: "GoLang",
+                link: "/code/后端/Go/"
+              }
+            ],
             "/code/后端/Python/": [
                 {
                     text: "Python",
@@ -153,17 +173,37 @@ export default {
                     ]
                 },
             ],
+            "/code/后端/Python/FastAPI/" :[
+              {
+                text: "介绍"
+              }
+            ],
+            "/code/后端/Python/爬虫/" :[
+              {
+                text: "未知",
+              }
+            ],
+            "/code/后端/Python/Python常用库" :[
+              {
+                text: "未知",
+              }
+            ],
+            "/code/后端/数据库/" :[
+              {
+                text: "MySQL",
+                link: "/code/后端/数据库/MySQL/"
+              }
+            ],
             "/code/后端/数据库/MySQL/": [
                 {
                     text: "基础语法",
                     link: "/code/后端/MySQL/Mysql基础语法"
                 }
             ],
-            "/code/前端/小程序开发/": [
-                {
-                    text: "未知",
-                    link: ""
-                }
+            "/code/后端/Go/" :[
+              {
+                text: "未知",
+              }
             ],
             "/code/前端/": [
                 {
@@ -179,31 +219,31 @@ export default {
                     link: "/code/前端/小程序开发/"
                 }
             ],
+            "/code/前端/Vue/": [
+                {
+                    text: "未知",
+                    link: ""
+                }
+            ],
+            "/code/前端/TailwindCSS/": [
+              {
+                text: "未知",
+              }
+            ], 
+            "/code/前端/小程序开发/": [
+              {
+                  text: "未知",
+                  link: ""
+              }
+          ],
             "/code/算法/": [
                 {
                     text: "未知",
                     link: ""
                 }
             ],
-            "/code/后端/": [
-              {
-                text: "Python",
-                link: "/code/后端/Python/"
-              },
-              {
-                text: "数据库",
-                link: "/code/后端/数据库/"
-              },
-              {
-                text: "GoLang",
-                link: "/code/后端/Go/"
-              }
-            ],
-            "/code/后端/Python/FastAPI/" :[
-              {
-                text: "介绍"
-              }
-            ],
+            
+            
     }
   }
 }
