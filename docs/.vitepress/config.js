@@ -134,24 +134,28 @@ export default {
                     items: [
                         { 
                             text: "爬虫",
-                            link: "/code/Python/爬虫/"
+                            link: "/code/后端/Python/爬虫/"
                         },
                         {
                             text: "Python常用库",
-                            link: "/code/Python/Python常用库/"
+                            link: "/code/后端/Python/Python常用库/"
                         },
                         {
                             text: "Python语法or算法",
-                            link: "/code/Python/Python所实现的一些奇怪算法/"
+                            link: "/code/后端/Python/Python所实现的一些奇怪算法/"
+                        },
+                        {
+                            text: "FastAPI",
+                            link: "/code/后端/Python/FastAPI/"
                         }
 
                     ]
                 },
             ],
-            "/code/后端/MySQL/": [
+            "/code/后端/数据库/MySQL/": [
                 {
                     text: "基础语法",
-                    link: "/code/MySQL/Mysql基础语法"
+                    link: "/code/后端/MySQL/Mysql基础语法"
                 }
             ],
             "/code/前端/小程序开发/": [
@@ -166,12 +170,8 @@ export default {
                     link: "/code/前端/Vue/"
                 },
                 {
-                    text: "React",
-                    link: "/code/前端/React/"
-                },
-                {
-                    text: "Bootstrap",
-                    link: "/code/前端/Bootstrap/"
+                    text: "TailwindCSS",
+                    link: "/code/前端/TailwindCSS/"
                 },
                 {
                     text: "小程序",
@@ -190,8 +190,17 @@ export default {
                 link: "/code/后端/Python/"
               },
               {
-                text: "MySQL",
-                link: "/code/后端/MySQL/"
+                text: "数据库",
+                link: "/code/后端/数据库/"
+              },
+              {
+                text: "GoLang",
+                link: "/code/后端/Go/"
+              }
+            ],
+            "/code/后端/Python/FastAPI/" :[
+              {
+                text: "介绍"
               }
             ],
     }
