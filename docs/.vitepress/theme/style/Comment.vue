@@ -1,18 +1,13 @@
-<template>
-  <Layout>
-    <template #doc-after>
-      <div v-if="initGitalkStep" id="gitalk-container"></div>
-    </template>
-  </Layout>
+<template #doc-after>
+  <div v-if="initGitalkStep" id="gitalk-container"></div>
 </template>
+
 
 <script lang="ts" setup>
 import { useRoute } from 'vitepress'
-import Theme from 'vitepress/theme'
 import { ref, watch, onMounted, nextTick } from 'vue'
 import Gitalk from 'gitalk'
 
-const { Layout } = Theme
 const route = useRoute()
 // 当前加载状态
 // 0 DOM 中无元素，此时调用应将元素插入到 DOM 中，等下个 step 再加载
