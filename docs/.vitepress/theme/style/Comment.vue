@@ -38,9 +38,9 @@ const initGitalk = () => {
     // 仓库名 <==== 按你的实际情况修改 ====>
     repo: 'docs-comment',
     // 客户端 ID <==== 按你的实际情况修改 ====>
-    clientID: '4654df2920736247e8d2',
+    clientID: CLINT_ID,
     // 客户端密钥 <==== 按你的实际情况修改 ====>
-    clientSecret: '4f2f3b7bacf1200c75f2bf2aa7fd710a4b68a0c1',
+    clientSecret: CLINT_KEY,
     // Github 账号 <==== 按你的实际情况修改 ====>
     admin: [ 'markbang' ],
     // 创建 Issue 时，为 Issue 增加的标签

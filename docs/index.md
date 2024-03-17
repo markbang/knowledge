@@ -14,8 +14,8 @@ hero:
       text: 去学习
       link: /code/index.md
     - theme: alt
-      text: 国内(Gitee)
-      link: https://bang-wu.gitee.io
+      text: 了解作者➡️
+      link: https://bangwu.top/about/
 
 features:
   - icon: 🛠️
