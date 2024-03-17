@@ -1,10 +1,5 @@
 # markbang.github.io
 用vitepress搭建的详细教程网站🤡😡
-- Vercel: https://blog.bangwu.top (推荐)
-
-- GitHub访问地址：https://markbang.github.io
-
-- Gitee访问地址(国内访问快)：https://bang-wu.gitee.io
 
 知识库所包含的内容：(非常欢迎大家提PR哦，提PR还能加入[Creators](https://blog.bangwu.top/about/author.html)名单哦)
 
