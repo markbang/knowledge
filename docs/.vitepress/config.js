@@ -15,13 +15,20 @@ export default {
         siteTItle: '🤡😡',
         logo: '/site.png',
         footer: {
-          message: '<a href="https://beian.miit.gov.cn/#/Integrated/recordQuery">皖ICP备2023007339号-1</a>',
           copyright: 'Copyright © 2019-present <a href="https://github.com/yyx990803">Evan you</a>'
         },
-        search:{
-          provider: 'local'
+        docFooter: {
+          prev: '上一篇',
+          next: '下一篇',
         },
-        lastUpdatedtext: '上次更新',
+        returnToTopLabel: '返回顶部',
+        outlineTitle: '导航栏',
+        darkModeSwitchLabel: '外观',
+        sidebarMenuLabel: '归档',
+        search:{
+          provider: 'local',
+        },
+        lastUpdatedtext: '上次更新于',
         editLink: {
           pattern: 'https://github.com/markbang/markbang.github.io/edit/main/docs/:path',
           text: '给出修改建议'
