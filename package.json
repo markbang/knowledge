@@ -14,13 +14,12 @@
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.5",
-    "flexsearch": "^0.7.43",
-    "markdown-it": "^14.0.0",
-    "vitepress": "1.0.0-rc.45",
-    "vitepress-plugin-search": "1.0.4-alpha.22"
+    "vitepress": "1.0.0-rc.45"
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
-    "vite": "^5.1.6"
+    "pagefind": "^1.0.4",
+    "vite": "^5.1.6",
+    "vitepress-plugin-pagefind": "^0.2.13"
   }
 }

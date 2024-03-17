@@ -1,10 +1,25 @@
-import { defineConfig } from 'vite';
+// import { defineConfig } from 'vite';
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
-export default {
+export default{
     title: '🤡😡', //站点标题
     description: '一个小白友好的教程网站',//mate标签description，多用于搜索引擎抓取摘要
-    lang: 'zh-CN', //语言
+    lang: 'zh-cn', //语言
     ignoreDeadLinks: true, //忽略死链接
+    vite:{
+      plugins:[pagefindPlugin({
+        btnPlaceholder: '搜索',
+        placeholder: '搜索文档',
+        emptyText: '空空如也',
+        heading: '共: {{searchResult}} 条结果',
+        customSearchQuery(input){
+          // 将搜索的每个中文单字两侧加上空格
+          return input.replace(/[\u4e00-\u9fa5]/g, ' $& ')
+          .replace(/\s+/g,' ')
+          .trim();
+        }
+      })],
+    },
     head:[
       ['link', { rel: 'icon', href: '/favicon.ico' }],
       ['script', {}, `window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };`],
@@ -73,189 +88,103 @@ export default {
             { icon: {
                 svg: '<svg t="1695391570251" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4216" data-spm-anchor-id="a313x.search_index.0.i3.36cd3a81cjRuXJ" width="200" height="200"><path d="M851.40363594 172.59636406c-187.46181844-187.46181844-491.34545437-187.46181844-678.80727188 0-187.46181844 187.46181844-187.46181844 491.34545437 0 678.80727188 187.46181844 187.46181844 491.34545437 187.46181844 678.80727188 0 187.46181844-187.46181844 187.46181844-491.34545437 0-678.80727188zM387.33090875 728.08727281a47.08363594 47.08363594 0 1 1-66.63272719-66.50181843 47.08363594 47.08363594 0 0 1 66.63272719 66.50181843z m205.52727281 1.39636313a38.74909125 38.74909125 0 0 1-76.62545437-11.52h-0.04363594a6.54545437 6.54545437 0 0 0-0.04363688 0.30545531v-0.34909125c0.30545438-2.61818156 2.05090875-20.72727281-2.96727281-44.98909125a174.24 174.24 0 0 0-48.56727281-89.28 172.10181844 172.10181844 0 0 0-88.8-48.30545438 156.69818156 156.69818156 0 0 0-42.45818156-2.92363593 38.66181844 38.66181844 0 0 1-35.38909125-65.32363688 38.61818156 38.61818156 0 0 1 21.12-10.8218175v-0.2181825c4.45090875-0.74181844 111.14181844-16.45090875 200.33454562 72.74181844 89.01818156 89.01818156 74.18181844 196.14545438 73.44 200.72727281z m175.2 7.59272812a38.74909125 38.74909125 0 0 1-65.67272719 21.3818175 39.49090875 39.49090875 0 0 1-11.65090875-33.73090875c0.08727281-0.34909125 5.10545437-37.48363594-5.06181843-88.97454562-13.30909125-67.37454562-45.29454563-126.89454563-94.95272719-176.90181844-50.00727281-49.70181844-109.52727281-81.64363594-176.94545438-94.95272719-51.49090875-10.16727281-88.58181844-5.19272719-89.01818156-5.14909031h0.21818156-0.04363687a39.92727281 39.92727281 0 0 1-44.68363594-32.90181844 38.83636406 38.83636406 0 0 1 32.20363594-44.37818156c1.92-0.30545438 47.86909125-7.33090875 111.27272719 4.36363594a411.75272719 411.75272719 0 0 1 106.25454562 34.95272718 425.76 425.76 0 0 1 114.63272719 82.25454563l0.91636406 0.96 0.96 0.87272719a425.89090875 425.89090875 0 0 1 82.25454563 114.72c16.40727281 33.6 28.14545437 69.29454562 34.99636312 106.21090875 11.65090875 63.40363594 4.66909125 109.35272719 4.32 111.27272812z" fill="#515151" p-id="4217" data-spm-anchor-id="a313x.search_index.0.i1.36cd3a81cjRuXJ"></path></svg>'
             }, link: "https://www.cnblogs.com/bangwu/" },],
-            sidebar: {
-            "/software/":[
-                {
-                  text: "推荐软件",
-                  items: [
-                    {
-                      text: "Typora(写MarkDown)",
-                      link: "/software/Typora",
-                    },
-                    { text: "WattToolkit", link: "/software/WattToolkit" },
-                  ],
-                },
-                {
-                  text: "一些好玩的软件",
-                  items: [
-                    {
-                      text: "未知",
-                      link: "/software/未知",
-                    },
-                  ],
-                },
+        sidebar: {
+          "/software/":[
+            {
+              text: "推荐软件",
+              items: [
+                { text: "Typora(写MarkDown)",link: "/software/Typora" },
+                { text: "WattToolkit", link: "/software/WattToolkit" },
               ],
-            "/environment/":[
-                {
-                    text: "Jupyter生态使用",
-                    items: [
-                      {
-                        text: "Jupyter Notebook",
-                        link: "/environment/Jupyter生态使用/Jupyter Notebook",
-                      },
-                      {
-                        text: "Jupyter Lab",
-                        link: "/environment/Jupyter生态使用/Jupyter Lab"
-                      },
-                      {
-                        text: "Jupyter Lite",
-                        link: "/environment/Jupyter生态使用/Jupyter Lite"
-                      }
-                    ],
-                  },
-                  {
-                    text: "博客搭建",
-                    items: [
-                      {
-                        text: "vitepress",
-                        link: "/environment/博客搭建/vitepress",
-                      },
-                      {
-                        text: "wordpress",
-                        link: "/environment/博客搭建/wordpress",
-                      },
-                    ],
-                  },
-                  {
-                    text: "各种环境配置",
-                    items: [
-                        {
-                            text: "未知",
-                            link: ""
-                        }
-                    ]
-                  }
-            ],
-            "/yrzx/" :[
-              {
-                text: "一人之下中的立场",
-                link: "/yrzx/立场"
-              }
-            ],
-            "/code/后端/": [
-              {
-                text: "Python",
-                link: "/code/后端/Python/"
-              },
-              {
-                text: "数据库",
-                link: "/code/后端/数据库/"
-              },
-              {
-                text: "GoLang",
-                link: "/code/后端/Go/"
-              }
-            ],
-            "/code/后端/Python/": [
-                {
-                    text: "Python",
-                    items: [
-                        { 
-                            text: "爬虫",
-                            link: "/code/后端/Python/爬虫/"
-                        },
-                        {
-                            text: "Python常用库",
-                            link: "/code/后端/Python/Python常用库/"
-                        },
-                        {
-                            text: "Python语法or算法",
-                            link: "/code/后端/Python/Python所实现的一些奇怪算法/"
-                        },
-                        {
-                            text: "FastAPI",
-                            link: "/code/后端/Python/FastAPI/"
-                        }
-
-                    ]
-                },
-            ],
-            "/code/后端/Python/FastAPI/" :[
-              {
-                text: "介绍"
-              }
-            ],
-            "/code/后端/Python/爬虫/" :[
-              {
-                text: "未知",
-              }
-            ],
-            "/code/后端/Python/Python常用库" :[
-              {
-                text: "未知",
-              }
-            ],
-            "/code/后端/数据库/" :[
-              {
-                text: "MySQL",
-                link: "/code/后端/数据库/MySQL/"
-              }
-            ],
-            "/code/后端/数据库/MySQL/": [
-                {
-                    text: "基础语法",
-                    link: "/code/后端/MySQL/Mysql基础语法"
-                }
-            ],
-            "/code/后端/Go/" :[
-              {
-                text: "未知",
-              }
-            ],
-            "/code/前端/": [
-                {
-                    text: "Vue",
-                    link: "/code/前端/Vue/"
-                },
-                {
-                    text: "TailwindCSS",
-                    link: "/code/前端/TailwindCSS/"
-                },
-                {
-                    text: "小程序",
-                    link: "/code/前端/小程序开发/"
-                }
-            ],
-            "/code/前端/Vue/": [
-                {
-                    text: "未知",
-                    link: ""
-                }
-            ],
-            "/code/前端/Vue/NaiveUI/": [
-                {
-                    text: "未知",
-                    link: ""
-                }
-            ],
-            "/code/前端/TailwindCSS/": [
-              {
-                text: "未知",
-              }
-            ], 
-            "/code/前端/小程序开发/": [
-              {
-                  text: "未知",
-                  link: ""
-              }
+            },
+            {
+              text: "一些好玩的软件",
+              items: [
+                { text: "未知", link: "/software/未知" },
+              ],
+            },
           ],
-            "/code/算法/": [
-                {
-                    text: "未知",
-                    link: ""
-                }
-            ],
-            
+          "/environment/":[
+            {
+              text: "Jupyter生态使用",
+              items: [
+                { text: "Jupyter Notebook", link: "/environment/Jupyter生态使用/Jupyter Notebook" },
+                { text: "Jupyter Lab", link: "/environment/Jupyter生态使用/Jupyter Lab" },
+                { text: "Jupyter Lite", link: "/environment/Jupyter生态使用/Jupyter Lite" },
+              ],
+            },
+            {
+              text: "博客搭建",
+              items: [
+                { text: "vitepress", link: "/environment/博客搭建/vitepress" },
+                { text: "wordpress", link: "/environment/博客搭建/wordpress" },
+              ],
+            },
+            {
+              text: "各种环境配置",
+              items: [
+                  { text: "未知", link: "" },
+              ]
+            }
+          ],
+          "/yrzx/" :[
+            { text: "一人之下中的立场", link: "/yrzx/立场" }
+          ],
+          "/code/后端/": [
+            { text: "Python", link: "/code/后端/Python/" },
+            { text: "数据库", link: "/code/后端/数据库/" },
+            { text: "GoLang", link: "/code/后端/Go/" }
+          ],
+          "/code/后端/Python/": [
+            {
+              text: "Python",
+              items: [
+                  { text: "爬虫", link: "/code/后端/Python/爬虫/" },
+                  { text: "Python常用库", link: "/code/后端/Python/Python常用库/" },
+                  { text: "Python语法or算法", link: "/code/后端/Python/Python所实现的一些奇怪算法/" },
+                  { text: "FastAPI", link: "/code/后端/Python/FastAPI/" },
+              ]
+            },
+          ],
+          "/code/后端/Python/FastAPI/" :[
+            { text: "安装与入门", link: "/code/后端/Python/FastAPI/安装与入门" },
+          ],
+          "/code/后端/Python/爬虫/" :[
+            { text: "未知", link: "" },
+          ],
+          "/code/后端/Python/Python常用库" :[
+            { text: "未知", link: "" },
+          ],
+          "/code/后端/数据库/" :[
+            { text: "MySQL", link: "/code/后端/数据库/MySQL/" },
+          ],
+          "/code/后端/数据库/MySQL/": [
+            { text: "基础语法", link: "/code/后端/MySQL/Mysql基础语法" },
+          ],
+          "/code/后端/Go/" :[
+            { text: "未知", link: "" },
+          ],
+          "/code/前端/": [
+            { text: "Vue", link: "/code/前端/Vue/" },
+            { text: "TailwindCSS", link: "/code/前端/TailwindCSS/" },
+            { text: "小程序", link: "/code/前端/小程序开发/" },
+          ],
+          "/code/前端/Vue/": [
+            { text: "未知", ink: "" },
+          ],
+          "/code/前端/Vue/NaiveUI/": [
+            { text: "未知", link: "" },
+          ],
+          "/code/前端/TailwindCSS/": [
+            { text: "未知", link: "" },
+          ], 
+          "/code/前端/小程序开发/": [
+            { text: "未知", link: "" },
+          ],
+          "/code/算法/": [
+            { text: "未知", link: "" },
+          ],
+          
             
     }
   }
