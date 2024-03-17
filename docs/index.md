@@ -14,8 +14,8 @@ hero:
       text: 去学习
       link: /code/index.md
     - theme: alt
-      text: 了解作者➡️
-      link: https://bangwu.top/about/
+      text: 了解本站➡️
+      link: /about/site.md
 
 features:
   - icon: 🛠️
@@ -35,3 +35,25 @@ features:
     linkText: 关于本站
 
 ---
+
+::: code-group
+
+```python
+print('Hello World!')
+```
+
+```javascript
+console.log('Hello World!')
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello World!")
+}
+```
+
+:::
