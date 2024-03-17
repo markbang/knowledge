@@ -20,6 +20,12 @@ export default{
         }
       })],
     },
+    markdown: {
+      lineNumbers: true,
+      image: {
+        lazyLoading: true,
+      }
+    },
     head:[
       ['link', { rel: 'icon', href: '/favicon.ico' }],
       ['script', {}, `window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };`],
