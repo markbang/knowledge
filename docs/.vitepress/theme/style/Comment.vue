@@ -1,36 +1,70 @@
-<!-- Comment.vue -->
+<template>
+  <Layout>
+    <template #doc-after>
+      <div v-if="initGitalkStep" id="gitalk-container"></div>
+    </template>
+  </Layout>
+</template>
+
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
-import { inBrowser } from 'vitepress'
+import { useRoute } from 'vitepress'
+import Theme from 'vitepress/theme'
+import { ref, watch, onMounted, nextTick } from 'vue'
 import Gitalk from 'gitalk'
 
-const commentRef = ref<HTMLElement | null>(null)
+const { Layout } = Theme
+const route = useRoute()
+// 当前加载状态
+// 0 DOM 中无元素，此时调用应将元素插入到 DOM 中，等下个 step 再加载
+// 1 DOM 中有元素，此时调用应用已有 DOM 元素初始化评论插件，加载后步骤完成，不需要再做什么了
+// 2 插件已经加载，此时调用应是切换页面了，应删除页面中的 DOM 元素，等下个 step 再插入
+const initGitalkStep = ref(0)
 
-const init = () => {
-  if (inBrowser) {
-    const wrap = document.createElement('div')
-    wrap.setAttribute('id', 'gitalk-page-container')
-    commentRef.value?.appendChild(wrap) // 把组件加入到想加载的地方 // querySelector的节点可自己根据自己想加载的地方设置
-    const gitTalk = new Gitalk({
-      id: location.pathname, // 可选。默认为 location.href
-      owner: 'markbang', // GitHub repository 所有者
-      repo: 'docs-comment', // GitHub repo
-      clientID: '4654df2920736247e8d2', // clientID
-      clientSecret: '4f2f3b7bacf1200c75f2bf2aa7fd710a4b68a0c1', // clientSecret
-      admin: ['markbang'], // GitHub repo 所有者
-      labels: ['GitTalk'], // GitHub issue 标签
-      proxy:
-        'https://cors-server-ecru.vercel.app/github_access_token',
-      createIssueManually: true //如果当前页面没有相应的 issue 且登录的用户属于 admin，则会自动创建 issue。如果设置为 true，则显示一个初始化页面，创建 issue 需要点击 init 按钮。
-    })
-    gitTalk.render('gitalk-page-container')
+const initGitalk = () => {
+  // 切换页面时，刷新评论组件
+  switch (initGitalkStep.value) {
+    case 0: // DOM 中无元素，此时调用应将元素插入到 DOM 中，等下个 step 再加载
+      initGitalkStep.value = 1
+      nextTick(initGitalk)
+      return
+    case 1: // DOM 中有元素，此时调用应用已有 DOM 元素初始化评论插件，加载后步骤完成，不需要再做什么了
+      initGitalkStep.value = 2
+      break
+    case 2: // 插件已经加载，此时调用应是切换页面了，应删除页面中的 DOM 元素，等下个 step 再插入
+      initGitalkStep.value = 0
+      nextTick(initGitalk)
+      return
   }
+
+  // 创建评论组件
+  const gitTalk = new Gitalk({
+    // GitHub 账号 <==== 按你的实际情况修改 ====>
+    owner: 'markbang',
+    // 仓库名 <==== 按你的实际情况修改 ====>
+    repo: 'docs-comment',
+    // 客户端 ID <==== 按你的实际情况修改 ====>
+    clientID: '4654df2920736247e8d2',
+    // 客户端密钥 <==== 按你的实际情况修改 ====>
+    clientSecret: '4f2f3b7bacf1200c75f2bf2aa7fd710a4b68a0c1',
+    // Github 账号 <==== 按你的实际情况修改 ====>
+    admin: [ 'markbang' ],
+    // 创建 Issue 时，为 Issue 增加的标签
+    labels: [ 'GitTalk' ],
+    // 如果 Issue 不存在，且登陆的是管理员账号，是否显示创建 Issue 按钮
+    createIssueManually: true,
+    // 创建 Issue 时，用于唯一标识这篇文章的标记
+    id: location.pathname,
+    // 撰写评论时，给一个全屏遮罩，聚焦到评论框
+    distractionFreeMode: true,
+  })
+  // 渲染到 DOM 元素中
+  gitTalk.render('gitalk-container')
 }
 
-onMounted(() => {
-  init()
-})
+// 初始化和页面切换时加载评论插件
+onMounted(initGitalk)
+watch(
+  () => route.path,
+  initGitalk,
+)
 </script>
-<template>
-  <div class="commentRef"></div>
-</template>
