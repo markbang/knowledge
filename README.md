@@ -4,27 +4,17 @@
 知识库所包含的内容：(非常欢迎大家提PR哦，提PR还能加入[Creators](https://blog.bangwu.top/about/author.html)名单哦)
 
 - 前端
-  - Vue3
-    - ElementPlus
-    - NaiveUI
-    - VueRouter
-    - Vite
-  - React
-  - BootStrap
+  - Vue
+  - TailwindCSS
+  - 小程序
 - 后端
   - Python
-    - FastAPI
-    - Flask
   - 数据库
-    - MySQL
-    - MongoDB
-    - Redis
-  - Go(待更新)
+  - Go
 - 算法
   - 算法分享
 - 软件推荐(一些常用必备软件和工具)
 - 环境(博客、服务器等知识)
-
 
 discord: https://discord.gg/Eb3jEZNtRv (欢迎来群里交流！！)
 
