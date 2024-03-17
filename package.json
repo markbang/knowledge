@@ -14,12 +14,14 @@
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.5",
+    "gitalk": "^1.8.0",
     "vitepress": "1.0.0-rc.45"
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
     "pagefind": "^1.0.4",
     "vite": "^5.1.6",
-    "vitepress-plugin-pagefind": "^0.2.13"
+    "vitepress-plugin-pagefind": "^0.2.13",
+    "vue": "^3.4.21"
   }
 }
