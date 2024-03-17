@@ -28,7 +28,7 @@ export default {
         search:{
           provider: 'local',
         },
-        lastUpdatedtext: '上次更新于',
+        lastUpdatedText: '上次更新于',
         editLink: {
           pattern: 'https://github.com/markbang/markbang.github.io/edit/main/docs/:path',
           text: '给出修改建议'
