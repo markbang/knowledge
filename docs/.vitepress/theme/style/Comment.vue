@@ -8,6 +8,8 @@ import { useRoute } from 'vitepress'
 import { ref, watch, onMounted, nextTick } from 'vue'
 import Gitalk from 'gitalk'
 
+const CLINT_ID = process.env.CLINT_ID
+const CLINT_KEY = process.env.CLINT_KEY
 const route = useRoute()
 // 当前加载状态
 // 0 DOM 中无元素，此时调用应将元素插入到 DOM 中，等下个 step 再加载
