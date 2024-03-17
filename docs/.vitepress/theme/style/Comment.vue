@@ -51,6 +51,8 @@ const initGitalk = () => {
     id: location.pathname,
     // 撰写评论时，给一个全屏遮罩，聚焦到评论框
     distractionFreeMode: true,
+    proxy:
+        'https://strong-caramel-969805.netlify.app/github_access_token',
   })
   // 渲染到 DOM 元素中
   gitTalk.render('gitalk-container')
