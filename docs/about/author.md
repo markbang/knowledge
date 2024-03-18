@@ -7,7 +7,6 @@ import {
   VPTeamPageTitle,
   VPTeamMembers
 } from 'vitepress/theme'
-
 const members = [
   {
     avatar: 'https://txmov2.a.yximgs.com/ufile/atlas/NTE5MTgwNjAzNTM5OTUyNTg1N18xNjY3NTQwNzIxMDUw_9.jpg',
@@ -17,32 +16,21 @@ const members = [
       { icon: 'github', link: 'https://github.com/markbang' },
     ]
   },
-  {
-    avatar: 'https://s2.loli.net/2023/11/20/pfyosLlMWNU3Xak.jpg',
-    name: 'Hui',
-    title: 'Creator',
-    links: [
-      { icon: 'github', link: 'https://github.com/Hui-hub507' },
-    ]
-  },
 ]
+const partners = []
 </script>
 
 <VPTeamPage>
   <VPTeamPageTitle>
-    <template #title>
-      我们的团队
-    </template>
-    <template #lead>
-      我们团队是由以下两人组成，也是本站的两位文章编写者
-    </template>
+    <template #title>站点作者</template>
+    <template #lead>本人本科大二，开本站一方面为了方便自己查找自己学过的知识和分享给大家，另一方面是督促自己学习，任务驱动型吧（差不多。。。。）</template>
   </VPTeamPageTitle>
-  <VPTeamMembers
-    :members="members"
-  />
+  <VPTeamMembers :members="members" />
+  <VPTeamPageSection>
+    <template #title>贡献者</template>
+    <template #lead>通过提评论或者Pull优化本站内容即可以申请进入贡献者名单哦</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="partners" />
+    </template>
+  </VPTeamPageSection>
 </VPTeamPage>
-<center style="font-size: 14px; color: #666;">
-  <a href="https://cnblogs.com/bangwu" target="_blank">
-    点击查看大学生期末复习
-  </a>
-</center>
