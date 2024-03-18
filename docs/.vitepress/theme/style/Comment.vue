@@ -1,4 +1,4 @@
-<template #doc-after>
+2<template #doc-after>
   <div v-if="initGitalkStep" id="gitalk-container"></div>
 </template>
 
@@ -49,7 +49,7 @@ const initGitalk = () => {
     // 如果 Issue 不存在，且登陆的是管理员账号，是否显示创建 Issue 按钮
     createIssueManually: true,
     // 创建 Issue 时，用于唯一标识这篇文章的标记
-    id: md5(location.pathname),
+    id: md5(window.location.pathname),
     proxy:
         'https://strong-caramel-969805.netlify.app/github_access_token',
   })
