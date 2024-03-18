@@ -38,9 +38,9 @@ const initGitalk = () => {
     // 仓库名 <==== 按你的实际情况修改 ====>
     repo: 'docs-comment',
     // 客户端 ID <==== 按你的实际情况修改 ====>
-    clientID: import.meta.env.CLINT_ID,
+    clientID: '4654df2920736247e8d2',
     // 客户端密钥 <==== 按你的实际情况修改 ====>
-    clientSecret: import.meta.env.CLINT_KEY,
+    clientSecret: '4f2f3b7bacf1200c75f2bf2aa7fd710a4b68a0c1',
     // Github 账号 <==== 按你的实际情况修改 ====>
     admin: [ 'markbang' ],
     // 创建 Issue 时，为 Issue 增加的标签
@@ -49,8 +49,6 @@ const initGitalk = () => {
     createIssueManually: true,
     // 创建 Issue 时，用于唯一标识这篇文章的标记
     id: location.pathname,
-    // 撰写评论时，给一个全屏遮罩，聚焦到评论框
-    distractionFreeMode: true,
     proxy:
         'https://strong-caramel-969805.netlify.app/github_access_token',
   })
