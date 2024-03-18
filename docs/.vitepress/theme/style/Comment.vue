@@ -40,7 +40,7 @@ const initGitalk = () => {
     // 仓库名 <==== 按你的实际情况修改 ====>
     repo: 'docs-comment',
     // 客户端 ID <==== 按你的实际情况修改 ====>
-    clientID: cid,
+    clientID: '4654df2920736247e8d2',
     // 客户端密钥 <==== 按你的实际情况修改 ====>
     clientSecret: key,
     // Github 账号 <==== 按你的实际情况修改 ====>
