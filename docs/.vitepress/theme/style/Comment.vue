@@ -37,7 +37,7 @@ const initGitalk = () => {
     // GitHub 账号 <==== 按你的实际情况修改 ====>
     owner: 'markbang',
     // 仓库名 <==== 按你的实际情况修改 ====>
-    repo: 'docs-comment',
+    repo: 'markbang.github.io',
     // 客户端 ID <==== 按你的实际情况修改 ====>
     clientID: '4654df2920736247e8d2',
     // 客户端密钥 <==== 按你的实际情况修改 ====>
@@ -49,14 +49,13 @@ const initGitalk = () => {
     // 如果 Issue 不存在，且登陆的是管理员账号，是否显示创建 Issue 按钮
     createIssueManually: true,
     // 创建 Issue 时，用于唯一标识这篇文章的标记
-    id: md5(window.location.pathname),
-    proxy:
-        'https://strong-caramel-969805.netlify.app/github_access_token',
+    id: md5(decodeURI(location.pathname)),
+    proxy: 'https://strong-caramel-969805.netlify.app/github_access_token',
+    distractionFreeMode: false,
   })
   // 渲染到 DOM 元素中
   gitTalk.render('gitalk-container')
 }
-
 // 初始化和页面切换时加载评论插件
 onMounted(initGitalk)
 watch(
