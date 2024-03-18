@@ -8,7 +8,6 @@ import { useRoute } from 'vitepress'
 import { ref, watch, onMounted, nextTick } from 'vue'
 import Gitalk from 'gitalk'
 
-const cid = process.env.CLINT_ID
 const key = process.env.CLINT_KEY
 const route = useRoute()
 // 当前加载状态
@@ -51,10 +50,7 @@ const initGitalk = () => {
     createIssueManually: true,
     // 创建 Issue 时，用于唯一标识这篇文章的标记
     id: location.pathname,
-    // 撰写评论时，给一个全屏遮罩，聚焦到评论框
-    distractionFreeMode: true,
-    proxy:
-        'https://strong-caramel-969805.netlify.app/github_access_token',
+    proxy:'https://strong-caramel-969805.netlify.app/github_access_token',
   })
   // 渲染到 DOM 元素中
   gitTalk.render('gitalk-container')
