@@ -7,7 +7,7 @@
 import { useRoute } from 'vitepress'
 import { ref, watch, onMounted, nextTick } from 'vue'
 import Gitalk from 'gitalk'
-import md5 from "md5";
+import md5 from "./md5.js";
 
 const route = useRoute()
 // 当前加载状态
