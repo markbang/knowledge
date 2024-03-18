@@ -7,6 +7,7 @@
 import { useRoute } from 'vitepress'
 import { ref, watch, onMounted, nextTick } from 'vue'
 import Gitalk from 'gitalk'
+import md5 from "md5";
 
 const route = useRoute()
 // 当前加载状态
@@ -48,7 +49,7 @@ const initGitalk = () => {
     // 如果 Issue 不存在，且登陆的是管理员账号，是否显示创建 Issue 按钮
     createIssueManually: true,
     // 创建 Issue 时，用于唯一标识这篇文章的标记
-    id: decodeURI(location.pathname),
+    id: md5(location.pathname),
     proxy:
         'https://strong-caramel-969805.netlify.app/github_access_token',
   })
