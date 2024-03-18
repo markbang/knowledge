@@ -8,7 +8,8 @@ import { useRoute } from 'vitepress'
 import { ref, watch, onMounted, nextTick } from 'vue'
 import Gitalk from 'gitalk'
 
-const key = process.env.CLINT_KEY
+const cid = process.env.CLINI_ID  
+const ckey = process.env.CLINT_KEY
 const route = useRoute()
 // 当前加载状态
 // 0 DOM 中无元素，此时调用应将元素插入到 DOM 中，等下个 step 再加载
@@ -39,9 +40,9 @@ const initGitalk = () => {
     // 仓库名 <==== 按你的实际情况修改 ====>
     repo: 'docs-comment',
     // 客户端 ID <==== 按你的实际情况修改 ====>
-    clientID: '4654df2920736247e8d2',
+    clientID: cid,
     // 客户端密钥 <==== 按你的实际情况修改 ====>
-    clientSecret: key,
+    clientSecret: ckey,
     // Github 账号 <==== 按你的实际情况修改 ====>
     admin: [ 'markbang' ],
     // 创建 Issue 时，为 Issue 增加的标签
@@ -50,7 +51,6 @@ const initGitalk = () => {
     createIssueManually: true,
     // 创建 Issue 时，用于唯一标识这篇文章的标记
     id: location.pathname,
-    proxy:'https://strong-caramel-969805.netlify.app/github_access_token',
   })
   // 渲染到 DOM 元素中
   gitTalk.render('gitalk-container')
