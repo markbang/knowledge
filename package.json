@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
+    "md5": "^2.3.0",
     "pagefind": "^1.0.4",
     "vite": "^5.1.6",
     "vitepress-plugin-pagefind": "^0.2.13",
