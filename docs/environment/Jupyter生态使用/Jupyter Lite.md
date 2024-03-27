@@ -8,7 +8,7 @@ Jupyter Lite是Jupyter团队自行开发的一个基于浏览器的静态Jupyter
 
 ```html
 <iframe
-    src="https://markbang.github.io/my-custom-deployment/repl/?kernel=python&toolbar=1">
+    src="https://repl.bangwu.top/repl/?kernel=python&toolbar=1">
 </iframe>
 ```
 
