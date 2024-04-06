@@ -1,6 +1,7 @@
 // import { defineConfig } from 'vite';
 import { set_sidebar } from "./sidebar"
 import getDirectoryContents from "./code_rule"
+import { totalWords } from "./count"
 export default{
     title: '🤡😡', //站点标题
     description: '一个小白友好的教程网站',//mate标签description，多用于搜索引擎抓取摘要
@@ -25,7 +26,7 @@ export default{
         siteTItle: '🤡😡',
         logo: '/site.png',
         footer: {
-          copyright: 'Copyright © 2019-present <a href="https://github.com/yyx990803">Evan you</a>'
+          copyright: 'Copyright © 2019-present <a href="https://github.com/yyx990803">Evan you</a>  TotalWords: '+totalWords,
         },
         docFooter: {
           prev: '上一篇',
