@@ -57,3 +57,10 @@ func main() {
 ```
 
 :::
+
+<div align="center">
+    访客统计
+    <br>
+    <img src="https://counter.seku.su/cmoe?name=blogbangwu&theme=r34">
+</div>
+
