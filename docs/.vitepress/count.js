@@ -60,4 +60,3 @@ export const sidebars = {
     '/code/后端/Python/Python所实现的一些奇怪算法/': set_sidebar('docs/code/后端/Python/Python所实现的一些奇怪算法'),
     '/code/后端/Go/': set_sidebar('docs/code/后端/Go'),
 }
-console.log(sidebars)
