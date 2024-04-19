@@ -22,7 +22,7 @@ function getDirectoryContents(docs) {
         } else if (item.isFile() && item.name !== 'index.md') {
             result.push({
                 text: fileName,
-                link: path.join('/', relativePath)
+                link: '/' + path.join('/', relativePath)
             });
         }
     });

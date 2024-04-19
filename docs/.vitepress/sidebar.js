@@ -45,7 +45,7 @@ function getList(params, path1, pathname) {
             var result = parts.slice(1).join('/');
             res.push({
                 text: new_name,
-                link: `${result}/${name}`,
+                link: `/${result}/${new_name}`,
             })
         }
     }
