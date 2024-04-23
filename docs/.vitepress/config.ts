@@ -95,8 +95,10 @@ export default{
             items: [
               
               {
-                items:[{ text: '前端', link: '/code/前端/' },
+                items:[
+              { text: '前端', link: '/code/前端/' },
               { text: '后端', link: '/code/后端/' },
+              { text: '客户端', link: '/code/客户端/' },
               { text: '算法', link: '/code/算法/' }]
               },
               {
