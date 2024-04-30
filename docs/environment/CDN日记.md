@@ -577,3 +577,91 @@ APP KEY 和 ID 要去 Backblaze 后台生成，`B2_ENDPOINT` 要去自己的 B2 
 - `images.eallion.com/*`
 
 :::
+
+CDN证书自动更换
+
+以上算是解决了基本的问题，但是还有一个痛点就是SSL证书问题，CF是提供免费续签更新永不过期证书的，但是国内CDN厂商一般都需要手动上传自己申请的证书。。。这个确实不太方便，所以想着能不能找个解决方案：
+
+::: details 自动更新证书脚本
+
+起因：因为配置国内CDN基本都是需要手动上传证书，但是我申请的域名证书都是基本三个月保质期的，所以就想着写个自动脚本自动更新证书。
+环境：
+1panel（国产面板，自动申请证书，还有其他强大功能，挺方便的）
+
+以我用的多吉云为例，其他厂家都可以去找到相应的SDK。
+代码如下：
+```python
+from hashlib import sha1
+import hmac
+import requests
+import json
+import urllib
+
+def dogecloud_api(api_path, data={}, json_mode=False):
+    """
+    调用多吉云API
+
+    :param api_path:    调用的 API 接口地址，包含 URL 请求参数 QueryString，例如：/console/vfetch/add.json?url=xxx&a=1&b=2
+    :param data:        POST 的数据，字典，例如 {'a': 1, 'b': 2}，传递此参数表示不是 GET 请求而是 POST 请求
+    :param json_mode:   数据 data 是否以 JSON 格式请求，默认为 false 则使用表单形式（a=1&b=2）
+
+    :type api_path: string
+    :type data: dict
+    :type json_mode bool
+
+    :return dict: 返回的数据
+    """
+
+    # 这里替换为你的多吉云永久 AccessKey 和 SecretKey，可在用户中心 - 密钥管理中查看
+    # 请勿在客户端暴露 AccessKey 和 SecretKey，否则恶意用户将获得账号完全控制权
+    access_key = ''
+    secret_key = ''
+
+    body = ''
+    mime = ''
+    if json_mode:
+        body = json.dumps(data)
+        mime = 'application/json'
+    else:
+        body = urllib.parse.urlencode(data) # Python 2 可以直接用 urllib.urlencode
+        mime = 'application/x-www-form-urlencoded'
+    sign_str = api_path + "\n" + body
+    signed_data = hmac.new(secret_key.encode('utf-8'), sign_str.encode('utf-8'), sha1)
+    sign = signed_data.digest().hex()
+    authorization = 'TOKEN ' + access_key + ':' + sign
+    response = requests.post('https://api.dogecloud.com' + api_path, data=body, headers = {
+        'Authorization': authorization,
+        'Content-Type': mime
+    })
+    return response.json()
+api = dogecloud_api('/cdn/cert/list.json')
+if api['code'] == 200:
+    for cert in api['data']['certs']:
+        ssl_next_id = cert['id']
+        delet_api = dogecloud_api('/cdn/cert/delete.json', {
+    'id': cert['id']
+})
+else:
+    print("api failed: " + api['msg']) # 失败
+# 下面两个路径就是1panel自动生成的证书路径
+with open('/opt/1panel/apps/openresty/openresty/www/sites/xxxx/ssl/fullchain.pem') as fullchain:
+    full = fullchain.read()
+with open('/opt/1panel/apps/openresty/openresty/www/sites/xxxx/ssl/privkey.pem') as privkey:
+    priv = privkey.read()
+api = dogecloud_api('/cdn/cert/upload.json', {
+    "note": f"自动证书{ssl_next_id}",
+    "cert": full,
+    "private": priv
+})
+if api['code'] == 200:
+    ssl_id = api['data']['id']
+else:
+    print("api failed: " + api['msg']) # 失败
+api = dogecloud_api('/cdn/domain/config.json?domain=cdn.example.com', {
+    'cert_id': ssl_id
+}, True)
+
+```
+基本实现思路就是先删除现有证书，然后添加读取的证书，然后上传并激活上传后的证书，这样就实现CDN证书自动配置了。可以利用1panel自动定时执行脚本功能每隔一个月执行一次，以此更新证书。真是又实现了一个奇奇怪怪的使用小技巧✊✊✊
+
+:::
