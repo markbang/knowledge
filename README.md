@@ -1,7 +1,7 @@
 # Bangwu's knowledge base
 用vitepress搭建的详细教程网站🤡😡
 
-知识库所包含的内容：(非常欢迎大家提PR哦，提PR还能加入[Creators](https://blog.bangwu.top/about/author.html)名单哦)
+知识库所包含的内容：(非常欢迎大家提PR哦，提PR还能加入[Creators](https://base.bangwu.top/about/author.html)名单哦)
 
 - 前端
   - Vue
