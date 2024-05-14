@@ -1,13 +1,15 @@
 // import { defineConfig } from 'vite';
 import { sidebars, totalWords } from "./count"
 export default{
-    title: '🤡😡', //站点标题
-    description: '一个小白友好的教程网站',//mate标签description，多用于搜索引擎抓取摘要
+    title: '棒无の知识库', //站点标题
+    titleTemplate: ':title 🤡😡',
+    description: '红温小丑：一个小白友好的教程网站，作者：棒无',//mate标签description，多用于搜索引擎抓取摘要
     lang: 'zh-cn', //语言
     ignoreDeadLinks: true, //忽略死链接
     vite:{
       plugins:[],
     },
+    metaChunk: true,
     markdown: {
       lineNumbers: true,
       image: {
@@ -24,8 +26,9 @@ export default{
     ],
     lastUpdated: true,
     themeConfig: {
-        siteTItle: '🤡😡',
+        siteTitle: '🤡😡',
         logo: '/site.png',
+        externalLinkIcon: true,
         footer: {
           copyright: 'Copyright © 2023-present <a href="https://github.com/markbang">棒无</a>  TotalWords: '+totalWords,
         },
