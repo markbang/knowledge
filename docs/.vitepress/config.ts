@@ -14,6 +14,9 @@ export default{
         lazyLoading: true,
       }
     },
+    sitemap: {
+      hostname: 'https://base.bangwu.top'
+    },
     head:[
       ['link', { rel: 'icon', href: '/favicon.ico' }],
       ['script', {}, `window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };`],
