@@ -9,7 +9,7 @@ import {
 } from 'vitepress/theme'
 const members = [
   {
-    avatar: 'https://txmov2.a.yximgs.com/ufile/atlas/NTE5MTgwNjAzNTM5OTUyNTg1N18xNjY3NTQwNzIxMDUw_9.jpg',
+    avatar: 'https://p0.meituan.net/csc/05feb33b6fd287de69b7ad8f68c9bec3122241.jpg',
     name: 'Mark Bang',
     title: 'Creator',
     links: [
