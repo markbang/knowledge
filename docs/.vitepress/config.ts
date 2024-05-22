@@ -23,6 +23,7 @@ export default{
       ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
       ['meta', { name: 'author', content: '棒无' }],
       ['meta', { name: 'keywords', content: '棒无,棒无の知识库,小白教程,红温小丑,markbang' }],
+      ['meta', { rel: 'dns-prefetch', href: 'https://cdn.bangwu.top' }],
       ['link', { rel: 'icon', href: '/favicon.ico' }],
       ['script', {}, `window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };`],
       ['script', { defer:'', src: '/_vercel/insights/script.js' }],
