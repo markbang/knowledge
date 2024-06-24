@@ -20,6 +20,43 @@ const members = [
 const partners = []
 </script>
 
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .course-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .course-container h1 {
+      margin-bottom: 20px;
+  }
+  a.course-link {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px 0;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+  }
+  a.course-link:hover {
+      background-color: gray;
+      transform: translateY(-2px);
+  }
+  a.course-link:active {
+      background-color: #1ecaca;
+      transform: translateY(0);
+  }
+</style>
+
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>站点作者</template>
@@ -34,3 +71,8 @@ const partners = []
     </template>
   </VPTeamPageSection>
 </VPTeamPage>
+<div class="course-container">
+    <a href="./学科期末复习/数据挖掘" class="course-link">数据挖掘</a>
+    <a href="./学科期末复习/数据结构与算法" class="course-link">数据结构与算法</a>
+    <a href="./学科期末复习/信息检索" class="course-link">信息检索</a>
+</div>
