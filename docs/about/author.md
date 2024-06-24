@@ -21,15 +21,10 @@ const partners = []
 </script>
 
 <style>
-  body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
   .course-container {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       padding: 20px;
       border-radius: 10px;
