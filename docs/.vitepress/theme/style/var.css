@@ -1440,3 +1440,19 @@
 .gt-comment-body .snippet-clipboard-content pre code {
     color: var(--c-text);
 }
+::-webkit-scrollbar {
+  background-color: rgba(27,27,27,.4);
+  border-radius: 10px;
+  width: 5px;
+  height:3px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(222, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #dc9c9c;
+}
