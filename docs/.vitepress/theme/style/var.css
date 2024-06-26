@@ -17,6 +17,9 @@
     --vp-button-brand-hover-bg: #1ecaca;
 
     --vp-button-brand-active-border: #f6cece;
+    --vp-c-brand-1: #c04851;
+    --vp-c-brand-2: #a61b29;
+    --vp-c-brand-3: #de1c31;
   }
 @media (min-width: 640px) {
 :root {
@@ -1449,7 +1452,7 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: rgba(222, 0, 0, 0.4);
+  background: #c04851;
 }
 
 ::-webkit-scrollbar-track {
