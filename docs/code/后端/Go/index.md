@@ -9,4 +9,6 @@ Go作为Python友好学习的语言，最终被我选中。
 > 以下是我的学习路线，仅供参考：
 
 1. https://tour.go-zh.org/welcome/1 和 https://www.bilibili.com/video/BV1ae41157o9 将Go语言基本语法掌握
-2. 
+2. GoFrame初试？(后来发现过于全面而放弃)
+3. Gin+Gorm搭建[onlywrite](https://onlywrite.top)后端
+4. 待续.....
