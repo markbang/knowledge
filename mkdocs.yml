@@ -18,6 +18,9 @@ theme:
     - navigation.top
     - search.highlight
     - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
   palette:
     - media: '(prefers-color-scheme)'
       toggle:
@@ -60,3 +63,11 @@ plugins:
       enabled: true
       enable_creation_date: true
       fallback_to_build_date: true
+markdown_extensions:
+  - abbr
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - pymdownx.details

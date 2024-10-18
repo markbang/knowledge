@@ -1,73 +1,29 @@
----
-layout: page
----
-<script setup>
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPTeamMembers
-} from 'vitepress/theme'
-const members = [
-  {
-    avatar: 'https://p0.meituan.net/csc/05feb33b6fd287de69b7ad8f68c9bec3122241.jpg',
-    name: 'Mark Bang',
-    title: 'Creator',
-    links: [
-      { icon: 'github', link: 'https://github.com/markbang' },
-    ]
-  },
-]
-const partners = []
-</script>
+# 关于
 
-<style>
-  .course-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .course-container h1 {
-      margin-bottom: 20px;
-  }
-  a.course-link {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px 0;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s, transform 0.3s;
-  }
-  a.course-link:hover {
-      background-color: gray;
-      transform: translateY(-2px);
-  }
-  a.course-link:active {
-      background-color: #1ecaca;
-      transform: translateY(0);
-  }
-</style>
+## 棒无 / markbang / bangwu
 
-<VPTeamPage>
-  <VPTeamPageTitle>
-    <template #title>站点作者</template>
-    <template #lead>本人本科大二，开本站一方面为了方便自己查找自己学过的知识和分享给大家，另一方面是督促自己学习，任务驱动型吧（差不多。。。。）</template>
-  </VPTeamPageTitle>
-  <VPTeamMembers :members="members" />
-  <VPTeamPageSection>
-    <template #title>贡献者</template>
-    <template #lead>通过提评论或者Pull优化本站内容即可以申请进入贡献者名单哦</template>
-    <template #members>
-      <VPTeamMembers size="small" :members="partners" />
-    </template>
-  </VPTeamPageSection>
-</VPTeamPage>
-<div class="course-container">
-    <a href="./学科期末复习/数据挖掘" class="course-link">数据挖掘</a>
-    <a href="./学科期末复习/数据结构与算法" class="course-link">数据结构与算法</a>
-    <a href="./学科期末复习/信息检索" class="course-link">信息检索</a>
-</div>
+- 漫画《一人之下》的重度思考者
+- ECNUer
+- 相信存在即合理的全栈
+- 游戏瘾晚期患者、羽毛球小白、瞎折腾冠军、著名音乐的听者
+- INFP-A
+
+## 内容输出简介
+
+日常：https://blog.bangwu.top 我的日常思考以及生活分享
+
+知识库：https://base.bangwu.top 几乎是所有学到过的 CS 知识
+
+RSS：[我的碎碎念](https://now.bangwu.top/rss.xml)
+
+## 联系我
+
+E-mail:[i@bangwu.top](mailto:i@bangwu.top)
+
+GitHub:[markbang](https://github.com/markbang)
+
+由于习惯原因，一般回 email 会很慢，请谅解。加我 vx 之前请确保一般回复消息不会超过 15 分钟（因为我一般是秒回，并且回复慢会影响到我）
+
+## 一些宣告
+
+相信你明白在茫茫的互联网浪潮中，遇到彼此就是缘分，所以请友善发言。如果能和棒无友好交流并成为好朋友的话，我会非常开心 😋URL 是对互联网的第一次承诺，所以我会一直持有这个域名的。嗯，就这样——2024 年 9 月 27 日

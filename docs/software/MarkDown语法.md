@@ -1,10 +1,10 @@
-# MarkDown简介
+# MarkDown 简介
 
-作为一个会写程序的人来说，markdown是再也熟悉不过的一个轻量标记语言，也就是后缀为.md的文件，目前是主流的标记语言，而且其比html更简单，其主要用于日常写作，文档编写等，但是本文不会教程基本语法，会讲解一些高级用法。
+作为一个会写程序的人来说，markdown 是再也熟悉不过的一个轻量标记语言，也就是后缀为.md 的文件，目前是主流的标记语言，而且其比 html 更简单，其主要用于日常写作，文档编写等，但是本文不会教程基本语法，会讲解一些高级用法。
 
 # 主要语法
 
-Markdown语法主要分为如下几大部分： **标题**，**段落**，**区块引用**，**代码区块**，**强调**，**列表**，**分割线**，**链接**，**图片**，**反斜杠 `\`**，**符号'`'**。
+Markdown 语法主要分为如下几大部分： **标题**，**段落**，**区块引用**，**代码区块**，**强调**，**列表**，**分割线**，**链接**，**图片**，**反斜杠 `\`**，**符号'`'**。
 
 ## 标题
 
@@ -18,7 +18,7 @@ Markdown语法主要分为如下几大部分： **标题**，**段落**，**区�
 > 二级标题
 > `---------`
 
-### 2、使用`#`，可表示1-6级标题。
+### 2、使用`#`，可表示 1-6 级标题。
 
 > \# 一级标题
 >
@@ -51,7 +51,7 @@ Markdown语法主要分为如下几大部分： **标题**，**段落**，**区�
 
 ## 代码区块
 
-代码区块的建立是在每行加上4个空格或者一个制表符（如同写代码一样）。如
+代码区块的建立是在每行加上 4 个空格或者一个制表符（如同写代码一样）。如
 普通段落：
 
 print("hello world")
@@ -62,35 +62,32 @@ print("hello world")
 print("hello world")
 ```
 
-
-
 **注意**:需要和普通段落之间存在空行。
 
 ## 强调
 
 在强调内容两侧分别加上`*`或者`_`，如：
 
-> \*斜体*，\_斜体_
-> \*\*粗体**，\_\_粗体__
+> \*斜体\*，\_斜体\_
+> \*\*粗体\*\*，\_\_粗体\_\_
 
 效果：
 
-> *斜体*，*斜体*
-> **粗体**，**粗体**
+> _斜体_，_斜体_ > **粗体**，**粗体**
 
 ## 列表
 
 使用`·`、`+`、或`-`标记无序列表，如：
 
-> -（+*） 第一项 -（+*） 第二项 - （+*）第三项
+> -（+_） 第一项 -（+_） 第二项 - （+\*）第三项
 
-**注意**：标记后面最少有一个_空格_或_制表符_。若不在引用区块中，必须和前方段落之间存在空行。
+**注意**：标记后面最少有一个*空格*或*制表符*。若不在引用区块中，必须和前方段落之间存在空行。
 
 效果：
 
-> - 第一项	
-> - 第二项    
-> - 第三项    
+> - 第一项
+> - 第二项
+> - 第三项
 
 有序列表的标记方式是将上述的符号换成数字,并辅以`.`，如：
 
@@ -113,25 +110,24 @@ print("hello world")
 链接可以由两种形式生成：**行内式**和**参考式**。
 **行内式**：
 
-> \[markbang的主页]\(https://github.com/markbang\)。
+> \[markbang 的主页]\(https://github.com/markbang\)。
 
 效果：
 
-> [markbang的主页](https://github.com/markbang)。
+> [markbang 的主页](https://github.com/markbang)。
 
 **参考式**：
 
-> \[markbang的主页][1]
+> \[markbang 的主页][1]
 >
-> \[Hui的主页][2]
+> \[Hui 的主页][2]
 
-[1]: https:://github.com/markbang	"Markdown"
-[2]: https:://github.com/Hui-hub507	"Markdown"
+[1]: https:://github.com/markbang 'Markdown'
+[2]: https:://github.com/Hui-hub507 'Markdown'
 
 效果：
 
-> [markbang的主页](https://github.com/markbang)
-> [Hui的主页](https://github.com/Hui-hub507)
+> [markbang 的主页](https://github.com/markbang) > [Hui 的主页](https://github.com/Hui-hub507)
 
 **注意**：上述的`[1]:https:://github.com/markbang "Markdown"`不出现在区块中。
 
@@ -143,7 +139,7 @@ print("hello world")
 
 ## 反斜杠\
 
-相当于**反转义**作用(类似于Python)。使符号成为普通符号。
+相当于**反转义**作用(类似于 Python)。使符号成为普通符号。
 
 ## 符号‘`’
 
@@ -199,11 +195,11 @@ Markdown 制作表格使用 **|** 来分隔不同的单元格，使用 **-** 来
 
 # 高级语法
 
-markdown能做的可不仅仅只是上面所提到的那些，它还支持一些扩展语法。
+markdown 能做的可不仅仅只是上面所提到的那些，它还支持一些扩展语法。
 
 ## HTML
 
-目前支持的 HTML 元素有：`<kbd> <b> <i> <em> <sup> <sub> <br>`等 
+目前支持的 HTML 元素有：`<kbd> <b> <i> <em> <sup> <sub> <br>`等
 
 ## 数学公式
 
@@ -213,13 +209,13 @@ markdown能做的可不仅仅只是上面所提到的那些，它还支持一些
 
 ## 画图
 
-可以通过扩展mermaid来画流程图、时序图、类图、甘特图、饼图。
+可以通过扩展 mermaid 来画流程图、时序图、类图、甘特图、饼图。
 
 > 创建画布：
 
-~~~markdown
-```mermaid```
-~~~
+````markdown
+`mermaid`
+````
 
 ### 流程图
 
@@ -234,7 +230,7 @@ graph TB
   C[矩形节点]
   D((圆形节点))
   E{菱形节点}
-  F>右向旗帜状节点] 
+  F>右向旗帜状节点]
 1234567
 ```
 
@@ -278,10 +274,10 @@ graph TB
 
 树形图：
 
-<svg id="mermaid-svg-FxB7l1UNUrgnrULK" width="208.39218139648438" xmlns="http://www.w3.org/2000/svg" height="337.61248779296875" viewBox="0 0 208.39218139648438 337.61248779296875" class="mermaid-svg"><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M94.19021668981333,54L88.45955582915758,60.333333333333336C82.72889496850185,66.66666666666667,71.26757324719038,79.33333333333333,65.53691238653464,92C59.806251525878906,104.66666666666667,59.806251525878906,117.33333333333333,59.806251525878906,123.66666666666667L59.806251525878906,130" marker-end="url(#arrowhead126)" style=" stroke-width: 3.5px;fill:none"></path><defs><marker id="arrowhead126" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-A LE-C" style="opacity: 1;" id="L-A-C"><path class="path" d="M135.8129113619445,54L141.54357222260023,60.333333333333336C147.27423308325595,66.66666666666667,158.73555480456744,79.33333333333333,164.4662156652232,92C170.1968765258789,104.66666666666667,170.1968765258789,117.33333333333333,170.1968765258789,123.66666666666667L170.1968765258789,130" marker-end="url(#arrowhead127)" style="fill:none"></path><defs><marker id="arrowhead127" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-B LE-D" style="opacity: 1;" id="L-B-D"><path class="path" d="M59.806251525878906,176L59.806251525878906,180.16666666666666C59.806251525878906,184.33333333333334,59.806251525878906,192.66666666666666,59.88958485921224,201.08333358764648C59.97291819254557,209.5000005086263,60.13958485921224,218.00000101725263,60.22291819254557,222.25000127156576L60.306251525878906,226.50000152587893" marker-end="url(#arrowhead128)" style="fill:none"></path><defs><marker id="arrowhead128" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B" style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; background-color: rgb(232, 232, 232); font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; fill: rgb(51, 51, 51); color: rgb(51, 51, 51); text-align: center;"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(170.1968765258789,92)"><g transform="translate(-20.1953125,-13)" class="label"><rect rx="0" ry="0" width="40.390625" height="26"></rect><foreignObject width="40.390625" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;"><span id="L-L-A-C" class="edgeLabel L-LS-A' L-LE-C" style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; background-color: rgb(232, 232, 232); font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; fill: rgb(51, 51, 51); color: rgb(51, 51, 51); text-align: center;">条件1</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;"><span id="L-L-B-D" class="edgeLabel L-LS-B' L-LE-D" style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; background-color: rgb(232, 232, 232); font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; fill: rgb(51, 51, 51); color: rgb(51, 51, 51); text-align: center;"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-150" transform="translate(115.0015640258789,31)" style="opacity: 1;"><rect rx="0" ry="0" x="-24.421875" y="-23" width="48.84375" height="46" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-14.421875,-13)"><foreignObject width="28.84375" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;">Test</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-B-151" transform="translate(59.806251525878906,153)"><rect rx="5" ry="5" x="-30.1953125" y="-23" width="60.390625" height="46" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.1953125,-13)"><foreignObject width="40.390625" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;">测试1</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-C-153" transform="translate(170.1968765258789,153)"><rect rx="5" ry="5" x="-30.1953125" y="-23" width="60.390625" height="46" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.1953125,-13)"><foreignObject width="40.390625" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;">测试2</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-D-155" transform="translate(59.806251525878906,277.8062515258789)"><polygon points="51.80625,0 103.6125,-51.80625 51.80625,-103.6125 0,-51.80625" transform="translate(-51.80625,51.80625)" class="label-container"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-24.5625,-13)"><foreignObject width="49.125" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;">Hellow</div></foreignObject></g></g></g></g></g></g></svg>
+<svg id="mermaid-svg-FxB7l1UNUrgnrULK" width="208.39218139648438" xmlns="http://www.w3.org/2000/svg" height="337.61248779296875" viewBox="0 0 208.39218139648438 337.61248779296875" class="mermaid-svg"><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M94.19021668981333,54L88.45955582915758,60.333333333333336C82.72889496850185,66.66666666666667,71.26757324719038,79.33333333333333,65.53691238653464,92C59.806251525878906,104.66666666666667,59.806251525878906,117.33333333333333,59.806251525878906,123.66666666666667L59.806251525878906,130" marker-end="url(#arrowhead126)" style=" stroke-width: 3.5px;fill:none"></path><defs><marker id="arrowhead126" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-A LE-C" style="opacity: 1;" id="L-A-C"><path class="path" d="M135.8129113619445,54L141.54357222260023,60.333333333333336C147.27423308325595,66.66666666666667,158.73555480456744,79.33333333333333,164.4662156652232,92C170.1968765258789,104.66666666666667,170.1968765258789,117.33333333333333,170.1968765258789,123.66666666666667L170.1968765258789,130" marker-end="url(#arrowhead127)" style="fill:none"></path><defs><marker id="arrowhead127" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-B LE-D" style="opacity: 1;" id="L-B-D"><path class="path" d="M59.806251525878906,176L59.806251525878906,180.16666666666666C59.806251525878906,184.33333333333334,59.806251525878906,192.66666666666666,59.88958485921224,201.08333358764648C59.97291819254557,209.5000005086263,60.13958485921224,218.00000101725263,60.22291819254557,222.25000127156576L60.306251525878906,226.50000152587893" marker-end="url(#arrowhead128)" style="fill:none"></path><defs><marker id="arrowhead128" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B" style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; background-color: rgb(232, 232, 232); font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; fill: rgb(51, 51, 51); color: rgb(51, 51, 51); text-align: center;"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(170.1968765258789,92)"><g transform="translate(-20.1953125,-13)" class="label"><rect rx="0" ry="0" width="40.390625" height="26"></rect><foreignObject width="40.390625" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;"><span id="L-L-A-C" class="edgeLabel L-LS-A' L-LE-C" style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; background-color: rgb(232, 232, 232); font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; fill: rgb(51, 51, 51); color: rgb(51, 51, 51); text-align: center;">条件 1</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;"><span id="L-L-B-D" class="edgeLabel L-LS-B' L-LE-D" style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; background-color: rgb(232, 232, 232); font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; fill: rgb(51, 51, 51); color: rgb(51, 51, 51); text-align: center;"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-150" transform="translate(115.0015640258789,31)" style="opacity: 1;"><rect rx="0" ry="0" x="-24.421875" y="-23" width="48.84375" height="46" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-14.421875,-13)"><foreignObject width="28.84375" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;">Test</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-B-151" transform="translate(59.806251525878906,153)"><rect rx="5" ry="5" x="-30.1953125" y="-23" width="60.390625" height="46" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.1953125,-13)"><foreignObject width="40.390625" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;">测试 1</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-C-153" transform="translate(170.1968765258789,153)"><rect rx="5" ry="5" x="-30.1953125" y="-23" width="60.390625" height="46" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.1953125,-13)"><foreignObject width="40.390625" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;">测试 2</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-D-155" transform="translate(59.806251525878906,277.8062515258789)"><polygon points="51.80625,0 103.6125,-51.80625 51.80625,-103.6125 0,-51.80625" transform="translate(-51.80625,51.80625)" class="label-container"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-24.5625,-13)"><foreignObject width="49.125" height="26"><div style="box-sizing: border-box; outline: 0px; user-select: auto !important; margin: 0px; padding: 0px; font-weight: normal; overflow-wrap: break-word; font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif !important; display: inline-block; white-space: nowrap;">Hellow</div></foreignObject></g></g></g></g></g></g></svg>
 
 以及一些其他图，这里就不再展示了，用到的时候很少。
 
 # 总结
 
-其实只要掌握基本语法，能够应对日常笔记需求就行，扩展语法也可以学习，毕竟很多社区评论都支持markdown，在评论的时候甩一张流程图过去表达更清除。以及，推荐一个写markdown的软件，[Typora](/software/Typora.md)，非常好用，点击链接有安装教程和介绍。
+其实只要掌握基本语法，能够应对日常笔记需求就行，扩展语法也可以学习，毕竟很多社区评论都支持 markdown，在评论的时候甩一张流程图过去表达更清除。以及，推荐一个写 markdown 的软件，[Typora](/software/Typora/)，非常好用，点击链接有安装教程和介绍。
