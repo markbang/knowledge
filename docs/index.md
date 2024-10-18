@@ -33,7 +33,6 @@ features:
     details: 由于看到了国内一些社区上很多人盗用文章，乱复制，导致社区乌烟瘴气，该站文章皆是经过学习后产出的高质量文章，可以放心阅读
     link: /about/
     linkText: 关于本站
-
 ---
 
 ::: code-group
@@ -43,7 +42,7 @@ print('Hello World!')
 ```
 
 ```javascript
-console.log('Hello World!')
+console.log('Hello World!');
 ```
 
 ```go
@@ -57,10 +56,3 @@ func main() {
 ```
 
 :::
-
-<div align="center">
-    访客统计
-    <br>
-    <img src="https://camo.githubusercontent.com/4e89de0f0ced6ef95f62b1bee6a709188979946c3245899b1e16983f130cfdd0/68747470733a2f2f636f756e7465722e73656b752e73752f636d6f653f6e616d653d626c6f6762616e677775267468656d653d723334">
-</div>
-
