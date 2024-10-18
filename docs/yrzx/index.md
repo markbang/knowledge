@@ -1,3 +1,9 @@
+---
+comments: true
+---
+
+# 一人之下
+
 ![yrzx](https://cdn.bangwu.top/img/yrzx.jpg)
 
 贯穿学生时代，我想到的最好的漫画是《一人之下》，也有很多见解，在这里来做一个分享。我觉得这部作品是非常适合深入探讨的，一部非常适合细细品味的漫画。喜欢一人之下的可以去[一人之下吧](https://tieba.baidu.com/f?kw=%E4%B8%80%E4%BA%BA%E4%B9%8B%E4%B8%8B&ie=utf-8)和大家一起探讨或者看看别人的理解哦。

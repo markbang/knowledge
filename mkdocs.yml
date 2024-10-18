@@ -1,0 +1,62 @@
+site_name: 棒无の知识库
+# site_url: https://base.bangwu.top
+site_author: 棒无
+site_description: 红温小丑：一个小白友好的教程网站，作者：棒无
+copyright: Copyright © 2023-present <a href="https://github.com/markbang">棒无</a>
+repo_name: markbang/knowledge
+repo_url: https://github.com/markbang/knowledge
+theme:
+  name: material
+  logo: assets/joker.png
+  favicon: assets/joker.png
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.path
+    - navigation.indexes
+    - navigation.footer
+    - navigation.top
+    - search.highlight
+    - search.share
+  palette:
+    - media: '(prefers-color-scheme)'
+      toggle:
+        icon: material/brightness-auto
+        name: ''
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: ''
+    - media: '(prefers-color-scheme: dark)'
+      primary: teal
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: ''
+  font:
+    text: Roboto
+    code: Roboto Mono
+extra:
+  generator: true
+  alternate:
+    - name: '中文'
+      link: '/'
+      lang: zh_CN
+    - name: English
+      link: /en/
+      lang: en
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/markbang
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/markbangwu
+    - icon: fontawesome/brands/mastodon
+      link: https://mastodon.social/@bangwu
+    - icon: fontawesome/solid/blog
+      link: https://bangwu.top
+plugins:
+  - git-revision-date-localized:
+      enabled: true
+      enable_creation_date: true
+      fallback_to_build_date: true

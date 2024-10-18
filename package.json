@@ -1,29 +1,9 @@
 {
-  "name": "markbangbase",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "mkdocs",
+  "version": "lastest",
+  "private": true,
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "git fetch --unshallow && vitepress build docs",
-    "serve": "vitepress serve docs",
-    "deploy": "powershell bin/autoDeploy.bat"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@rollup/plugin-replace": "^5.0.5",
-    "gitalk": "^1.8.0",
-    "markdown-it-mathjax3": "^4.3.2",
-    "vitepress": "1.1.3"
-  },
-  "dependencies": {
-    "@vercel/analytics": "^1.1.1",
-    "md5": "^2.3.0",
-    "pagefind": "^1.0.4",
-    "vite": "^5.1.6",
-    "vitepress-plugin-pagefind": "^0.2.13",
-    "vue": "^3.4.21"
+    "dev": "mkdocs serve",
+    "build": "mkdocs build -d public"
   }
 }
