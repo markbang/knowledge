@@ -7,8 +7,8 @@ repo_name: markbang/knowledge
 repo_url: https://github.com/markbang/knowledge
 theme:
   name: material
-  logo: assets/joker.png
-  favicon: assets/joker.png
+  logo: assets/favicon.png
+  favicon: assets/favicon.png
   custom_dir: overrides
   features:
     - navigation.tabs
