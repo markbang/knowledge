@@ -5,7 +5,7 @@ on:
       - master
       - main
 env:
-TZ: Asia/Shanghai
+  TZ: Asia/Shanghai
 permissions:
   contents: write
 jobs:
