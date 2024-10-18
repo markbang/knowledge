@@ -464,7 +464,7 @@
         
   
   <span class="md-ellipsis">
-    Author
+    关于
   </span>
   
 
@@ -3634,7 +3634,7 @@
         
   
   <span class="md-ellipsis">
-    MarkDown简介
+    MarkDown 简介
   </span>
   
 
@@ -4202,29 +4202,29 @@ Use R2 from Workers：https://developers.cloudflare.com/r2/api/workers/workers-a
 不用 Wrangle CLI 脚本也可以在后台手动创建 Worker。</p>
 <p>左侧切换到 <code>Worker 和 Pages</code> 分栏，<code>创建应用程序</code>，随便取个名字，随便选个模板部署就可以了，后面再改代码。</p>
 <p>点击 <code>快速编辑</code> 把以下代码复制到 <code>worker.js</code> 中，保存并部署：</p>
-<pre><code class="language-javascript">var worker_default = {
-  async fetch(request, env) {
-    if (request.method !== &quot;GET&quot;) {
-      return new Response(&quot;Only GET method allowed&quot;, { status: 405 });
-    }
-    const url = new URL(request.url);
-    const key = url.pathname.slice(1);
-    const object = await env.MY_BUCKET.get(key);
-    if (!object) {
-      return new Response(&quot;Object not found&quot;, { status: 404 });
-    }
-    const headers = new Headers();
-    object.writeHttpMetadata(headers);
-    headers.set(&quot;ETag&quot;, object.httpEtag);
-    return new Response(object.body, {
-      headers
-    });
-  }
-};
-export {
-  worker_default as default
-};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">worker_default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">env</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;GET&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Response</span><span class="p">(</span><span class="s2">&quot;Only GET method allowed&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="mf">405</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URL</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">url</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">env</span><span class="p">.</span><span class="nx">MY_BUCKET</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Response</span><span class="p">(</span><span class="s2">&quot;Object not found&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="mf">404</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Headers</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">object</span><span class="p">.</span><span class="nx">writeHttpMetadata</span><span class="p">(</span><span class="nx">headers</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">headers</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;ETag&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">object</span><span class="p">.</span><span class="nx">httpEtag</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Response</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">headers</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">worker_default</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="k">default</span>
+<span class="p">};</span>
+</code></pre></div>
 <p>部署成功后返回。
 在当前 Worker 的设置中，<code>变量</code> <code>R2 存储桶绑定</code> 添加绑定：</p>
 <ul>
@@ -4251,341 +4251,341 @@ export {
 Docs：<a href="https://www.backblaze.com/docs/cloud-storage-integrate-cloudflare-workers-with-backblaze-b2">Integrate Cloudflare Workers with Backblaze B2</a></p>
 <p>简要介绍一下怎么做吧：（还是建议看官方文档比较好。）</p>
 <h5 id="1-cloudflare-workerworkerjs">1、新建 Cloudflare Worker，<code>worker.js</code></h5>
-<pre><code class="language-javascript">(() =&gt; {
-  // node_modules/aws4fetch/dist/aws4fetch.esm.mjs
-  var encoder = new TextEncoder();
-  var HOST_SERVICES = {
-    appstream2: &quot;appstream&quot;,
-    cloudhsmv2: &quot;cloudhsm&quot;,
-    email: &quot;ses&quot;,
-    marketplace: &quot;aws-marketplace&quot;,
-    mobile: &quot;AWSMobileHubService&quot;,
-    pinpoint: &quot;mobiletargeting&quot;,
-    queue: &quot;sqs&quot;,
-    &quot;git-codecommit&quot;: &quot;codecommit&quot;,
-    &quot;mturk-requester-sandbox&quot;: &quot;mturk-requester&quot;,
-    &quot;personalize-runtime&quot;: &quot;personalize&quot;
-  };
-  var UNSIGNABLE_HEADERS = /* @__PURE__ */ new Set([
-    &quot;authorization&quot;,
-    &quot;content-type&quot;,
-    &quot;content-length&quot;,
-    &quot;user-agent&quot;,
-    &quot;presigned-expires&quot;,
-    &quot;expect&quot;,
-    &quot;x-amzn-trace-id&quot;,
-    &quot;range&quot;,
-    &quot;connection&quot;
-  ]);
-  var AwsClient = class {
-    constructor({ accessKeyId, secretAccessKey, sessionToken, service, region, cache, retries, initRetryMs }) {
-      if (accessKeyId == null)
-        throw new TypeError(&quot;accessKeyId is a required option&quot;);
-      if (secretAccessKey == null)
-        throw new TypeError(&quot;secretAccessKey is a required option&quot;);
-      this.accessKeyId = accessKeyId;
-      this.secretAccessKey = secretAccessKey;
-      this.sessionToken = sessionToken;
-      this.service = service;
-      this.region = region;
-      this.cache = cache || /* @__PURE__ */ new Map();
-      this.retries = retries != null ? retries : 10;
-      this.initRetryMs = initRetryMs || 50;
-    }
-    async sign(input, init) {
-      if (input instanceof Request) {
-        const { method, url, headers, body } = input;
-        init = Object.assign({ method, url, headers }, init);
-        if (init.body == null &amp;&amp; headers.has(&quot;Content-Type&quot;)) {
-          init.body = body != null &amp;&amp; headers.has(&quot;X-Amz-Content-Sha256&quot;) ? body : await input.clone().arrayBuffer();
-        }
-        input = url;
-      }
-      const signer = new AwsV4Signer(Object.assign({ url: input }, init, this, init &amp;&amp; init.aws));
-      const signed = Object.assign({}, init, await signer.sign());
-      delete signed.aws;
-      try {
-        return new Request(signed.url.toString(), signed);
-      } catch (e) {
-        if (e instanceof TypeError) {
-          return new Request(signed.url.toString(), Object.assign({ duplex: &quot;half&quot; }, signed));
-        }
-        throw e;
-      }
-    }
-    async fetch(input, init) {
-      for (let i = 0; i &lt;= this.retries; i++) {
-        const fetched = fetch(await this.sign(input, init));
-        if (i === this.retries) {
-          return fetched;
-        }
-        const res = await fetched;
-        if (res.status &lt; 500 &amp;&amp; res.status !== 429) {
-          return res;
-        }
-        await new Promise((resolve) =&gt; setTimeout(resolve, Math.random() * this.initRetryMs * Math.pow(2, i)));
-      }
-      throw new Error(&quot;An unknown error occurred, ensure retries is not negative&quot;);
-    }
-  };
-  var AwsV4Signer = class {
-    constructor({ method, url, headers, body, accessKeyId, secretAccessKey, sessionToken, service, region, cache, datetime, signQuery, appendSessionToken, allHeaders, singleEncode }) {
-      if (url == null)
-        throw new TypeError(&quot;url is a required option&quot;);
-      if (accessKeyId == null)
-        throw new TypeError(&quot;accessKeyId is a required option&quot;);
-      if (secretAccessKey == null)
-        throw new TypeError(&quot;secretAccessKey is a required option&quot;);
-      this.method = method || (body ? &quot;POST&quot; : &quot;GET&quot;);
-      this.url = new URL(url);
-      this.headers = new Headers(headers || {});
-      this.body = body;
-      this.accessKeyId = accessKeyId;
-      this.secretAccessKey = secretAccessKey;
-      this.sessionToken = sessionToken;
-      let guessedService, guessedRegion;
-      if (!service || !region) {
-        [guessedService, guessedRegion] = guessServiceRegion(this.url, this.headers);
-      }
-      this.service = service || guessedService || &quot;&quot;;
-      this.region = region || guessedRegion || &quot;us-east-1&quot;;
-      this.cache = cache || /* @__PURE__ */ new Map();
-      this.datetime = datetime || new Date().toISOString().replace(/[:-]|\.\d{3}/g, &quot;&quot;);
-      this.signQuery = signQuery;
-      this.appendSessionToken = appendSessionToken || this.service === &quot;iotdevicegateway&quot;;
-      this.headers.delete(&quot;Host&quot;);
-      if (this.service === &quot;s3&quot; &amp;&amp; !this.signQuery &amp;&amp; !this.headers.has(&quot;X-Amz-Content-Sha256&quot;)) {
-        this.headers.set(&quot;X-Amz-Content-Sha256&quot;, &quot;UNSIGNED-PAYLOAD&quot;);
-      }
-      const params = this.signQuery ? this.url.searchParams : this.headers;
-      params.set(&quot;X-Amz-Date&quot;, this.datetime);
-      if (this.sessionToken &amp;&amp; !this.appendSessionToken) {
-        params.set(&quot;X-Amz-Security-Token&quot;, this.sessionToken);
-      }
-      this.signableHeaders = [&quot;host&quot;, ...this.headers.keys()].filter((header) =&gt; allHeaders || !UNSIGNABLE_HEADERS.has(header)).sort();
-      this.signedHeaders = this.signableHeaders.join(&quot;;&quot;);
-      this.canonicalHeaders = this.signableHeaders.map((header) =&gt; header + &quot;:&quot; + (header === &quot;host&quot; ? this.url.host : (this.headers.get(header) || &quot;&quot;).replace(/\s+/g, &quot; &quot;))).join(&quot;\n&quot;);
-      this.credentialString = [this.datetime.slice(0, 8), this.region, this.service, &quot;aws4_request&quot;].join(&quot;/&quot;);
-      if (this.signQuery) {
-        if (this.service === &quot;s3&quot; &amp;&amp; !params.has(&quot;X-Amz-Expires&quot;)) {
-          params.set(&quot;X-Amz-Expires&quot;, &quot;86400&quot;);
-        }
-        params.set(&quot;X-Amz-Algorithm&quot;, &quot;AWS4-HMAC-SHA256&quot;);
-        params.set(&quot;X-Amz-Credential&quot;, this.accessKeyId + &quot;/&quot; + this.credentialString);
-        params.set(&quot;X-Amz-SignedHeaders&quot;, this.signedHeaders);
-      }
-      if (this.service === &quot;s3&quot;) {
-        try {
-          this.encodedPath = decodeURIComponent(this.url.pathname.replace(/\+/g, &quot; &quot;));
-        } catch (e) {
-          this.encodedPath = this.url.pathname;
-        }
-      } else {
-        this.encodedPath = this.url.pathname.replace(/\/+/g, &quot;/&quot;);
-      }
-      if (!singleEncode) {
-        this.encodedPath = encodeURIComponent(this.encodedPath).replace(/%2F/g, &quot;/&quot;);
-      }
-      this.encodedPath = encodeRfc3986(this.encodedPath);
-      const seenKeys = /* @__PURE__ */ new Set();
-      this.encodedSearch = [...this.url.searchParams].filter(([k]) =&gt; {
-        if (!k)
-          return false;
-        if (this.service === &quot;s3&quot;) {
-          if (seenKeys.has(k))
-            return false;
-          seenKeys.add(k);
-        }
-        return true;
-      }).map((pair) =&gt; pair.map((p) =&gt; encodeRfc3986(encodeURIComponent(p)))).sort(([k1, v1], [k2, v2]) =&gt; k1 &lt; k2 ? -1 : k1 &gt; k2 ? 1 : v1 &lt; v2 ? -1 : v1 &gt; v2 ? 1 : 0).map((pair) =&gt; pair.join(&quot;=&quot;)).join(&quot;&amp;&quot;);
-    }
-    async sign() {
-      if (this.signQuery) {
-        this.url.searchParams.set(&quot;X-Amz-Signature&quot;, await this.signature());
-        if (this.sessionToken &amp;&amp; this.appendSessionToken) {
-          this.url.searchParams.set(&quot;X-Amz-Security-Token&quot;, this.sessionToken);
-        }
-      } else {
-        this.headers.set(&quot;Authorization&quot;, await this.authHeader());
-      }
-      return {
-        method: this.method,
-        url: this.url,
-        headers: this.headers,
-        body: this.body
-      };
-    }
-    async authHeader() {
-      return [
-        &quot;AWS4-HMAC-SHA256 Credential=&quot; + this.accessKeyId + &quot;/&quot; + this.credentialString,
-        &quot;SignedHeaders=&quot; + this.signedHeaders,
-        &quot;Signature=&quot; + await this.signature()
-      ].join(&quot;, &quot;);
-    }
-    async signature() {
-      const date = this.datetime.slice(0, 8);
-      const cacheKey = [this.secretAccessKey, date, this.region, this.service].join();
-      let kCredentials = this.cache.get(cacheKey);
-      if (!kCredentials) {
-        const kDate = await hmac(&quot;AWS4&quot; + this.secretAccessKey, date);
-        const kRegion = await hmac(kDate, this.region);
-        const kService = await hmac(kRegion, this.service);
-        kCredentials = await hmac(kService, &quot;aws4_request&quot;);
-        this.cache.set(cacheKey, kCredentials);
-      }
-      return buf2hex(await hmac(kCredentials, await this.stringToSign()));
-    }
-    async stringToSign() {
-      return [
-        &quot;AWS4-HMAC-SHA256&quot;,
-        this.datetime,
-        this.credentialString,
-        buf2hex(await hash(await this.canonicalString()))
-      ].join(&quot;\n&quot;);
-    }
-    async canonicalString() {
-      return [
-        this.method.toUpperCase(),
-        this.encodedPath,
-        this.encodedSearch,
-        this.canonicalHeaders + &quot;\n&quot;,
-        this.signedHeaders,
-        await this.hexBodyHash()
-      ].join(&quot;\n&quot;);
-    }
-    async hexBodyHash() {
-      let hashHeader = this.headers.get(&quot;X-Amz-Content-Sha256&quot;) || (this.service === &quot;s3&quot; &amp;&amp; this.signQuery ? &quot;UNSIGNED-PAYLOAD&quot; : null);
-      if (hashHeader == null) {
-        if (this.body &amp;&amp; typeof this.body !== &quot;string&quot; &amp;&amp; !(&quot;byteLength&quot; in this.body)) {
-          throw new Error(&quot;body must be a string, ArrayBuffer or ArrayBufferView, unless you include the X-Amz-Content-Sha256 header&quot;);
-        }
-        hashHeader = buf2hex(await hash(this.body || &quot;&quot;));
-      }
-      return hashHeader;
-    }
-  };
-  async function hmac(key, string) {
-    const cryptoKey = await crypto.subtle.importKey(
-      &quot;raw&quot;,
-      typeof key === &quot;string&quot; ? encoder.encode(key) : key,
-      { name: &quot;HMAC&quot;, hash: { name: &quot;SHA-256&quot; } },
-      false,
-      [&quot;sign&quot;]
-    );
-    return crypto.subtle.sign(&quot;HMAC&quot;, cryptoKey, encoder.encode(string));
-  }
-  async function hash(content) {
-    return crypto.subtle.digest(&quot;SHA-256&quot;, typeof content === &quot;string&quot; ? encoder.encode(content) : content);
-  }
-  function buf2hex(buffer) {
-    return Array.prototype.map.call(new Uint8Array(buffer), (x) =&gt; (&quot;0&quot; + x.toString(16)).slice(-2)).join(&quot;&quot;);
-  }
-  function encodeRfc3986(urlEncodedStr) {
-    return urlEncodedStr.replace(/[!'()*]/g, (c) =&gt; &quot;%&quot; + c.charCodeAt(0).toString(16).toUpperCase());
-  }
-  function guessServiceRegion(url, headers) {
-    const { hostname, pathname } = url;
-    if (hostname.endsWith(&quot;.r2.cloudflarestorage.com&quot;)) {
-      return [&quot;s3&quot;, &quot;auto&quot;];
-    }
-    if (hostname.endsWith(&quot;.backblazeb2.com&quot;)) {
-      const match2 = hostname.match(/^(?:[^.]+\.)?s3\.([^.]+)\.backblazeb2\.com$/);
-      return match2 != null ? [&quot;s3&quot;, match2[1]] : [&quot;&quot;, &quot;&quot;];
-    }
-    const match = hostname.replace(&quot;dualstack.&quot;, &quot;&quot;).match(/([^.]+)\.(?:([^.]*)\.)?amazonaws\.com(?:\.cn)?$/);
-    let [service, region] = (match || [&quot;&quot;, &quot;&quot;]).slice(1, 3);
-    if (region === &quot;us-gov&quot;) {
-      region = &quot;us-gov-west-1&quot;;
-    } else if (region === &quot;s3&quot; || region === &quot;s3-accelerate&quot;) {
-      region = &quot;us-east-1&quot;;
-      service = &quot;s3&quot;;
-    } else if (service === &quot;iot&quot;) {
-      if (hostname.startsWith(&quot;iot.&quot;)) {
-        service = &quot;execute-api&quot;;
-      } else if (hostname.startsWith(&quot;data.jobs.iot.&quot;)) {
-        service = &quot;iot-jobs-data&quot;;
-      } else {
-        service = pathname === &quot;/mqtt&quot; ? &quot;iotdevicegateway&quot; : &quot;iotdata&quot;;
-      }
-    } else if (service === &quot;autoscaling&quot;) {
-      const targetPrefix = (headers.get(&quot;X-Amz-Target&quot;) || &quot;&quot;).split(&quot;.&quot;)[0];
-      if (targetPrefix === &quot;AnyScaleFrontendService&quot;) {
-        service = &quot;application-autoscaling&quot;;
-      } else if (targetPrefix === &quot;AnyScaleScalingPlannerFrontendService&quot;) {
-        service = &quot;autoscaling-plans&quot;;
-      }
-    } else if (region == null &amp;&amp; service.startsWith(&quot;s3-&quot;)) {
-      region = service.slice(3).replace(/^fips-|^external-1/, &quot;&quot;);
-      service = &quot;s3&quot;;
-    } else if (service.endsWith(&quot;-fips&quot;)) {
-      service = service.slice(0, -5);
-    } else if (region &amp;&amp; /-\d$/.test(service) &amp;&amp; !/-\d$/.test(region)) {
-      [service, region] = [region, service];
-    }
-    return [HOST_SERVICES[service] || service, region];
-  }
+<div class="highlight"><pre><span></span><code><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// node_modules/aws4fetch/dist/aws4fetch.esm.mjs</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">encoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TextEncoder</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">HOST_SERVICES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">appstream2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;appstream&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">cloudhsmv2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloudhsm&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ses&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">marketplace</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws-marketplace&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">mobile</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;AWSMobileHubService&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pinpoint</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mobiletargeting&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">queue</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sqs&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;git-codecommit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;codecommit&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;mturk-requester-sandbox&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mturk-requester&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;personalize-runtime&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;personalize&quot;</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">UNSIGNABLE_HEADERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* @__PURE__ */</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">([</span>
+<span class="w">    </span><span class="s2">&quot;authorization&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;content-type&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;content-length&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;user-agent&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;presigned-expires&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;expect&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;x-amzn-trace-id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;range&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;connection&quot;</span>
+<span class="w">  </span><span class="p">]);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">AwsClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">({</span><span class="w"> </span><span class="nx">accessKeyId</span><span class="p">,</span><span class="w"> </span><span class="nx">secretAccessKey</span><span class="p">,</span><span class="w"> </span><span class="nx">sessionToken</span><span class="p">,</span><span class="w"> </span><span class="nx">service</span><span class="p">,</span><span class="w"> </span><span class="nx">region</span><span class="p">,</span><span class="w"> </span><span class="nx">cache</span><span class="p">,</span><span class="w"> </span><span class="nx">retries</span><span class="p">,</span><span class="w"> </span><span class="nx">initRetryMs</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">accessKeyId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;accessKeyId is a required option&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">secretAccessKey</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;secretAccessKey is a required option&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">accessKeyId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accessKeyId</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">secretAccessKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">secretAccessKey</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">sessionToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionToken</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">service</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">region</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cache</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="cm">/* @__PURE__ */</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">retries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">retries</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">retries</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">initRetryMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">initRetryMs</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">sign</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span><span class="w"> </span><span class="nx">init</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">Request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">method</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">init</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({</span><span class="w"> </span><span class="nx">method</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">init</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">init</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">headers</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">init</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">headers</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;X-Amz-Content-Sha256&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">clone</span><span class="p">().</span><span class="nx">arrayBuffer</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">url</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">signer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AwsV4Signer</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">init</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="nx">init</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">init</span><span class="p">.</span><span class="nx">aws</span><span class="p">));</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">signed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span><span class="w"> </span><span class="nx">init</span><span class="p">,</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">signer</span><span class="p">.</span><span class="nx">sign</span><span class="p">());</span>
+<span class="w">      </span><span class="ow">delete</span><span class="w"> </span><span class="nx">signed</span><span class="p">.</span><span class="nx">aws</span><span class="p">;</span>
+<span class="w">      </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">(</span><span class="nx">signed</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span><span class="w"> </span><span class="nx">signed</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="ne">TypeError</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">(</span><span class="nx">signed</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({</span><span class="w"> </span><span class="nx">duplex</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;half&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">signed</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="nx">e</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span><span class="w"> </span><span class="nx">init</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">retries</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">fetched</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span><span class="w"> </span><span class="nx">init</span><span class="p">));</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">retries</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="nx">fetched</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetched</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">500</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">429</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">initRetryMs</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)));</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;An unknown error occurred, ensure retries is not negative&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">AwsV4Signer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">({</span><span class="w"> </span><span class="nx">method</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="p">,</span><span class="w"> </span><span class="nx">accessKeyId</span><span class="p">,</span><span class="w"> </span><span class="nx">secretAccessKey</span><span class="p">,</span><span class="w"> </span><span class="nx">sessionToken</span><span class="p">,</span><span class="w"> </span><span class="nx">service</span><span class="p">,</span><span class="w"> </span><span class="nx">region</span><span class="p">,</span><span class="w"> </span><span class="nx">cache</span><span class="p">,</span><span class="w"> </span><span class="nx">datetime</span><span class="p">,</span><span class="w"> </span><span class="nx">signQuery</span><span class="p">,</span><span class="w"> </span><span class="nx">appendSessionToken</span><span class="p">,</span><span class="w"> </span><span class="nx">allHeaders</span><span class="p">,</span><span class="w"> </span><span class="nx">singleEncode</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;url is a required option&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">accessKeyId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;accessKeyId is a required option&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">secretAccessKey</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;secretAccessKey is a required option&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">method</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="nx">body</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;GET&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URL</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Headers</span><span class="p">(</span><span class="nx">headers</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{});</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">body</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">accessKeyId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accessKeyId</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">secretAccessKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">secretAccessKey</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">sessionToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionToken</span><span class="p">;</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">guessedService</span><span class="p">,</span><span class="w"> </span><span class="nx">guessedRegion</span><span class="p">;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">service</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">region</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">[</span><span class="nx">guessedService</span><span class="p">,</span><span class="w"> </span><span class="nx">guessedRegion</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">guessServiceRegion</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">service</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">guessedService</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">region</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">guessedRegion</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cache</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="cm">/* @__PURE__ */</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">datetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">datetime</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[:-]|\.\d{3}/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">signQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">signQuery</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">appendSessionToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">appendSessionToken</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;iotdevicegateway&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">&quot;Host&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">signQuery</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;X-Amz-Content-Sha256&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;X-Amz-Content-Sha256&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;UNSIGNED-PAYLOAD&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">signQuery</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">params</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;X-Amz-Date&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">datetime</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sessionToken</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">appendSessionToken</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">params</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;X-Amz-Security-Token&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">sessionToken</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">signableHeaders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;host&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">keys</span><span class="p">()].</span><span class="nx">filter</span><span class="p">((</span><span class="nx">header</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">allHeaders</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">UNSIGNABLE_HEADERS</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">header</span><span class="p">)).</span><span class="nx">sort</span><span class="p">();</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">signedHeaders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">signableHeaders</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">canonicalHeaders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">signableHeaders</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">header</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">header</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">header</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;host&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">host</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">header</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\s+/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="p">))).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">credentialString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">datetime</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">),</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">region</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;aws4_request&quot;</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">signQuery</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">params</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;X-Amz-Expires&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">params</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;X-Amz-Expires&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;86400&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="nx">params</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;X-Amz-Algorithm&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;AWS4-HMAC-SHA256&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">params</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;X-Amz-Credential&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">accessKeyId</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">credentialString</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">params</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;X-Amz-SignedHeaders&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">signedHeaders</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="nx">encodedPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">decodeURIComponent</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\+/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="nx">encodedPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">pathname</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">encodedPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\/+/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">singleEncode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">encodedPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">encodedPath</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/%2F/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">encodedPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">encodeRfc3986</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">encodedPath</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">seenKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* @__PURE__ */</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">encodedSearch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">].</span><span class="nx">filter</span><span class="p">(([</span><span class="nx">k</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">k</span><span class="p">)</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">seenKeys</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">k</span><span class="p">))</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">          </span><span class="nx">seenKeys</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">k</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}).</span><span class="nx">map</span><span class="p">((</span><span class="nx">pair</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">pair</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">encodeRfc3986</span><span class="p">(</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">p</span><span class="p">)))).</span><span class="nx">sort</span><span class="p">(([</span><span class="nx">k1</span><span class="p">,</span><span class="w"> </span><span class="nx">v1</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="nx">k2</span><span class="p">,</span><span class="w"> </span><span class="nx">v2</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">k1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">k2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">k1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">k2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">v1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">v2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">v1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">v2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">pair</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">pair</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&amp;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">sign</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">signQuery</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;X-Amz-Signature&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">signature</span><span class="p">());</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sessionToken</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">appendSessionToken</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;X-Amz-Security-Token&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">sessionToken</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;Authorization&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">authHeader</span><span class="p">());</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">method</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">body</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">authHeader</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;AWS4-HMAC-SHA256 Credential=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">accessKeyId</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">credentialString</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;SignedHeaders=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">signedHeaders</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Signature=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">signature</span><span class="p">()</span>
+<span class="w">      </span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">signature</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">datetime</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">cacheKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">secretAccessKey</span><span class="p">,</span><span class="w"> </span><span class="nx">date</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">region</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="p">].</span><span class="nx">join</span><span class="p">();</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">kCredentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">cacheKey</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">kCredentials</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">kDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">hmac</span><span class="p">(</span><span class="s2">&quot;AWS4&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">secretAccessKey</span><span class="p">,</span><span class="w"> </span><span class="nx">date</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">kRegion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">hmac</span><span class="p">(</span><span class="nx">kDate</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">region</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">kService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">hmac</span><span class="p">(</span><span class="nx">kRegion</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">kCredentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">hmac</span><span class="p">(</span><span class="nx">kService</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;aws4_request&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">cacheKey</span><span class="p">,</span><span class="w"> </span><span class="nx">kCredentials</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">buf2hex</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">hmac</span><span class="p">(</span><span class="nx">kCredentials</span><span class="p">,</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">stringToSign</span><span class="p">()));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">stringToSign</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;AWS4-HMAC-SHA256&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">datetime</span><span class="p">,</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">credentialString</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">buf2hex</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">hash</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">canonicalString</span><span class="p">()))</span>
+<span class="w">      </span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">canonicalString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">method</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">(),</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">encodedPath</span><span class="p">,</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">encodedSearch</span><span class="p">,</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">canonicalHeaders</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;\n&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">signedHeaders</span><span class="p">,</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">hexBodyHash</span><span class="p">()</span>
+<span class="w">      </span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">hexBodyHash</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">hashHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;X-Amz-Content-Sha256&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">service</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">signQuery</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;UNSIGNED-PAYLOAD&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hashHeader</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="s2">&quot;byteLength&quot;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">body</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;body must be a string, ArrayBuffer or ArrayBufferView, unless you include the X-Amz-Content-Sha256 header&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="nx">hashHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buf2hex</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">hash</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">));</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">hashHeader</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">hmac</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">cryptoKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">crypto</span><span class="p">.</span><span class="nx">subtle</span><span class="p">.</span><span class="nx">importKey</span><span class="p">(</span>
+<span class="w">      </span><span class="s2">&quot;raw&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">encoder</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">key</span><span class="p">,</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;HMAC&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SHA-256&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;sign&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">crypto</span><span class="p">.</span><span class="nx">subtle</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="s2">&quot;HMAC&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cryptoKey</span><span class="p">,</span><span class="w"> </span><span class="nx">encoder</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">string</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">hash</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">crypto</span><span class="p">.</span><span class="nx">subtle</span><span class="p">.</span><span class="nx">digest</span><span class="p">(</span><span class="s2">&quot;SHA-256&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">content</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">encoder</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">content</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">buf2hex</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">buffer</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">x</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mf">16</span><span class="p">)).</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mf">2</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">encodeRfc3986</span><span class="p">(</span><span class="nx">urlEncodedStr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">urlEncodedStr</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[!&#39;()*]/g</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;%&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mf">16</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">guessServiceRegion</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">hostname</span><span class="p">,</span><span class="w"> </span><span class="nx">pathname</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">url</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hostname</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;.r2.cloudflarestorage.com&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;s3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hostname</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;.backblazeb2.com&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">match2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hostname</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^(?:[^.]+\.)?s3\.([^.]+)\.backblazeb2\.com$/</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">match2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;s3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">match2</span><span class="p">[</span><span class="mf">1</span><span class="p">]]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hostname</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;dualstack.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">).</span><span class="nx">match</span><span class="p">(</span><span class="sr">/([^.]+)\.(?:([^.]*)\.)?amazonaws\.com(?:\.cn)?$/</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">service</span><span class="p">,</span><span class="w"> </span><span class="nx">region</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">match</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">]).</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">region</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;us-gov&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;us-gov-west-1&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">region</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">region</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;s3-accelerate&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">service</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;iot&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hostname</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;iot.&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;execute-api&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hostname</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;data.jobs.iot.&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;iot-jobs-data&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pathname</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;/mqtt&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;iotdevicegateway&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;iotdata&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">service</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;autoscaling&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">targetPrefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">headers</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;X-Amz-Target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">targetPrefix</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;AnyScaleFrontendService&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;application-autoscaling&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">targetPrefix</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;AnyScaleScalingPlannerFrontendService&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;autoscaling-plans&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">region</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">service</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;s3-&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">service</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">3</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^fips-|^external-1/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">service</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;-fips&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">service</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">5</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">region</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="sr">/-\d$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">service</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="sr">/-\d$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">region</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">[</span><span class="nx">service</span><span class="p">,</span><span class="w"> </span><span class="nx">region</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">region</span><span class="p">,</span><span class="w"> </span><span class="nx">service</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="nx">HOST_SERVICES</span><span class="p">[</span><span class="nx">service</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">service</span><span class="p">,</span><span class="w"> </span><span class="nx">region</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
 
-  // index.js
-  var UNSIGNABLE_HEADERS2 = [
-    &quot;x-forwarded-proto&quot;,
-    &quot;x-real-ip&quot;
-  ];
-  function filterHeaders(headers) {
-    return Array.from(headers.entries()).filter((pair) =&gt; !UNSIGNABLE_HEADERS2.includes(pair[0]) &amp;&amp; !pair[0].startsWith(&quot;cf-&quot;));
-  }
-  async function handleRequest(event, client2) {
-    const request = event.request;
-    if (![&quot;GET&quot;, &quot;HEAD&quot;].includes(request.method)) {
-      return new Response(null, {
-        status: 405,
-        statusText: &quot;Method Not Allowed&quot;
-      });
-    }
-    const url = new URL(request.url);
-    let path = url.pathname.replace(/^\//, &quot;&quot;);
-    path = path.replace(/\/$/, &quot;&quot;);
-    const pathSegments = path.split(&quot;/&quot;);
-    if (ALLOW_LIST_BUCKET !== &quot;true&quot;) {
-      if (BUCKET_NAME === &quot;$path&quot; &amp;&amp; pathSegments[0].length &lt; 2 || BUCKET_NAME !== &quot;$path&quot; &amp;&amp; path.length === 0) {
-        return new Response(null, {
-          status: 404,
-          statusText: &quot;Not Found&quot;
-        });
-      }
-    }
-    switch (BUCKET_NAME) {
-      case &quot;$path&quot;:
-        url.hostname = B2_ENDPOINT;
-        break;
-        break;
-      case &quot;$host&quot;:
-        url.hostname = url.hostname.split(&quot;.&quot;)[0] + &quot;.&quot; + B2_ENDPOINT;
-        break;
-      default:
-        url.hostname = BUCKET_NAME + &quot;.&quot; + B2_ENDPOINT;
-        break;
-    }
-    const headers = filterHeaders(request.headers);
-    const signedRequest = await client2.sign(url.toString(), {
-      method: request.method,
-      headers,
-      body: request.body
-    });
-    return fetch(signedRequest);
-  }
-  var endpointRegex = /^s3\.([a-zA-Z0-9-]+)\.backblazeb2\.com$/;
-  var [, aws_region] = B2_ENDPOINT.match(endpointRegex);
-  var client = new AwsClient({
-    &quot;accessKeyId&quot;: B2_APPLICATION_KEY_ID,
-    &quot;secretAccessKey&quot;: B2_APPLICATION_KEY,
-    &quot;service&quot;: &quot;s3&quot;,
-    &quot;region&quot;: aws_region
-  });
-  addEventListener(&quot;fetch&quot;, function(event) {
-    event.respondWith(handleRequest(event, client));
-  });
-})();
-</code></pre>
+<span class="w">  </span><span class="c1">// index.js</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">UNSIGNABLE_HEADERS2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;x-forwarded-proto&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;x-real-ip&quot;</span>
+<span class="w">  </span><span class="p">];</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">filterHeaders</span><span class="p">(</span><span class="nx">headers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">headers</span><span class="p">.</span><span class="nx">entries</span><span class="p">()).</span><span class="nx">filter</span><span class="p">((</span><span class="nx">pair</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">UNSIGNABLE_HEADERS2</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">pair</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">pair</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;cf-&quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleRequest</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="nx">client2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">request</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HEAD&quot;</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Response</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="mf">405</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">statusText</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Method Not Allowed&quot;</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URL</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">url</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^\//</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\/$/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">pathSegments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">ALLOW_LIST_BUCKET</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">BUCKET_NAME</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;$path&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">pathSegments</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">BUCKET_NAME</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;$path&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Response</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="mf">404</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">statusText</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Not Found&quot;</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">BUCKET_NAME</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;$path&quot;</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">url</span><span class="p">.</span><span class="nx">hostname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">B2_ENDPOINT</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;$host&quot;</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">url</span><span class="p">.</span><span class="nx">hostname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">url</span><span class="p">.</span><span class="nx">hostname</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">B2_ENDPOINT</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">      </span><span class="k">default</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">url</span><span class="p">.</span><span class="nx">hostname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">BUCKET_NAME</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">B2_ENDPOINT</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">filterHeaders</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">headers</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">signedRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client2</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">headers</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">body</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">signedRequest</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">endpointRegex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^s3\.([a-zA-Z0-9-]+)\.backblazeb2\.com$/</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="nx">aws_region</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">B2_ENDPOINT</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">endpointRegex</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AwsClient</span><span class="p">({</span>
+<span class="w">    </span><span class="s2">&quot;accessKeyId&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">B2_APPLICATION_KEY_ID</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;secretAccessKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">B2_APPLICATION_KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;service&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;region&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">aws_region</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;fetch&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">respondWith</span><span class="p">(</span><span class="nx">handleRequest</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="p">));</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">})();</span>
+</code></pre></div>
 <h5 id="2-worker">2、设置 Worker 环境变量</h5>
 <ul>
 <li><code>ALLOW_LIST_BUCKET</code>：true</li>
@@ -4627,79 +4627,78 @@ Docs：<a href="https://www.backblaze.com/docs/cloud-storage-integrate-cloudflar
 环境：
 1panel（国产面板，自动申请证书，还有其他强大功能，挺方便的）</p>
 <p>以我用的多吉云为例，其他厂家都可以去找到相应的SDK。
-代码如下：</p>
-<pre><code class="language-python">from hashlib import sha1
-import hmac
-import requests
-import json
-import urllib
+代码如下：
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha1</span>
+<span class="kn">import</span> <span class="nn">hmac</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
 
-def dogecloud_api(api_path, data={}, json_mode=False):
-    &quot;&quot;&quot;
-    调用多吉云API
+<span class="k">def</span> <span class="nf">dogecloud_api</span><span class="p">(</span><span class="n">api_path</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{},</span> <span class="n">json_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    调用多吉云API</span>
 
-    :param api_path:    调用的 API 接口地址，包含 URL 请求参数 QueryString，例如：/console/vfetch/add.json?url=xxx&amp;a=1&amp;b=2
-    :param data:        POST 的数据，字典，例如 {'a': 1, 'b': 2}，传递此参数表示不是 GET 请求而是 POST 请求
-    :param json_mode:   数据 data 是否以 JSON 格式请求，默认为 false 则使用表单形式（a=1&amp;b=2）
+<span class="sd">    :param api_path:    调用的 API 接口地址，包含 URL 请求参数 QueryString，例如：/console/vfetch/add.json?url=xxx&amp;a=1&amp;b=2</span>
+<span class="sd">    :param data:        POST 的数据，字典，例如 {&#39;a&#39;: 1, &#39;b&#39;: 2}，传递此参数表示不是 GET 请求而是 POST 请求</span>
+<span class="sd">    :param json_mode:   数据 data 是否以 JSON 格式请求，默认为 false 则使用表单形式（a=1&amp;b=2）</span>
 
-    :type api_path: string
-    :type data: dict
-    :type json_mode bool
+<span class="sd">    :type api_path: string</span>
+<span class="sd">    :type data: dict</span>
+<span class="sd">    :type json_mode bool</span>
 
-    :return dict: 返回的数据
-    &quot;&quot;&quot;
+<span class="sd">    :return dict: 返回的数据</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-    # 这里替换为你的多吉云永久 AccessKey 和 SecretKey，可在用户中心 - 密钥管理中查看
-    # 请勿在客户端暴露 AccessKey 和 SecretKey，否则恶意用户将获得账号完全控制权
-    access_key = ''
-    secret_key = ''
+    <span class="c1"># 这里替换为你的多吉云永久 AccessKey 和 SecretKey，可在用户中心 - 密钥管理中查看</span>
+    <span class="c1"># 请勿在客户端暴露 AccessKey 和 SecretKey，否则恶意用户将获得账号完全控制权</span>
+    <span class="n">access_key</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">secret_key</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
-    body = ''
-    mime = ''
-    if json_mode:
-        body = json.dumps(data)
-        mime = 'application/json'
-    else:
-        body = urllib.parse.urlencode(data) # Python 2 可以直接用 urllib.urlencode
-        mime = 'application/x-www-form-urlencoded'
-    sign_str = api_path + &quot;\n&quot; + body
-    signed_data = hmac.new(secret_key.encode('utf-8'), sign_str.encode('utf-8'), sha1)
-    sign = signed_data.digest().hex()
-    authorization = 'TOKEN ' + access_key + ':' + sign
-    response = requests.post('https://api.dogecloud.com' + api_path, data=body, headers = {
-        'Authorization': authorization,
-        'Content-Type': mime
-    })
-    return response.json()
-api = dogecloud_api('/cdn/cert/list.json')
-if api['code'] == 200:
-    for cert in api['data']['certs']:
-        ssl_next_id = cert['id']
-        delet_api = dogecloud_api('/cdn/cert/delete.json', {
-    'id': cert['id']
-})
-else:
-    print(&quot;api failed: &quot; + api['msg']) # 失败
-# 下面两个路径就是1panel自动生成的证书路径
-with open('/opt/1panel/apps/openresty/openresty/www/sites/xxxx/ssl/fullchain.pem') as fullchain:
-    full = fullchain.read()
-with open('/opt/1panel/apps/openresty/openresty/www/sites/xxxx/ssl/privkey.pem') as privkey:
-    priv = privkey.read()
-api = dogecloud_api('/cdn/cert/upload.json', {
-    &quot;note&quot;: f&quot;自动证书{ssl_next_id}&quot;,
-    &quot;cert&quot;: full,
-    &quot;private&quot;: priv
-})
-if api['code'] == 200:
-    ssl_id = api['data']['id']
-else:
-    print(&quot;api failed: &quot; + api['msg']) # 失败
-api = dogecloud_api('/cdn/domain/config.json?domain=cdn.example.com', {
-    'cert_id': ssl_id
-}, True)
-
-</code></pre>
-<p>基本实现思路就是先删除现有证书，然后添加读取的证书，然后上传并激活上传后的证书，这样就实现CDN证书自动配置了。可以利用1panel自动定时执行脚本功能每隔一个月执行一次，以此更新证书。真是又实现了一个奇奇怪怪的使用小技巧✊✊✊</p>
+    <span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">mime</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">json_mode</span><span class="p">:</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">mime</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Python 2 可以直接用 urllib.urlencode</span>
+        <span class="n">mime</span> <span class="o">=</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
+    <span class="n">sign_str</span> <span class="o">=</span> <span class="n">api_path</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">body</span>
+    <span class="n">signed_data</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">secret_key</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">sign_str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">sha1</span><span class="p">)</span>
+    <span class="n">sign</span> <span class="o">=</span> <span class="n">signed_data</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+    <span class="n">authorization</span> <span class="o">=</span> <span class="s1">&#39;TOKEN &#39;</span> <span class="o">+</span> <span class="n">access_key</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="n">sign</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;https://api.dogecloud.com&#39;</span> <span class="o">+</span> <span class="n">api_path</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">body</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="n">authorization</span><span class="p">,</span>
+        <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="n">mime</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">dogecloud_api</span><span class="p">(</span><span class="s1">&#39;/cdn/cert/list.json&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">api</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">cert</span> <span class="ow">in</span> <span class="n">api</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;certs&#39;</span><span class="p">]:</span>
+        <span class="n">ssl_next_id</span> <span class="o">=</span> <span class="n">cert</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+        <span class="n">delet_api</span> <span class="o">=</span> <span class="n">dogecloud_api</span><span class="p">(</span><span class="s1">&#39;/cdn/cert/delete.json&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">cert</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;api failed: &quot;</span> <span class="o">+</span> <span class="n">api</span><span class="p">[</span><span class="s1">&#39;msg&#39;</span><span class="p">])</span> <span class="c1"># 失败</span>
+<span class="c1"># 下面两个路径就是1panel自动生成的证书路径</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/opt/1panel/apps/openresty/openresty/www/sites/xxxx/ssl/fullchain.pem&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fullchain</span><span class="p">:</span>
+    <span class="n">full</span> <span class="o">=</span> <span class="n">fullchain</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/opt/1panel/apps/openresty/openresty/www/sites/xxxx/ssl/privkey.pem&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">privkey</span><span class="p">:</span>
+    <span class="n">priv</span> <span class="o">=</span> <span class="n">privkey</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">dogecloud_api</span><span class="p">(</span><span class="s1">&#39;/cdn/cert/upload.json&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s2">&quot;note&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;自动证书</span><span class="si">{</span><span class="n">ssl_next_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cert&quot;</span><span class="p">:</span> <span class="n">full</span><span class="p">,</span>
+    <span class="s2">&quot;private&quot;</span><span class="p">:</span> <span class="n">priv</span>
+<span class="p">})</span>
+<span class="k">if</span> <span class="n">api</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">ssl_id</span> <span class="o">=</span> <span class="n">api</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;api failed: &quot;</span> <span class="o">+</span> <span class="n">api</span><span class="p">[</span><span class="s1">&#39;msg&#39;</span><span class="p">])</span> <span class="c1"># 失败</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">dogecloud_api</span><span class="p">(</span><span class="s1">&#39;/cdn/domain/config.json?domain=cdn.example.com&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">&#39;cert_id&#39;</span><span class="p">:</span> <span class="n">ssl_id</span>
+<span class="p">},</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+基本实现思路就是先删除现有证书，然后添加读取的证书，然后上传并激活上传后的证书，这样就实现CDN证书自动配置了。可以利用1panel自动定时执行脚本功能每隔一个月执行一次，以此更新证书。真是又实现了一个奇奇怪怪的使用小技巧✊✊✊</p>
 <p>:::</p>
 
 
@@ -4723,7 +4722,7 @@ api = dogecloud_api('/cdn/domain/config.json?domain=cdn.example.com', {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 30, 2024</span>
   </span>
 
     
@@ -4733,7 +4732,7 @@ api = dogecloud_api('/cdn/domain/config.json?domain=cdn.example.com', {
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 15, 2024</span>
   </span>
 
     
@@ -4750,6 +4749,8 @@ api = dogecloud_api('/cdn/domain/config.json?domain=cdn.example.com', {
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -4879,7 +4880,7 @@ api = dogecloud_api('/cdn/domain/config.json?domain=cdn.example.com', {
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

@@ -469,7 +469,7 @@
         
   
   <span class="md-ellipsis">
-    Author
+    关于
   </span>
   
 
@@ -801,6 +801,60 @@
   <a href="#2-python" class="md-nav__link">
     <span class="md-ellipsis">
       第2章 Python基础
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第3章 面向对象编程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第4章 算法分析
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      第5章 递归
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      第6章 基本数据结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      第7章 搜索和排序
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.总结
     </span>
   </a>
   
@@ -3526,7 +3580,7 @@
         
   
   <span class="md-ellipsis">
-    MarkDown简介
+    MarkDown 简介
   </span>
   
 
@@ -3897,6 +3951,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第3章 面向对象编程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第4章 算法分析
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      第5章 递归
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      第6章 基本数据结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      第7章 搜索和排序
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.总结
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3971,9 +4079,9 @@
 <p>Python的注释    P12</p>
 </li>
 </ol>
-<p><code>python
-   # 这段话被注释了
-   这段没有被注释</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 这段话被注释了</span>
+<span class="n">这段没有被注释</span>
+</code></pre></div>
 <ol>
 <li>
 <p>Python的标识符和保留字    P17-P18
@@ -3984,14 +4092,14 @@
    赋值语句就是<code>=</code>，例如：</p>
 </li>
 </ol>
-<p><code>python
-   a = 1
-   a += 1 # 是在已存在的对象名a 进行运算，并将新结果重新分配给a
-   # 动态/可变 对象
-   b = [1, 2, 3]
-   c = b
-   c[1] = 1
-   print(b) # [1, 1, 3]</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># 是在已存在的对象名a 进行运算，并将新结果重新分配给a</span>
+<span class="c1"># 动态/可变 对象</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># [1, 1, 3]</span>
+</code></pre></div>
 <ol>
 <li>
 <p>Python中可变的类和不可变的类    P33-P51
@@ -4001,104 +4109,104 @@
 <p>Python的运算符    P54-P64</p>
 </li>
 </ol>
-<p><code>python
-   # 除了正常的加减乘除和逻辑非、与、或之外，值得注意的是相等运算符
-   # is表示同一实体， ==是等价的意思
-   a = [1, 2, 3]
-   b = a[:]
-   a == b # True
-   a is b # False
-   # 序列运算符
-   [5, 6, 9] &lt; [5, 7] # True, 因为所有序列规定的比较操作都是基于字典顺序，即元素一个接一个地比较</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 除了正常的加减乘除和逻辑非、与、或之外，值得注意的是相等运算符</span>
+<span class="c1"># is表示同一实体， ==是等价的意思</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="c1"># True</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="n">b</span> <span class="c1"># False</span>
+<span class="c1"># 序列运算符</span>
+<span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="c1"># True, 因为所有序列规定的比较操作都是基于字典顺序，即元素一个接一个地比较</span>
+</code></pre></div>
 <ol>
 <li>Python的输入和输出    P99-P105</li>
 </ol>
-<p><code>python
-   print('hello', 1) # hello 1\n
-   print('a', 'b', 'c', sep=';', end='@') # a;b;c@
-   input()
-   fp = open('sample.txt')</code></p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># hello 1\n</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;@&#39;</span><span class="p">)</span> <span class="c1"># a;b;c@</span>
+<span class="nb">input</span><span class="p">()</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sample.txt&#39;</span><span class="p">)</span>
+</code></pre></div>
 <ol>
 <li>迭代器和可迭代对象    P121
    可迭代对象：https://docs.pythontab.com/interpy/Generators/Iterable/</li>
 </ol>
-<p>```python
-   class Iterator:</p>
-<pre><code>   def __init__(self, squence):
-       self._seq = squence
-       self._index = -1
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Iterator</span><span class="p">:</span>
 
-   def __next__(self):
-       self._index += 1
-       if self._index &lt; len(self._seq):
-           return self._seq[self._index]
-       else:
-           raise StopIteration()
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">squence</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_seq</span> <span class="o">=</span> <span class="n">squence</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
-   def __iter__(self):
-       return self
-</code></pre>
-<p>if <strong>name</strong> == '<strong>main</strong>':
-       a = Iterator([1, 2, 3, 4, 5])
-       print(next(a), next(a))
-       n = 2
-       for i in a:
-           print(i, end=' ')
-           n += 1
-   ```</p>
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_seq</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_seq</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">Iterator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
 <p>迭代器：https://docs.pythontab.com/interpy/Generators/Iterator/</p>
-<p>```python
-   # 任意对象，只要定义了__next__方法，它就是一个迭代器。
-   class Iterator:</p>
-<pre><code>   def __next__(self):
-       return self
-</code></pre>
-<p>if <strong>name</strong> == '<strong>main</strong>':
-       print(Iterator()) # &lt;<strong>main</strong>.Iterator object at 0x2753730&gt;
-   ```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 任意对象，只要定义了__next__方法，它就是一个迭代器。</span>
+<span class="k">class</span> <span class="nc">Iterator</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Iterator</span><span class="p">())</span> <span class="c1"># &lt;__main__.Iterator object at 0x2753730&gt;</span>
+</code></pre></div>
 <ol>
 <li>
 <p>迭代器和生成器    P125
     生成器：https://docs.pythontab.com/interpy/Generators/Generators/</p>
-<p>```python
-def generator_function():
-    for i in range(10):
-        yield i</p>
-<p>for item in generator_function():
-    print(item, end='-&gt;')</p>
-<h1 id="output-0-1-2-3-4-5-6-7-8-9-">Output: 0-&gt;1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6-&gt;7-&gt;8-&gt;9-&gt;</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generator_function</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">i</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">generator_function</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Output: 0-&gt;1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6-&gt;7-&gt;8-&gt;9-&gt;</span>
+</code></pre></div>
 </li>
 <li>
 <p>一行写条件表达式    P129</p>
-<p><code>python
-love = 'Male' if male_age ==18 else None</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">love</span> <span class="o">=</span> <span class="s1">&#39;Male&#39;</span> <span class="k">if</span> <span class="n">male_age</span> <span class="o">==</span><span class="mi">18</span> <span class="k">else</span> <span class="kc">None</span>
+</code></pre></div>
 </li>
 <li>
 <p>语法解析    P132</p>
-<p>```python</p>
-<h1 id="_1">列表解析</h1>
-<p>[ k∗k for k in range (1, n +1)]</p>
-<h1 id="_2">集合解析</h1>
-<p>{ k∗k for k in range (1, n +1)}</p>
-<h1 id="_3">生成器解析</h1>
-<p>( k∗k for k in range (1, n +1))</p>
-<h1 id="_4">字典解析</h1>
-<p>{ k: k∗k for k in range (1, n +1)}
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 列表解析</span>
+<span class="p">[</span> <span class="n">k</span><span class="err">∗</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="c1"># 集合解析</span>
+<span class="p">{</span> <span class="n">k</span><span class="err">∗</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+<span class="c1"># 生成器解析</span>
+<span class="p">(</span> <span class="n">k</span><span class="err">∗</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># 字典解析</span>
+<span class="p">{</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="err">∗</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+</code></pre></div>
 </li>
 <li>
 <p>打包和解包    P134-P135</p>
-<p>```python
-data = 1,2,3,4
-data</p>
-<h1 id="1-2-3-4">(1, 2, 3, 4)</h1>
-<h1 id="return-x-y-return-x-y">return x, y 等价于 return (x, y)</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span>
+<span class="n">data</span>
+<span class="c1"># (1, 2, 3, 4)</span>
+<span class="c1"># return x, y 等价于 return (x, y)</span>
+</code></pre></div>
 <p>如果在大的上下文中给出了一系列逗号分隔的表达式，它们将被视为一个单独的元组，即使没有提供封闭的圆括号。这个过程就是<code>自动打包</code>。</p>
-<p><code>python
-a, b, c, d = range(7, 11)
-print(a ,b, c, d) # 7 8 9 10</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="c1"># 7 8 9 10</span>
+</code></pre></div>
 <p>Python 允许单个标识符的一系列元素赋值给序列中的各个元素。右边的表达式可以是任何迭代类型，只要<strong>左边的变量数等于右边选代的元素数</strong>。这个过程就是<code>自动解包</code>。</p>
 </li>
 <li>
@@ -4160,24 +4268,23 @@ print(a ,b, c, d) # 7 8 9 10</code></p>
 <li>
 <p>运算符重载    P55，P58-P59
     Python中允许同一运算符根据上下文具有不同的含义，例：</p>
-<p><code>python
-1 + 1 # 加法
-'hello' + 'world' # 拼接运算符
-[1, 2] + [3, 4] # 合并两个列表</code></p>
+<div class="highlight"><pre><span></span><code><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># 加法</span>
+<span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="s1">&#39;world&#39;</span> <span class="c1"># 拼接运算符</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="c1"># 合并两个列表</span>
+</code></pre></div>
 <p>但是对于上述的加法，应用于python内置类还行，自己定义的类是不能直接这样相加的。但可以通过定义来实现类的运算：</p>
-<p>```python
-class Point:</p>
-<pre><code>def __init__(self, x=0, y=0):
-    self.x = x
-    self.y = y
-# change add
-def __add__(self, other):
-    return "Point(x:%d, y:%d)" % (self.x + other.x, self.y + other.y)
-# change print
-def __str__(self):
-    return "Point(x:%s, y:%s)" % (self.x, self.y)
-</code></pre>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="c1"># change add</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Point(x:</span><span class="si">%d</span><span class="s2">, y:</span><span class="si">%d</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="c1"># change print</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Point(x:</span><span class="si">%s</span><span class="s2">, y:</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
 <p><img alt="bangwu_20240620190209" src="https://cdn.bangwu.top/img/bangwu_20240620190209.webp" /></p>
 <p><img alt="bangwu_20240620190230" src="https://cdn.bangwu.top/img/bangwu_20240620190230.webp" /></p>
 </li>
@@ -4253,41 +4360,42 @@ def __str__(self):
 <p>异序词检测问题的代码    P51-P58
     问题：如果一个字符串只是重排了另一个字符串的字符，那么这个字符串就是另一
     个的异序词，比如 heart 与 earth，以及 python 与 typhon。简化问题：两个字符串的长度相同，并且都由26个英文字母的小写组成。</p>
-<p>```python
-words = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
-def solution(st1, st2): # O(n*log(n))
-    if len(st1) == len(st2):
-        for i in range(len(st1)):
-            if st1[i] not in words or st2[i] not in words:
-                return False
-        li1 = list(st1).sort()
-        li2 = list(st2).sort()
-        return li1 == li2
-    else:
-        return False</p>
-<p>def solution2(st1, st2): # O(n^2)
-    if len(st1) == len(st2):
-        for i in range(len(st1)):
-            if st1[i] not in words or st2[i] not in words:
-                return False
-        li2 = list(st2)
-        for m in range(len(st1)):
-            index = li2.index(st1[m])
-            li2[index] = ''
-        return ''.join(li2) == ''
-    else:
-        return False</p>
-<p>def solution3(st1, st2): # O(n)
-    dic1 = {}
-    dic2 = {}
-    if len(st1) == len(st2):
-        for i in range(len(st1)):
-            dic1[st1[i]] = dic1.get(st1[i], 0) + 1
-            dic2[st2[i]] = dic2.get(st2[i], 0) + 1
-        return dic1 == dic2
-    else:
-        return False</p>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="n">words</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">st2</span><span class="p">):</span> <span class="c1"># O(n*log(n))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">st2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">st1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span> <span class="ow">or</span> <span class="n">st2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">li1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">st1</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">li2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">st2</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">li1</span> <span class="o">==</span> <span class="n">li2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">solution2</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">st2</span><span class="p">):</span> <span class="c1"># O(n^2)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">st2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">st1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span> <span class="ow">or</span> <span class="n">st2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">li2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">st2</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)):</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">li2</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">st1</span><span class="p">[</span><span class="n">m</span><span class="p">])</span>
+            <span class="n">li2</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">li2</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">solution3</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">st2</span><span class="p">):</span> <span class="c1"># O(n)</span>
+    <span class="n">dic1</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">dic2</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">st2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)):</span>
+            <span class="n">dic1</span><span class="p">[</span><span class="n">st1</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">dic1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">st1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">dic2</span><span class="p">[</span><span class="n">st2</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">dic2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">st2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">dic1</span> <span class="o">==</span> <span class="n">dic2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 </li>
 </ol>
 <h2 id="5">第5章 递归</h2>
@@ -4312,57 +4420,57 @@ def solution(st1, st2): # O(n*log(n))
 <p>计算一列数之和的递归解法    P9</p>
 </li>
 </ul>
-<p><code>python
-   def list_sum(num_list):
-       if len(num_list) == 1:
-           return num_list[0]
-       else:
-           return num_list[0] + list_sum(num_list[1:])</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">list_sum</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">num_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">num_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">list_sum</span><span class="p">(</span><span class="n">num_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</code></pre></div>
 <ol>
 <li>阶乘的递归解法    P14</li>
 </ol>
-<p><code>python
-   def factorial(n):
-       if n == 0:
-           return 1
-       else:
-           return n * factorial(n-1)</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 <ol>
 <li>将整数转换成任意进制字符串的递归解法    P20</li>
 </ol>
-<p><code>python
-   def to_str(n, base):
-       covert_string = '0123456789ABCDEF'
-       if n &lt; base:
-           return covert_string[n]
-       else:
-           return to_str(n // base, base) + covert_string[n % base]</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_str</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+    <span class="n">covert_string</span> <span class="o">=</span> <span class="s1">&#39;0123456789ABCDEF&#39;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">base</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">covert_string</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">to_str</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="n">base</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span> <span class="o">+</span> <span class="n">covert_string</span><span class="p">[</span><span class="n">n</span> <span class="o">%</span> <span class="n">base</span><span class="p">]</span>
+</code></pre></div>
 <ol>
 <li>二分查找    P25</li>
 </ol>
-<p><code>python
-   def binary_search(data, target, low, high):
-       if low &gt; high:
-           return False
-       else:
-           mid = (low + high) // 2
-           if target == data[mid]:
-               return True
-           elif target &lt; data[mid]:
-               return binary_search(data, target, low, mid - 1)
-           else:
-               return binary_search(data, target, mid + 1, high)</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">low</span> <span class="o">&gt;</span> <span class="n">high</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">data</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+</code></pre></div>
 <ol>
 <li>汉诺塔问题    P37-P42</li>
 </ol>
-<p><code>python
-   def hannouta(n, A, B, C):
-       if n == 1:
-           print(A, '移到', C)
-       else:
-           hannuota(n-1, A, C, B)
-           hannuota(1, A, B, C)
-           hannuota(n-1, B, A, C)</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hannouta</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;移到&#39;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hannuota</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+        <span class="n">hannuota</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+        <span class="n">hannuota</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="6">第6章 基本数据结构</h2>
 <ol>
 <li>
@@ -4377,79 +4485,80 @@ def solution(st1, st2): # O(n*log(n))
 <p>理解列表和元组存放的是引用    P14-18</p>
 </li>
 </ol>
-<p><code>python
-   x = (1, 2, [3, 4])
-   y = x
-   y[2][0] = 10
-   print(x)  # 输出 (1, 2, [10, 4])</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 输出 (1, 2, [10, 4])</span>
+</code></pre></div>
 <p>这段内容可以和深拷贝、浅拷贝一块理解。</p>
 <ol>
 <li>动态数组的实现    P27</li>
 </ol>
-<p>```python
-   import ctypes</p>
-<p>class DynamicArray:</p>
-<pre><code>   def __init__(self):
-       self._n = 0
-       self._capacity = 1
-       self._A = self._make_array(self._capacity)
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ctypes</span>
 
-   def __len__(self):
-       return self._n
+<span class="k">class</span> <span class="nc">DynamicArray</span><span class="p">:</span>
 
-   def __getitem__(self, k):
-       if not 0 &lt;= k &lt; self._n:
-           raise IndexError('invalid index')
-       return self._A[k]
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">)</span>
 
-   def append(self, obj):
-       if self._n == self._capacity:
-           self._resize(2 * self._capacity)
-       self._A[self._n] = obj
-       self._n += 1
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span>
 
-   def _make_array(self, c):
-       return (c * ctypes.py_object)()
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">&#39;invalid index&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
 
-   def _resize(self, c):
-       B = self._make_array(c)
-       for k in range(self._n):
-           B[k] = self._A[k]
-       self._A = B
-       self._capacity = c
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">+=</span> <span class="mi">1</span>
 
-   def remove(self, value):
-       for k in range(self._n):
-           if self._A[k] == value:
-               for j in range(k, self._n - 1):
-                   self._A[j] = self._A[j + 1]
-               self._A[self._n - 1] = None
-               self._n -= 1
-       raise ValueError('value not found')
+    <span class="k">def</span> <span class="nf">_make_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">py_object</span><span class="p">)()</span>
 
-   def insert(self, k, value):
-       if self._n == self._capacity:
-           self._resize(2 * self._capacity)
-       for j in range(self._n, k, -1):
-           self._A[j] = self._A[j - 1]
-       self._A[k] = value
-       self._n += 1
-</code></pre>
-<p>if <strong>name</strong> == '<strong>main</strong>':
-       A = DynamicArray()
-       A.append(1)
-       print(A._capacity)
-       A.append(2)
-       A.append(3)
-       print(A._capacity)
-   ```</p>
+    <span class="k">def</span> <span class="nf">_resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_array</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">):</span>
+            <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_A</span> <span class="o">=</span> <span class="n">B</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span> <span class="o">=</span> <span class="n">c</span>
+
+    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;value not found&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">DynamicArray</span><span class="p">()</span>
+    <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">_capacity</span><span class="p">)</span>
+    <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">_capacity</span><span class="p">)</span>
+</code></pre></div>
 <ol>
 <li>二维数组的构建    P43-P46</li>
 </ol>
-<p><code>python
-   # data = ([0] * c) * r 会得出[0,0,0,0]不是二维的
-   # data = [[0] * c] * r 会构建出指向同一个[0]*c
-   data = [[0] * c for j in range(r)]</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># data = ([0] * c) * r 会得出[0,0,0,0]不是二维的</span>
+<span class="c1"># data = [[0] * c] * r 会构建出指向同一个[0]*c</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">c</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="p">)]</span>
+</code></pre></div>
 <ol>
 <li>
 <p>栈的定义    P50
@@ -4489,137 +4598,137 @@ def solution(st1, st2): # O(n*log(n))
 <ol>
 <li>栈的实现    P61</li>
 </ol>
-<p>```python
-   class ArrayStack:</p>
-<pre><code>   def __init__(self):
-       self._stack = []
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ArrayStack</span><span class="p">:</span>
 
-   def __len__(self):
-       return len(self._stack)
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span> <span class="o">=</span> <span class="p">[]</span>
 
-   def __str__(self) -&gt; str:
-       return str(self._stack)
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="p">)</span>
 
-   def is_empty(self):
-       return len(self) == 0
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="p">)</span>
 
-   def push(self, e):
-       self._stack.append(e)
+    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 
-   def top(self):
-       if self.is_empty():
-           raise ValueError('Stack is empty')
-       return self._stack[-1]
+    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
-   def pop(self):
-       if self.is_empty():
-           raise ValueError('Stack is empty')
-       return self._stack.pop()
-</code></pre>
-<p>```</p>
+    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Stack is empty&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Stack is empty&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</code></pre></div>
 <ol>
 <li>括号匹配的代码实现    P69</li>
 </ol>
-<p><code>python
-   def is_matched(expr):
-       lefty = '([{'
-       righty = ')]}'
-       S = ArrayStack()
-       for c in expr:
-           if c in lefty:
-               S.push(c)
-           elif c in righty:
-               if S.is_empty():
-                   return False
-               if righty.index(c) != lefty.index(S.pop()):
-                   return False
-       return S.is_empty()</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_matched</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="n">lefty</span> <span class="o">=</span> <span class="s1">&#39;([{&#39;</span>
+    <span class="n">righty</span> <span class="o">=</span> <span class="s1">&#39;)]}&#39;</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">ArrayStack</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">expr</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">lefty</span><span class="p">:</span>
+            <span class="n">S</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">righty</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">S</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="n">righty</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">!=</span> <span class="n">lefty</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">()):</span>
+                <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">S</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
+</code></pre></div>
 <ol>
 <li>
 <p>标记语言的标签匹配的代码实现    P72</p>
-<p><code>python
-def is_matched_html(raw: str):
-    S = ArrayStack()
-    j = raw.find('&lt;')
-    while j != -1:
-        k = raw.find('&gt;', j+1)
-        if k == -1:
-            return False
-        tag = raw[j+1:k]
-        if not tag.startswith('/'):
-            S.push(tag)
-        else:
-            if S.is_empty():
-                return False
-            if tag[1:] != S.pop():
-                return False
-        j = raw.find('&lt;', k+1)
-    return S.is_empty()</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_matched_html</span><span class="p">(</span><span class="n">raw</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">ArrayStack</span><span class="p">()</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">tag</span> <span class="o">=</span> <span class="n">raw</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">):</span>
+            <span class="n">S</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">S</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="n">tag</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">!=</span> <span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">S</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>十进制转换成任意进制数的代码实现    P75</p>
-<p>```python
-def base_converter(dec_number, base):
-    digits = "0123456789ABCDEF"
-    rem_stack = ArrayStack()</p>
-<pre><code>while dec_number &gt; 0:
-    rem = dec_number % base
-    rem_stack.push(rem)
-    dec_number = dec_number // base
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">base_converter</span><span class="p">(</span><span class="n">dec_number</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+    <span class="n">digits</span> <span class="o">=</span> <span class="s2">&quot;0123456789ABCDEF&quot;</span>
+    <span class="n">rem_stack</span> <span class="o">=</span> <span class="n">ArrayStack</span><span class="p">()</span>
 
-new_string = ""
-while not rem_stack.is_empty():
-    new_string = new_string + digits[rem_stack.pop()]
+    <span class="k">while</span> <span class="n">dec_number</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">rem</span> <span class="o">=</span> <span class="n">dec_number</span> <span class="o">%</span> <span class="n">base</span>
+        <span class="n">rem_stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">rem</span><span class="p">)</span>
+        <span class="n">dec_number</span> <span class="o">=</span> <span class="n">dec_number</span> <span class="o">//</span> <span class="n">base</span>
 
-return new_string
-</code></pre>
-<p>```</p>
+    <span class="n">new_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">rem_stack</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">new_string</span> <span class="o">=</span> <span class="n">new_string</span> <span class="o">+</span> <span class="n">digits</span><span class="p">[</span><span class="n">rem_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()]</span>
+
+    <span class="k">return</span> <span class="n">new_string</span>
+</code></pre></div>
 </li>
 <li>
 <p>实现python的运算：先从中序转后序，再计算后序    P87，P93</p>
-<p>```python</p>
-<h1 id="_5">这段大概率是不会出的</h1>
-<p>from array_stack import ArrayStack
-import string</p>
-<p>def infix_to_post_fix(infix_expr):
-    prec = {}
-    prec["*"] = 3
-    prec["/"] = 3
-    prec["+"] = 2
-    prec["-"] = 2
-    prec["("] = 1</p>
-<pre><code>op_stack = ArrayStack()
-post_fix_list = []
+<div class="highlight"><pre><span></span><code><span class="c1"># 这段大概率是不会出的</span>
+<span class="kn">from</span> <span class="nn">array_stack</span> <span class="kn">import</span> <span class="n">ArrayStack</span>
+<span class="kn">import</span> <span class="nn">string</span>
 
-token_list = infix_expr.split()
+<span class="k">def</span> <span class="nf">infix_to_post_fix</span><span class="p">(</span><span class="n">infix_expr</span><span class="p">):</span>
+    <span class="n">prec</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">prec</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">prec</span><span class="p">[</span><span class="s2">&quot;/&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">prec</span><span class="p">[</span><span class="s2">&quot;+&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">prec</span><span class="p">[</span><span class="s2">&quot;-&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">prec</span><span class="p">[</span><span class="s2">&quot;(&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
-for token in token_list:
-    if token in string.ascii_uppercase:
-        post_fix_list.append(token)
-    elif token == "(":
-        op_stack.push(token)
-    elif token == ")":
-        top_token = op_stack.pop()
-        while top_token != "(":
-            post_fix_list.append(top_token)
-            top_token = op_stack.pop()
-    else:
-        while (not op_stack.is_empty()) and \
-            (prec[op_stack.top()] &gt;= prec[token]):
-            post_fix_list.append(op_stack.pop())
-        op_stack.push(token)
+    <span class="n">op_stack</span> <span class="o">=</span> <span class="n">ArrayStack</span><span class="p">()</span>
+    <span class="n">post_fix_list</span> <span class="o">=</span> <span class="p">[]</span>
 
-while not op_stack.is_empty():
-    post_fix_list.append(op_stack.pop())
+    <span class="n">token_list</span> <span class="o">=</span> <span class="n">infix_expr</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
-return " ".join(post_fix_list)
-</code></pre>
-<p>if <strong>name</strong> == "<strong>main</strong>":
-    # infix_expr = "( A + B ) * ( C + D )"
-    # infix_expr = "( A + B ) * C"
-    infix_expr = "A + B * C"
-    print(infix_to_post_fix(infix_expr))
-```</p>
+    <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">token_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">:</span>
+            <span class="n">post_fix_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">token</span> <span class="o">==</span> <span class="s2">&quot;(&quot;</span><span class="p">:</span>
+            <span class="n">op_stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">token</span> <span class="o">==</span> <span class="s2">&quot;)&quot;</span><span class="p">:</span>
+            <span class="n">top_token</span> <span class="o">=</span> <span class="n">op_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">while</span> <span class="n">top_token</span> <span class="o">!=</span> <span class="s2">&quot;(&quot;</span><span class="p">:</span>
+                <span class="n">post_fix_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">top_token</span><span class="p">)</span>
+                <span class="n">top_token</span> <span class="o">=</span> <span class="n">op_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">while</span> <span class="p">(</span><span class="ow">not</span> <span class="n">op_stack</span><span class="o">.</span><span class="n">is_empty</span><span class="p">())</span> <span class="ow">and</span> \
+                <span class="p">(</span><span class="n">prec</span><span class="p">[</span><span class="n">op_stack</span><span class="o">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">prec</span><span class="p">[</span><span class="n">token</span><span class="p">]):</span>
+                <span class="n">post_fix_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+            <span class="n">op_stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">op_stack</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">post_fix_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">post_fix_list</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># infix_expr = &quot;( A + B ) * ( C + D )&quot;</span>
+    <span class="c1"># infix_expr = &quot;( A + B ) * C&quot;</span>
+    <span class="n">infix_expr</span> <span class="o">=</span> <span class="s2">&quot;A + B * C&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">infix_to_post_fix</span><span class="p">(</span><span class="n">infix_expr</span><span class="p">))</span>
+</code></pre></div>
 </li>
 <li>
 <p>队列的定义    P95，P97</p>
@@ -4657,66 +4766,66 @@ return " ".join(post_fix_list)
 </li>
 <li>
 <p>队列的实现    P101</p>
-<p>```python
-class ArrayQueue:
-    """FIFO Queue implementation using a Python list as underlying storage."""</p>
-<pre><code>def __init__(self):
-    """Create an empty queue."""
-    self._data = []
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ArrayQueue</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FIFO Queue implementation using a Python list as underlying storage.&quot;&quot;&quot;</span>
 
-def __len__(self):
-    """Return the number of elements in the queue."""
-    return len(self._data)
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create an empty queue.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-def is_empty(self):
-    """Return True if the queue is empty."""
-    return len(self._data) == 0
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of elements in the queue.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
 
-def enqueue(self, e):
-    """Add element e to the back of the queue."""
-    self._data.append(e)  # new item stored at end of list
+    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the queue is empty.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 
-def first(self):
-    """Return (but do not remove) the element at the front of the queue.
+    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add element e to the back of the queue.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>  <span class="c1"># new item stored at end of list</span>
 
-    Raise Empty exception if the queue is empty.
-    """
-    if self.is_empty():
-        raise Empty('Queue is empty')
-    return self._data[0]  # the last item in the list
+    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return (but do not remove) the element at the front of the queue.</span>
 
-def dequeue(self):
-    """Remove and return the first element of the queue (i.e., FIFO).
+<span class="sd">        Raise Empty exception if the queue is empty.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Queue is empty&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># the last item in the list</span>
 
-    Raise Empty exception if the queue is empty.
-    """
-    if self.is_empty():
-        raise Empty('Queue is empty')
-    return self._data.pop(0)  # remove last item from list
-</code></pre>
-<p>```</p>
+    <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove and return the first element of the queue (i.e., FIFO).</span>
+
+<span class="sd">        Raise Empty exception if the queue is empty.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Queue is empty&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># remove last item from list</span>
+</code></pre></div>
 </li>
 <li>
 <p>传土豆的代码实现    P105</p>
-<p>```python
-def hot_potato(name_list, num):
-    sim_queue = ArrayQueue()
-    for name in name_list:
-        sim_queue.enqueue(name)</p>
-<pre><code>while len(sim_queue) &gt; 1:
-    for i in range(num):
-        sim_queue.enqueue(sim_queue.dequeue())
-    sim_queue.dequeue()
-    print(sim_queue._data)
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hot_potato</span><span class="p">(</span><span class="n">name_list</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="n">sim_queue</span> <span class="o">=</span> <span class="n">ArrayQueue</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">:</span>
+        <span class="n">sim_queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
-return sim_queue.dequeue()
-</code></pre>
-<p>if <strong>name</strong> == "<strong>main</strong>":
-    name_list = ['Bill', 'David', 'Susan', 'Jane', 'Kent', 'Bard']
-    num = 6
-    win = hot_potato(name_list, num)
-    print(win)
-```</p>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">sim_queue</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+            <span class="n">sim_queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">sim_queue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
+        <span class="n">sim_queue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">sim_queue</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sim_queue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bill&#39;</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">,</span> <span class="s1">&#39;Susan&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Kent&#39;</span><span class="p">,</span> <span class="s1">&#39;Bard&#39;</span><span class="p">]</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">win</span> <span class="o">=</span> <span class="n">hot_potato</span><span class="p">(</span><span class="n">name_list</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>双端队列的定义    P107</p>
@@ -4769,72 +4878,72 @@ return sim_queue.dequeue()
 </li>
 <li>
 <p>双端队列的实现    P110</p>
-<p>```python
-class Deque:
-    def <strong>init</strong>(self):
-        self._data = []</p>
-<pre><code>def __len__(self):
-    return len(self._data)
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Deque</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-def is_empty(self):
-    return len(self._data) == 0
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
 
-def add_first(self, e):
-    self._data.insert(0, e)
+    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 
-def add_last(self, e):
-    self._data.append(e)
+    <span class="k">def</span> <span class="nf">add_first</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
-def delete_first(self):
-    if self.is_empty():
-        raise Empty('Deque is empty')
-    return self._data.pop(0)
+    <span class="k">def</span> <span class="nf">add_last</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
-def delete_last(self):
-    if self.is_empty():
-        raise Empty('Deque is empty')
-    return self._data.pop()
+    <span class="k">def</span> <span class="nf">delete_first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Deque is empty&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-def first(self):
-    if self.is_empty():
-        raise Empty('Deque is empty')
-    return self._data[0]
+    <span class="k">def</span> <span class="nf">delete_last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Deque is empty&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 
-def last(self):
-    if self.is_empty():
-        raise Empty('Deque is empty')
-    return self._data[-1]
-</code></pre>
-<p>```</p>
+    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Deque is empty&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Deque is empty&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
 <p>回文检测器的实现    P113</p>
-<p>```python</p>
-<h1 id="radar-toot">回文是指从前往后读和从后往前读是一样的。例如radar, toot</h1>
-<p>def palchecker(a_string):
-    print(a_string)
-    char_deque = Deque()</p>
-<pre><code>for ch in a_string:
-    char_deque.add_last(ch)
+<div class="highlight"><pre><span></span><code><span class="c1"># 回文是指从前往后读和从后往前读是一样的。例如radar, toot</span>
+<span class="k">def</span> <span class="nf">palchecker</span><span class="p">(</span><span class="n">a_string</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a_string</span><span class="p">)</span>
+    <span class="n">char_deque</span> <span class="o">=</span> <span class="n">Deque</span><span class="p">()</span>
 
-still_equal = True
+    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">a_string</span><span class="p">:</span>
+        <span class="n">char_deque</span><span class="o">.</span><span class="n">add_last</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
 
-while len(char_deque) &gt; 1 and still_equal:
-    print(char_deque.first(), char_deque.last())
-    first = char_deque.delete_first()
-    last = char_deque.delete_last()
-    if first != last:
-        still_equal = False
+    <span class="n">still_equal</span> <span class="o">=</span> <span class="kc">True</span>
 
-return still_equal
-</code></pre>
-<p>if <strong>name</strong> == "<strong>main</strong>":
-    # a_string1 = 'lsdkjfskf'
-    a_string1 = '上海自来水来自海上'
-    print(palchecker(a_string1))
-    a_string2 = 'TENET'
-    print(palchecker(a_string2))
-```</p>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">char_deque</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">still_equal</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">char_deque</span><span class="o">.</span><span class="n">first</span><span class="p">(),</span> <span class="n">char_deque</span><span class="o">.</span><span class="n">last</span><span class="p">())</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="n">char_deque</span><span class="o">.</span><span class="n">delete_first</span><span class="p">()</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">char_deque</span><span class="o">.</span><span class="n">delete_last</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">first</span> <span class="o">!=</span> <span class="n">last</span><span class="p">:</span>
+            <span class="n">still_equal</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">still_equal</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># a_string1 = &#39;lsdkjfskf&#39;</span>
+    <span class="n">a_string1</span> <span class="o">=</span> <span class="s1">&#39;上海自来水来自海上&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">palchecker</span><span class="p">(</span><span class="n">a_string1</span><span class="p">))</span>
+    <span class="n">a_string2</span> <span class="o">=</span> <span class="s1">&#39;TENET&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">palchecker</span><span class="p">(</span><span class="n">a_string2</span><span class="p">))</span>
+</code></pre></div>
 </li>
 <li>
 <p>列表的缺点    P115</p>
@@ -4917,118 +5026,117 @@ return still_equal
 </li>
 <li>
 <p>链表的实现    P121-P139</p>
-<p>```python</p>
-<h1 id="node">首先构建Node类</h1>
-<p>class Node:
-    def <strong>init</strong>(self, initdata):
-        self.data = initdata
-        self.next = None</p>
-<pre><code>def get_data(self):
-    return self.data
+<div class="highlight"><pre><span></span><code><span class="c1"># 首先构建Node类</span>
+<span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initdata</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">initdata</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
 
-def get_next(self):
-    return self.next
+    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
 
-def set_data(self, new_data):
-    self.data = new_data
+    <span class="k">def</span> <span class="nf">get_next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">next</span>
 
-def set_next(self, new_next):
-    self.next = new_next
-</code></pre>
-<h1 id="_6">构建链表</h1>
-<p>class UnordredList:
-    def <strong>init</strong>(self):
-        self.head = None</p>
-<pre><code>def is_empty(self):
-    return self.head == None
+    <span class="k">def</span> <span class="nf">set_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">new_data</span>
 
-def add(self, item):
-    temp = Node(item)
-    temp.set_next(self.head)
-    self.head = temp
+    <span class="k">def</span> <span class="nf">set_next</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_next</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">new_next</span>       
+<span class="c1"># 构建链表</span>
+<span class="k">class</span> <span class="nc">UnordredList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
 
-def length(self):
-    count = 0
-    current = self.head
-    while current != None:
-        count += 1
-        current = current.get_next()
-    return count
+    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">==</span> <span class="kc">None</span>
 
-def search(self, item):
-    current = self.head
-    while current != None:
-        if current.get_data() == item:
-            return True
-        else:
-            current = current.get_next()
-    return False
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">temp</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">temp</span>
 
-def remove(self, item):
-    current = self.head
-    previous = None
-    found = False
-    while not found:
-        if current.get_data() == item:
-            found = True
-        else:
-            previous = current
-            current = current.get_next()
-    if previous == None:
-        self.head = current.get_next()
-    else:
-        previous.set_next(current.get_next())
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">count</span>
 
-def append(self, item):
-    current = self.head
-    while current.get_next() != None:
-        current = current.get_next()
-    current.set_next(Node(item))
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">False</span>
 
-def insert(self, pos, item):
-    current = self.head
-    previous = None
-    count = 0
-    while count != pos:
-        count += 1
-        previous = current
-        current = current.get_next()
-    insert_item = Node(item)
-    insert_item.set_next(current)
-    previous.set_next(insert_item)
+    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">previous</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">previous</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">previous</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">())</span>
 
-def index(self, item):
-    current = self.head
-    count = 0
-    while current.get_data() != item:
-        if current.get_next() == None:
-            return "Not Found"
-        else:
-            count +=1
-            current = current.get_next()
-    return count
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
 
-def pop (self, pos=None):
-    if pos == None:
-        current = self.head
-        previous = None
-        while current.get_next() != None:
-            previous = current
-            current = current.get_next()
-        previous.set_next(None)
-        return current.get_data()
-    else:
-        current = self.head
-        previous = None
-        count = 0
-        while count != pos:
-            count += 1
-            previous = current
-            current = current.get_next()
-        previous.set_next(current.get_next())
-        return current.get_data()
-</code></pre>
-<p>```</p>
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">previous</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">count</span> <span class="o">!=</span> <span class="n">pos</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+        <span class="n">insert_item</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">insert_item</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+        <span class="n">previous</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">insert_item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">current</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span> <span class="o">!=</span> <span class="n">item</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;Not Found&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">count</span>
+
+    <span class="k">def</span> <span class="nf">pop</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+            <span class="n">previous</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">while</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+            <span class="n">previous</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">current</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+            <span class="n">previous</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="n">count</span> <span class="o">!=</span> <span class="n">pos</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+            <span class="n">previous</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">current</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>具备解决新问题的能力（对已有问题的简单扩展）
@@ -5040,110 +5148,110 @@ def pop (self, pos=None):
 <ol>
 <li>无序的顺序搜索的实现和分析    P9-P10</li>
 </ol>
-<p><code>python
-   # 无序列表的顺序搜索
-   def sequential_search(a_list, item):
-       pos = 0
-       found = False
-       while pos &lt; len(a_list) and not found:
-           if a_list[pos] == item:
-               found = True
-           else:
-               pos += 1
-       return found
-   # 最暴力的方法，最坏的情况是O(n)</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 无序列表的顺序搜索</span>
+<span class="k">def</span> <span class="nf">sequential_search</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">while</span> <span class="n">pos</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pos</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">found</span>
+<span class="c1"># 最暴力的方法，最坏的情况是O(n)</span>
+</code></pre></div>
 <ol>
 <li>有序的顺序搜索的实现和分析    P12-P13</li>
 </ol>
-<p><code>python
-   # 有序列表的顺序搜索
-   def ordered_sequential_search(a_list, item):
-       pos = 0
-       found = False
-       stop = False
-       while pos &lt; len(a_list) and not found and not stop:
-           if a_list[pos] == item:
-               found = True
-           else:
-               if a_list[pos] &gt; item:
-                   stop = True
-               else:
-                   pos += 1
-       return found
-   # 最坏的情况仍是O(n)但不存在目标元素是可以减少执行次数，因为stop的存在</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 有序列表的顺序搜索</span>
+<span class="k">def</span> <span class="nf">ordered_sequential_search</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">stop</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">while</span> <span class="n">pos</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">stop</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">item</span><span class="p">:</span>
+                <span class="n">stop</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pos</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">found</span>
+<span class="c1"># 最坏的情况仍是O(n)但不存在目标元素是可以减少执行次数，因为stop的存在</span>
+</code></pre></div>
 <ol>
 <li>三种二分搜索的实现和分析    P16-P21</li>
 </ol>
-<p><code>python
-   # 循环实现
-   def binary_search(a_list, item):
-       first = 0
-       last = len(a_list) - 1
-       found = False
-       while first &lt;= last and not found:
-           mid_point = (first + last) // 2
-           if a_list[mid_point] == item:
-               found = True
-           else:
-               if item &lt; a_list[mid_point]:
-                   last = mid_point - 1
-               else:
-                   first = mid_point + 1
-       return found
-   # 递归实现1
-   def binary_search_r(a_list, item):
-       if len(a_list) == 0:
-           return False
-       else:
-           mid_point = len(a_list) // 2
-           if a_list[mid_point] == item:
-               return True
-           else:
-               if item &lt; a_list[mid_point]:
-                   return binary_search_r(a_list[:mid_point], item)
-               else:
-                   return binary_search_r(a_list[mid_point+1:], item)
-   # 递归实现2
-   def binary_search(data, target, low, high):
-       if low &gt; high:
-           return False    # interval is empty; no match
-       else:
-           mid = (low + high) // 2
-           if target == data[mid]:    # found a match
-               return True
-           elif target &lt; data[mid]:
-               return binary_search(data, target, low, mid-1)
-           else:
-               return binary_search(data, target, mid+1, high)</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 循环实现</span>
+<span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">while</span> <span class="n">first</span> <span class="o">&lt;=</span> <span class="n">last</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+        <span class="n">mid_point</span> <span class="o">=</span> <span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="n">last</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">mid_point</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="o">&lt;</span> <span class="n">a_list</span><span class="p">[</span><span class="n">mid_point</span><span class="p">]:</span>
+                <span class="n">last</span> <span class="o">=</span> <span class="n">mid_point</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">first</span> <span class="o">=</span> <span class="n">mid_point</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">found</span>
+<span class="c1"># 递归实现1</span>
+<span class="k">def</span> <span class="nf">binary_search_r</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mid_point</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">mid_point</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="o">&lt;</span> <span class="n">a_list</span><span class="p">[</span><span class="n">mid_point</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="n">binary_search_r</span><span class="p">(</span><span class="n">a_list</span><span class="p">[:</span><span class="n">mid_point</span><span class="p">],</span> <span class="n">item</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">binary_search_r</span><span class="p">(</span><span class="n">a_list</span><span class="p">[</span><span class="n">mid_point</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span> <span class="n">item</span><span class="p">)</span>
+<span class="c1"># 递归实现2</span>
+<span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">low</span> <span class="o">&gt;</span> <span class="n">high</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>    <span class="c1"># interval is empty; no match</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">data</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>    <span class="c1"># found a match</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+</code></pre></div>
 <p>对于上述的两种递归，第二种更好因为第二种是对原始<code>data</code>进行索引，没有创建新的列表。时间复杂度都是<em>O</em>(log<em>n</em>)</p>
 <ol>
 <li>散列表的定义和目标    P24-P32
    哈希表（hash table），又称散列表，它通过建立键 <code>key</code> 与值 <code>value</code> 之间的映射，实现高效的元素查询。具体而言，我们向哈希表中输入一个键 <code>key</code> ，则可以在 𝑂(1) 时间内获取对应的值 <code>value</code> 。这样就解决了列表搜索只能循环查找的问题。</li>
 </ol>
 <p>哈希冲突：从本质上看，哈希函数的作用是将所有 <code>key</code> 构成的输入空间映射到数组所有索引构成的输出空间，而输入空间往往远大于输出空间。因此，<strong>理论上一定存在“多个输入对应相同输出”的情况</strong>。例如：</p>
-<p><code>python
-   12836 % 100 = 36
-   20336 % 100 = 36</code></p>
+<div class="highlight"><pre><span></span><code><span class="mi">12836</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">=</span> <span class="mi">36</span>
+<span class="mi">20336</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">=</span> <span class="mi">36</span>
+</code></pre></div>
 <p><img alt="哈希冲突示例" src="https://cdn.bangwu.top/img/hash_collision.png" /></p>
 <p><strong>可以通过扩容哈希表容量来减少冲突。</strong></p>
 <ol>
 <li>常用的散列函数    P32-P37</li>
 </ol>
-<p>```python
-   def hash(a_string, table_size):
-       sum = 0
-       for pos in range(len(a_string)):
-           sum += ord(a_string[pos])</p>
-<pre><code>   return sum % table_size
-</code></pre>
-<p>def hash_pro(a_string, table_size):
-       sum = 0
-       for pos in range(len(a_string)):
-           sum += ord(a_string[pos]) * (pos + 1)</p>
-<pre><code>   return sum % table_size
-</code></pre>
-<p># 以上两个函数是用来key和index的，比如hash('cat', 100)返回12
-   ```</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a_string</span><span class="p">)):</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">a_string</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="nb">sum</span> <span class="o">%</span> <span class="n">table_size</span>
+
+<span class="k">def</span> <span class="nf">hash_pro</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a_string</span><span class="p">)):</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">a_string</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">sum</span> <span class="o">%</span> <span class="n">table_size</span>
+<span class="c1"># 以上两个函数是用来key和index的，比如hash(&#39;cat&#39;, 100)返回12</span>
+</code></pre></div>
 <ol>
 <li>再散列的方法    P39-P49
    <code>再散列</code>泛指在发生冲突后寻找另一个槽的过程。这里引入一个解决哈希冲突的一个方法：<code>开放定址法</code>    可参考👉https://www.cnblogs.com/east7/p/12594894.html</li>
@@ -5158,61 +5266,60 @@ def pop (self, pos=None):
 <p>HashTable    P55-P56</p>
 </li>
 </ul>
-<p>```python
-   # slots用于存储key, data用来存储value
-   class HashTable:
-       def <strong>init</strong>(self):
-           self.size = 11
-           self.slots = [None] * self.size
-           self.data = [None] * self.size</p>
-<pre><code>   def put(self, key, data):
-       hash_value = self.hash_function(key, len(self.slots))
+<div class="highlight"><pre><span></span><code><span class="c1"># slots用于存储key, data用来存储value</span>
+<span class="k">class</span> <span class="nc">HashTable</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">11</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slots</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
 
-       if self.slots[hash_value] == None:
-           self.slots[hash_value] = key
-           self.data[hash_value] = data
-       else:
-           if self.slots[hash_value] == key:
-               self.data[hash_value] = data  # replace the old data
-           else:
-               next_slot = self.rehash(hash_value, len(self.slots))
-               while self.slots[next_slot] != None and self.slots[next_slot] != key:
-                   next_slot = self.rehash(next_slot, len(self.slots))
-               if self.slots[next_slot] == None:
-                   self.slots[next_slot] = key
-                   self.data[next_slot] = data
-               else:
-                   self.data[next_slot] = data # replace the old data
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">hash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_function</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
 
-   def hash_function(self, key, size):
-       return key % size
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>  <span class="c1"># replace the old data</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">next_slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">hash_value</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
+                <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">next_slot</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">next_slot</span><span class="p">]</span> <span class="o">!=</span> <span class="n">key</span><span class="p">:</span>
+                    <span class="n">next_slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">next_slot</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">next_slot</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">next_slot</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">next_slot</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">next_slot</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span> <span class="c1"># replace the old data</span>
 
-   def rehash(self, old_hash, size):
-       return (old_hash + 1) % size
+    <span class="k">def</span> <span class="nf">hash_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">key</span> <span class="o">%</span> <span class="n">size</span>
 
-   def get(self, key):
-       start_slot = self.hash_function(key, len(self.slots))
-       data = None
-       stop = False
-       found = False
-       position = start_slot
-       while self.slots[position] != None and not found and not stop:
-           if self.slots[position] == key:
-               found = True
-               data = self.data[position]
-           else:
-               position = self.rehash(position, len(self.slots))
-               if position == start_slot:
-                   stop = True
-       return data
+    <span class="k">def</span> <span class="nf">rehash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old_hash</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">old_hash</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span>
 
-   def __getitem__(self, key): # 允许对象通过索引访问其元素
-       return self.get(key)
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="n">start_slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_function</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">stop</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">start_slot</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">stop</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">position</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="n">start_slot</span><span class="p">:</span>
+                    <span class="n">stop</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">data</span>
 
-   def __setitem__(self, key, data): # 允许对象通过索引设置其元素的值
-       self.put(key, data)
-</code></pre>
-<p>```</p>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span> <span class="c1"># 允许对象通过索引访问其元素</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span> <span class="c1"># 允许对象通过索引设置其元素的值</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 <ol>
 <li>分析散列搜索算法    P58
    引入一个定义：<code>载荷因子</code>，表示哈希表的占用率，<code>已被占用槽数</code>/<code>总槽数</code></li>
@@ -5242,15 +5349,14 @@ def pop (self, pos=None):
 </ol>
 <p><img alt="冒泡排序流程" src="https://cdn.bangwu.top/img/bubble_sort_overview.png" /></p>
 <p><img alt="img" src="https://cdn.bangwu.top/img/849589-20171015223238449-2146169197.gif" /></p>
-<p>```python</p>
-<h1 id="on2nn-12-123n-1">时间复杂度O(n2)，总共比较了n(n-1)/2次 也就是1+2+3+...+n-1</h1>
-<h1 id="_7">通常被认为是效率最低的排序算法</h1>
-<p>def bubble_sort(a_list):
-    for pass_num in range(len(a_list) - 1, 0, -1):
-        for i in range(pass_num):
-            if a_list[i] &gt; a_list[i + 1]:
-                a_list[i], a_list[i + 1] = a_list[i + 1], a_list[i]
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 时间复杂度O(n2)，总共比较了n(n-1)/2次 也就是1+2+3+...+n-1</span>
+<span class="c1"># 通常被认为是效率最低的排序算法</span>
+<span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">pass_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pass_num</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a_list</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="n">a_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">a_list</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
 <p>选择排序的实现和分析    P69-P70
@@ -5275,18 +5381,17 @@ def pop (self, pos=None):
 <p><img alt="img" src="https://cdn.bangwu.top/img/7789414-95f142a9696c4cf8.png.webp" /></p>
 <p><img alt="img" src="https://cdn.bangwu.top/img/7789414-5893f3ff1b915c38.gif.webp" /></p>
 <p>说明：此动图为优化后的选择排序，每趟只交换一次</p>
-<p>```python</p>
-<h1 id="on2">时间复杂度O(n2)</h1>
-<h1 id="_8">相比于冒泡排序，降低了交换次数</h1>
-<p>def selection_sort(a_list):
-    for fill_slot in range(len(a_list)-1, 0, -1):
-        position_of_max = 0
-        for location in range(1, fill_slot + 1):
-            if a_list[location] &gt; a_list[position_of_max]:
-                position_of_max = location</p>
-<pre><code>    a_list[fill_slot], a_list[position_of_max] = a_list[position_of_max], a_list[fill_slot]
-</code></pre>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 时间复杂度O(n2)</span>
+<span class="c1"># 相比于冒泡排序，降低了交换次数</span>
+<span class="k">def</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">fill_slot</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">position_of_max</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">location</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">fill_slot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">location</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a_list</span><span class="p">[</span><span class="n">position_of_max</span><span class="p">]:</span>
+                <span class="n">position_of_max</span> <span class="o">=</span> <span class="n">location</span>
+
+        <span class="n">a_list</span><span class="p">[</span><span class="n">fill_slot</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">position_of_max</span><span class="p">]</span> <span class="o">=</span> <span class="n">a_list</span><span class="p">[</span><span class="n">position_of_max</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">fill_slot</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
 <p>插入排序的实现和分析    P73-P74</p>
@@ -5308,19 +5413,18 @@ def pop (self, pos=None):
 </ol>
 <p><img alt="bangwu_20240621172011" src="https://cdn.bangwu.top/img/bangwu_20240621172011.webp" /></p>
 <p><img alt="img" src="https://cdn.bangwu.top/img/849589-20171015225645277-1151100000.gif" /></p>
-<p>```python</p>
-<h1 id="on2_1">时间复杂度依然是O(n2)，在基准测试中，插入排序算法的性能很不错</h1>
-<h1 id="_9">最好的情况下（列表已经是有序的），每轮秩序比较一次</h1>
-<h1 id="3_1">移动操作和交换操作有一个重要的不同点。总体来说，交换操作的处理时间大约是移动操作的 3 倍，因为后者只需进行一次赋值</h1>
-<p>def insertion_sort(a_list):
-    for index in range(1, len(a_list)):
-        current_value = a_list[index]
-        position = index
-        while position &gt; 0 and a_list[position-1] &gt; current_value:
-            a_list[position] = a_list[position-1]
-            position = position - 1
-        a_list[position] = current_value
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 时间复杂度依然是O(n2)，在基准测试中，插入排序算法的性能很不错</span>
+<span class="c1"># 最好的情况下（列表已经是有序的），每轮秩序比较一次</span>
+<span class="c1"># 移动操作和交换操作有一个重要的不同点。总体来说，交换操作的处理时间大约是移动操作的 3 倍，因为后者只需进行一次赋值</span>
+<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)):</span>
+        <span class="n">current_value</span> <span class="o">=</span> <span class="n">a_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">index</span>
+        <span class="k">while</span> <span class="n">position</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">a_list</span><span class="p">[</span><span class="n">position</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">current_value</span><span class="p">:</span>
+            <span class="n">a_list</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">=</span> <span class="n">a_list</span><span class="p">[</span><span class="n">position</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">position</span> <span class="o">=</span> <span class="n">position</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">a_list</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_value</span>
+</code></pre></div>
 </li>
 <li>
 <p>搜索和排序时间复杂度的总结    P91
@@ -5352,7 +5456,7 @@ def pop (self, pos=None):
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2024</span>
   </span>
 
     
@@ -5362,7 +5466,7 @@ def pop (self, pos=None):
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2024</span>
   </span>
 
     
@@ -5379,6 +5483,8 @@ def pop (self, pos=None):
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -5508,7 +5614,7 @@ def pop (self, pos=None):
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>

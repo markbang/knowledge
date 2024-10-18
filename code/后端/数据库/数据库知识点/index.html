@@ -464,7 +464,7 @@
         
   
   <span class="md-ellipsis">
-    Author
+    关于
   </span>
   
 
@@ -3480,7 +3480,7 @@
         
   
   <span class="md-ellipsis">
-    MarkDown简介
+    MarkDown 简介
   </span>
   
 
@@ -4355,13 +4355,13 @@
 </ol>
 </li>
 </ol>
-<pre><code class="language-sql">GRANT（权限）ON（对象类型）（对象名）TO（用户）[WITH GRANT OPTION]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">GRANT</span><span class="err">（权限）</span><span class="k">ON</span><span class="err">（对象类型）（对象名）</span><span class="k">TO</span><span class="err">（用户）</span><span class="p">[</span><span class="k">WITH</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">OPTION</span><span class="p">]</span>
+</code></pre></div>
 <ol>
 <li><code>权限回收的SQL代码 P69 - P73</code></li>
 </ol>
-<pre><code class="language-SQL">REVOKE（权限）ON（对象类型）（对象名）FROM（用户）[CASCADE|RESTRICT]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">REVOKE</span><span class="err">（权限）</span><span class="k">ON</span><span class="err">（对象类型）（对象名）</span><span class="k">FROM</span><span class="err">（用户）</span><span class="p">[</span><span class="k">CASCADE</span><span class="o">|</span><span class="k">RESTRICT</span><span class="p">]</span>
+</code></pre></div>
 <ol>
 <li>
 <p><code>数据库角色的概念 P76</code></p>
@@ -4373,12 +4373,12 @@
 <p><code>数据库角色的SQL代码 P77 - P83</code></p>
 </li>
 </ol>
-<pre><code class="language-sql">CREATE ROLE（角色名）；
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">ROLE</span><span class="err">（角色名）；</span>
 
-GRANT（权限）ON（对象类型）（对象名）TO（用户）[WITH GRANT OPTION]；
+<span class="k">GRANT</span><span class="err">（权限）</span><span class="k">ON</span><span class="err">（对象类型）（对象名）</span><span class="k">TO</span><span class="err">（用户）</span><span class="p">[</span><span class="k">WITH</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">OPTION</span><span class="p">]</span><span class="err">；</span>
 
-REVOKE（权限）ON（对象类型）（对象名）FROM（用户）[CASCADE|RESTRICT]
-</code></pre>
+<span class="k">REVOKE</span><span class="err">（权限）</span><span class="k">ON</span><span class="err">（对象类型）（对象名）</span><span class="k">FROM</span><span class="err">（用户）</span><span class="p">[</span><span class="k">CASCADE</span><span class="o">|</span><span class="k">RESTRICT</span><span class="p">]</span>
+</code></pre></div>
 <p><code>视图机制在安全性控制中的作用</code></p>
 <ul>
 <li>视图机制间接地实现支持存取谓词的用户权限定义，通过视图机制把要保密的数据对无权存取的用户隐藏起来，从而自动对数据提供一定程度的安全保护</li>
@@ -4418,10 +4418,10 @@ REVOKE（权限）ON（对象类型）（对象名）FROM（用户）[CASCADE|RE
 <p><code>实体完整性定义的代码 P13 - P16</code></p>
 </li>
 </ol>
-<pre><code class="language-SQL">（列名）PRIMARY KEY；
+<div class="highlight"><pre><span></span><code><span class="err">（列名）</span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="err">；</span>
 
-PRIMARY KEY（列名）（必须设置列名不为空值）
-</code></pre>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="err">（列名）（必须设置列名不为空值）</span>
+</code></pre></div>
 <ol>
 <li><code>实体完整性的检查和违约处理 P18</code></li>
 </ol>
@@ -4437,8 +4437,8 @@ PRIMARY KEY（列名）（必须设置列名不为空值）
 <p>参照完整性在CREATE TABLE中用FOREIGN KEY短语定义哪些列为外码，用REFERENCES短语指明这些外码参照哪些表的主码</p>
 </li>
 </ol>
-<pre><code class="language-SQL">FOREIGN KEY（列名）REFERENCES （表名）（列名）
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="err">（列名）</span><span class="k">REFERENCES</span><span class="w"> </span><span class="err">（表名）（列名）</span>
+</code></pre></div>
 <ol>
 <li>
 <p><code>参照完整性的检查和违约处理 P27 - P35</code></p>
@@ -4468,30 +4468,30 @@ PRIMARY KEY（列名）（必须设置列名不为空值）
 <li>元组上约束条件的检查和违约处理</li>
 <li>完整性约束命名的SQL P53 - P57</li>
 </ol>
-<pre><code class="language-SQL">CONSTRAINT（完整性约束条件名）（完整性约束条件）
+<div class="highlight"><pre><span></span><code><span class="k">CONSTRAINT</span><span class="err">（完整性约束条件名）（完整性约束条件）</span>
 
-完整性约束条件包括
-NOT NULL，UNIQUE，PRIMARY KEY，FOREIGN KEY，CHECK短语
-可以使用ALTER TABLE语句修改表中的完整性限制
+<span class="err">完整性约束条件包括</span>
+<span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="err">，</span><span class="k">UNIQUE</span><span class="err">，</span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="err">，</span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="err">，</span><span class="n">CHECK短语</span>
+<span class="err">可以使用</span><span class="k">ALTER</span><span class="w"> </span><span class="n">TABLE语句修改表中的完整性限制</span>
 
-ALTER TABLE Student DROP CONSTRAINT C4;
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">C4</span><span class="p">;</span>
 
-ALTER TABLE Student ADD CONSTRAINT C1 CHECK(Sno BETWEEN 900000 AND 999999);
-</code></pre>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">C1</span><span class="w"> </span><span class="k">CHECK</span><span class="p">(</span><span class="n">Sno</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">900000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">999999</span><span class="p">);</span>
+</code></pre></div>
 <ol>
 <li><code>触发器的定义、激活与删除 P68 - P78</code></li>
 </ol>
 <p><strong>触发器</strong>是一种特殊类型的<a href="https://so.csdn.net/so/search?q=存储过程&amp;spm=1001.2101.3001.7020">存储过程</a>，它不同于存储过程，主要是通过事件触发而被执行的，即不是主动调用而执行的；而存储过程则需要主动调用其名字执行</p>
 <p><a href="https://so.csdn.net/so/search?q=触发器&amp;spm=1001.2101.3001.7020">触发器</a>：trigger，是指事先为某张表绑定一段代码，当表中的某些内容发生改变（增、删、改）的时候，系统会自动触发代码并执行。</p>
-<pre><code class="language-sql">delimiter 自定义结束符号
-create trigger 触发器名字 触发时间 触发事件 on 表 for each row
-begin
-    -- 触发器内容主体，每行用分号结尾
-end
-自定义的结束符合
+<div class="highlight"><pre><span></span><code><span class="k">delimiter</span><span class="w"> </span><span class="err">自定义结束符号</span>
+<span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="err">触发器名字</span><span class="w"> </span><span class="err">触发时间</span><span class="w"> </span><span class="err">触发事件</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="err">表</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span>
+<span class="k">begin</span>
+<span class="w">    </span><span class="c1">-- 触发器内容主体，每行用分号结尾</span>
+<span class="k">end</span>
+<span class="err">自定义的结束符合</span>
 
-delimiter ;
-</code></pre>
+<span class="k">delimiter</span><span class="w"> </span><span class="p">;</span>
+</code></pre></div>
 <ul>
 <li>触发器是用户定义在关系表上的一类由事件驱动的特殊过程。</li>
 <li>触发器的定义P168</li>
@@ -4504,8 +4504,8 @@ delimiter ;
 <li>激活触发器的SQL语句</li>
 <li>执行该表上的AFTER触发器</li>
 </ul>
-<pre><code class="language-sql">删除触发器的SQL语法：DROP TRIGGER（触发器名）ON（表名）
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">删除触发器的</span><span class="n">SQL语法</span><span class="err">：</span><span class="k">DROP</span><span class="w"> </span><span class="k">TRIGGER</span><span class="err">（触发器名）</span><span class="k">ON</span><span class="err">（表名）</span>
+</code></pre></div>
 <h1 id="_5">六. 关系数据理论</h1>
 <ul>
 <li>
@@ -4764,8 +4764,8 @@ delimiter ;
 <p>使用游标功能后，我们可以将得到的结果先保存起来，然后可以随意进行自己的编程，得到我们最终想要的结果集。</p>
 </li>
 </ol>
-<p><code>python
-  Cursor = (数据库名).db.cursor</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">Cursor</span> <span class="o">=</span> <span class="p">(</span><span class="n">数据库名</span><span class="p">)</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">cursor</span>
+</code></pre></div>
 <ol>
 <li>
 <p><code>tornado web服务器的四大组件 P62-P63</code></p>
@@ -4798,15 +4798,15 @@ delimiter ;
 <p>在存储过程和自定义函数中可以使用流程控制语句来控制程序的流程。</p>
 </li>
 </ol>
-<pre><code class="language-sql">流程控制语句：
-IF 语句；
-CASE语句；
-LOOP语句；
-LEAVE语句；
-ITERATE语句；
-REPEAT语句；
-WHILE语句；
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">流程控制语句：</span>
+<span class="k">IF</span><span class="w"> </span><span class="err">语句；</span>
+<span class="n">CASE语句</span><span class="err">；</span>
+<span class="n">LOOP语句</span><span class="err">；</span>
+<span class="n">LEAVE语句</span><span class="err">；</span>
+<span class="n">ITERATE语句</span><span class="err">；</span>
+<span class="n">REPEAT语句</span><span class="err">；</span>
+<span class="n">WHILE语句</span><span class="err">；</span>
+</code></pre></div>
 <ol>
 <li>
 <p><code>匿名块与命名块 P100</code></p>
@@ -4846,28 +4846,28 @@ WHILE语句；
 <p><code>存储过程的SQL代码 P107 - P117</code></p>
 </li>
 </ol>
-<pre><code class="language-sql">创建存储过程：CREATE PROCEDURE （过程名）（参数）（过程化SQL块）
+<div class="highlight"><pre><span></span><code><span class="err">创建存储过程：</span><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="err">（过程名）（参数）（过程化</span><span class="n">SQL块</span><span class="err">）</span>
 
-声明语句结束符，可以自定义：DELIMITER $$或DELIMITER//
+<span class="err">声明语句结束符，可以自定义：</span><span class="k">DELIMITER</span><span class="w"> </span><span class="err">$$或</span><span class="k">DELIMITER</span><span class="o">//</span>
 
-DELIMITER $$
+<span class="k">DELIMITER</span><span class="w"> </span><span class="err">$$</span>
 
-CREATE PROCEDURE delete_sno ( IN p_sno CHAR(9))
+<span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">delete_sno</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="n">p_sno</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
 
-BEGIN
+<span class="k">BEGIN</span>
 
-DELETE FROM Student WHERE sno = p_sno ;
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_sno</span><span class="w"> </span><span class="p">;</span>
 
-END$$
+<span class="k">END</span><span class="err">$$</span>
 
-DELIMITER ;
+<span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
 
-执行存储过程：CALL（过程名）（参数）
+<span class="err">执行存储过程：</span><span class="k">CALL</span><span class="err">（过程名）（参数）</span>
 
-CALL delete__sno(‘201215122’);
+<span class="k">CALL</span><span class="w"> </span><span class="n">delete__sno</span><span class="p">(</span><span class="err">‘</span><span class="mi">201215122</span><span class="err">’</span><span class="p">);</span>
 
-删除存储过程：DROP PROCEDURE（过程名）
-</code></pre>
+<span class="err">删除存储过程：</span><span class="k">DROP</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="err">（过程名）</span>
+</code></pre></div>
 <ol>
 <li>
 <p><code>函数与存储过程的异同 P119</code></p>
@@ -4882,32 +4882,32 @@ CALL delete__sno(‘201215122’);
 <p><code>函数的SQL代码 P120 - P122</code></p>
 </li>
 </ol>
-<pre><code class="language-sql">1.定义语句格式：CREATE FUNCTION （函数名）（参数）RETURN（类型）（过程化SQL块）
+<div class="highlight"><pre><span></span><code><span class="mi">1</span><span class="p">.</span><span class="err">定义语句格式：</span><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="err">（函数名）（参数）</span><span class="k">RETURN</span><span class="err">（类型）（过程化</span><span class="n">SQL块</span><span class="err">）</span>
 
-DELIMITER //
+<span class="k">DELIMITER</span><span class="w"> </span><span class="o">//</span>
 
-CREATE FUNCTION func_student ( f_Sno CHAR(9))
+<span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">func_student</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">f_Sno</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
 
-RETURNS CHAR(20) DETERMINISTIC 
+<span class="k">RETURNS</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">DETERMINISTIC</span><span class="w"> </span>
 
-COMMENT ’ 查 询 某 个 学 生 的 姓 名 ’
+<span class="k">COMMENT</span><span class="w"> </span><span class="err">’</span><span class="w"> </span><span class="err">查</span><span class="w"> </span><span class="err">询</span><span class="w"> </span><span class="err">某</span><span class="w"> </span><span class="err">个</span><span class="w"> </span><span class="err">学</span><span class="w"> </span><span class="err">生</span><span class="w"> </span><span class="err">的</span><span class="w"> </span><span class="err">姓</span><span class="w"> </span><span class="err">名</span><span class="w"> </span><span class="err">’</span>
 
-BEGIN 
+<span class="k">BEGIN</span><span class="w"> </span>
 
-RETURN (SELECT Sname FROM Student WHERE Sno = f_Sno ) ;
+<span class="k">RETURN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">Sname</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Sno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f_Sno</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
 
-END // 
+<span class="k">END</span><span class="w"> </span><span class="o">//</span><span class="w"> </span>
 
-DELIMITER ;
+<span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
 
-2.函数的执行语句格式：SELECT（函数名）（参数）
+<span class="mi">2</span><span class="p">.</span><span class="err">函数的执行语句格式：</span><span class="k">SELECT</span><span class="err">（函数名）（参数）</span>
 
-SELECT func_student(‘201215123’);
+<span class="k">SELECT</span><span class="w"> </span><span class="n">func_student</span><span class="p">(</span><span class="err">‘</span><span class="mi">201215123</span><span class="err">’</span><span class="p">);</span>
 
-SELECT func_student(sno) FROM Stduent;
+<span class="k">SELECT</span><span class="w"> </span><span class="n">func_student</span><span class="p">(</span><span class="n">sno</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Stduent</span><span class="p">;</span>
 
-3.删除函数：DROP FUNCTION（函数名）
-</code></pre>
+<span class="mi">3</span><span class="p">.</span><span class="err">删除函数：</span><span class="k">DROP</span><span class="w"> </span><span class="k">FUNCTION</span><span class="err">（函数名）</span>
+</code></pre></div>
 <h1 id="mysql">九. MySQL优化原理</h1>
 <ol>
 <li>
@@ -5198,7 +5198,7 @@ SELECT func_student(sno) FROM Stduent;
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2024</span>
   </span>
 
     
@@ -5208,7 +5208,7 @@ SELECT func_student(sno) FROM Stduent;
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2023</span>
   </span>
 
     
@@ -5225,6 +5225,8 @@ SELECT func_student(sno) FROM Stduent;
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -5354,7 +5356,7 @@ SELECT func_student(sno) FROM Stduent;
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>

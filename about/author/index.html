@@ -24,7 +24,7 @@
     
     
       
-        <title>Author - 棒无の知识库</title>
+        <title>关于 - 棒无の知识库</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -104,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Author
+              关于
             
           </span>
         </div>
@@ -466,16 +471,84 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    关于
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Author
+    关于
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#markbang-bangwu" class="md-nav__link">
+    <span class="md-ellipsis">
+      棒无 / markbang / bangwu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      内容输出简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      联系我
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      一些宣告
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3469,7 +3542,7 @@
         
   
   <span class="md-ellipsis">
-    MarkDown简介
+    MarkDown 简介
   </span>
   
 
@@ -3813,6 +3886,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#markbang-bangwu" class="md-nav__link">
+    <span class="md-ellipsis">
+      棒无 / markbang / bangwu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      内容输出简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      联系我
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      一些宣告
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3830,78 +3949,25 @@
   
 
 
-  <h1>Author</h1>
-
-<script setup>
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPTeamMembers
-} from 'vitepress/theme'
-const members = [
-  {
-    avatar: 'https://p0.meituan.net/csc/05feb33b6fd287de69b7ad8f68c9bec3122241.jpg',
-    name: 'Mark Bang',
-    title: 'Creator',
-    links: [
-      { icon: 'github', link: 'https://github.com/markbang' },
-    ]
-  },
-]
-const partners = []
-</script>
-
-<style>
-  .course-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .course-container h1 {
-      margin-bottom: 20px;
-  }
-  a.course-link {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px 0;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s, transform 0.3s;
-  }
-  a.course-link:hover {
-      background-color: gray;
-      transform: translateY(-2px);
-  }
-  a.course-link:active {
-      background-color: #1ecaca;
-      transform: translateY(0);
-  }
-</style>
-
-<p><VPTeamPage>
-  <VPTeamPageTitle>
-    <template #title>站点作者</template>
-    <template #lead>本人本科大二，开本站一方面为了方便自己查找自己学过的知识和分享给大家，另一方面是督促自己学习，任务驱动型吧（差不多。。。。）</template>
-  </VPTeamPageTitle>
-  <VPTeamMembers :members="members" />
-  <VPTeamPageSection>
-    <template #title>贡献者</template>
-    <template #lead>通过提评论或者Pull优化本站内容即可以申请进入贡献者名单哦</template>
-    <template #members>
-      <VPTeamMembers size="small" :members="partners" />
-    </template>
-  </VPTeamPageSection>
-</VPTeamPage></p>
-<div class="course-container">
-    <a href="./学科期末复习/数据挖掘" class="course-link">数据挖掘</a>
-    <a href="./学科期末复习/数据结构与算法" class="course-link">数据结构与算法</a>
-    <a href="./学科期末复习/信息检索" class="course-link">信息检索</a>
-</div>
+<h1 id="_1">关于</h1>
+<h2 id="markbang-bangwu">棒无 / markbang / bangwu</h2>
+<ul>
+<li>漫画《一人之下》的重度思考者</li>
+<li>ECNUer</li>
+<li>相信存在即合理的全栈</li>
+<li>游戏瘾晚期患者、羽毛球小白、瞎折腾冠军、著名音乐的听者</li>
+<li>INFP-A</li>
+</ul>
+<h2 id="_2">内容输出简介</h2>
+<p>日常：https://blog.bangwu.top 我的日常思考以及生活分享</p>
+<p>知识库：https://base.bangwu.top 几乎是所有学到过的 CS 知识</p>
+<p>RSS：<a href="https://now.bangwu.top/rss.xml">我的碎碎念</a></p>
+<h2 id="_3">联系我</h2>
+<p>E-mail:<a href="mailto:i@bangwu.top">i@bangwu.top</a></p>
+<p>GitHub:<a href="https://github.com/markbang">markbang</a></p>
+<p>由于习惯原因，一般回 email 会很慢，请谅解。加我 vx 之前请确保一般回复消息不会超过 15 分钟（因为我一般是秒回，并且回复慢会影响到我）</p>
+<h2 id="_4">一些宣告</h2>
+<p>相信你明白在茫茫的互联网浪潮中，遇到彼此就是缘分，所以请友善发言。如果能和棒无友好交流并成为好朋友的话，我会非常开心 😋URL 是对互联网的第一次承诺，所以我会一直持有这个域名的。嗯，就这样——2024 年 9 月 27 日</p>
 
 
 
@@ -3934,7 +4000,7 @@ const partners = []
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2023</span>
   </span>
 
     
@@ -3951,6 +4017,8 @@ const partners = []
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -4080,7 +4148,7 @@ const partners = []
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
