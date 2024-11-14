@@ -1,8 +1,8 @@
-# 介绍
+# Rclone
 
 Rclone是一个命令行程序，用于管理云存储上的文件。他打包了各大供应商云存储的接口提供统一的访问界面。rclone支持40多种云存储产品，包括对象存储、企业和消费者文件存储、服务以及标准传输协议。Rclone符合unix POSIX规范，支持于常见的shell工具，比如rsync、cp、 mv、mount、ls、ncdu、tree、rm 和cat等交互。例如可以补坑[CDN方案里的对象存储同步](https://base.bangwu.top/environment/CDN%E6%97%A5%E8%AE%B0.html)
 
-# 安装
+## 安装
 
 官网下载链接：https://rclone.org/downloads/
 
