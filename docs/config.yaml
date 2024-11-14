@@ -420,7 +420,7 @@ rules:
   # 防止 YouTube 等使用 QUIC 导致速度不佳, 禁用 443 端口 UDP 流量（不包括国内）
 
   # github push
-  - DOMAIN-KEYWORD,github,PROXY
+  - DOMAIN-KEYWORD,github,节点选择
   # rule-set 与 GEOIP/GEOSITE 轮换
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
@@ -429,12 +429,12 @@ rules:
   - RULE-SET,reject,REJECT
   - RULE-SET,icloud,DIRECT
   - RULE-SET,apple,DIRECT
-  - RULE-SET,google,PROXY
-  - RULE-SET,proxy,PROXY
+  - RULE-SET,google,节点选择
+  - RULE-SET,proxy,节点选择
   - RULE-SET,direct,DIRECT
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
-  - RULE-SET,telegramcidr,PROXY
+  - RULE-SET,telegramcidr,节点选择
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
 
@@ -469,4 +469,4 @@ rules:
   - GEOSITE,CN,国内
   - GEOIP,CN,国内
   # - MATCH,其他
-  - MATCH,PROXY
+  - MATCH,节点选择
