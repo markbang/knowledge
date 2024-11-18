@@ -1,32 +1,14 @@
-- icon: 🛠️
+# 首页
 
-  title: 详细的教程
+Hello，这里是棒无的知识库，用来记录我学习过的 CS 知识
 
-  details: 本站的教程绝对小白友好，零基础学习，只要跟着教程走就不可能出错的那种
+## 技能图
 
-  link: /about/site.md
+[![roadmap.sh](https://roadmap.sh/card/wide/66f3ba84c45e253cb04054bc?variant=dark)](https://roadmap.sh/u/bangwu)
 
-  linkText: 了解站点
+## Coding activity
 
-- icon: 🤡
-
-  title: 丰富的知识
-
-  details: 本站文章很多，目前由棒无一人编写，但知识涉及面也广，且都是实践经验
-
-  link: /code/
-
-  linkText: 查看知识
-
-- icon: 😡
-
-  title: 完全原创
-
-  details: 由于看到了国内一些社区上很多人盗用文章，乱复制，导致社区乌烟瘴气，该站文章皆是经过学习后产出的高质量文章，可以放心阅读
-
-  link: /about/
-
-  linkText: 关于本站
+<figure><img src="https://wakatime.com/share/@markbang/ea21c385-5f3a-4713-a1e6-68acf5011dac.svg"></img></figure>
 
 === "python"
 
@@ -44,9 +26,9 @@
 
     ```go
     package main
-    
+
     import "fmt"
-    
+
     func main() {
       fmt.Println("Hello World!")
     }
