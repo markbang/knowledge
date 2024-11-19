@@ -1,5 +1,9 @@
 # 首页
 
+<style>
+.md-content .md-typeset h1 { display: none; }
+</style>
+
 Hello，这里是棒无的知识库，用来记录我学习过的 CS 知识
 
 ## 技能图
