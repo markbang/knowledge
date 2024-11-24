@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/joker.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
@@ -3476,8 +3476,6 @@
       
         
       
-        
-      
     
     
       
@@ -3495,7 +3493,7 @@
             
   
   <span class="md-ellipsis">
-    博客搭建
+    博客
   </span>
   
 
@@ -3505,7 +3503,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
-            博客搭建
+            博客
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3516,7 +3514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%9B%BE%E5%BA%8A%E6%96%B9%E6%A1%88/" class="md-nav__link">
+      <a href="../../%E5%8D%9A%E5%AE%A2/%E5%9B%BE%E5%BA%8A%E6%96%B9%E6%A1%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3525,100 +3523,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_7_2" id="__nav_5_7_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Vitepress
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            Vitepress
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/vitepress/%E5%88%9D%E5%A7%8B%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    什么是Vitepress
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/vitepress/%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    添加评论功能
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -3737,7 +3641,7 @@
         
   
   <span class="md-ellipsis">
-    MarkDown语法
+    MarkDown 语法
   </span>
   
 
@@ -3934,7 +3838,56 @@
 
 
 
+<!-- Insert generated snippet here -->
+<script
+  src="https://giscus.app/client.js"
+  data-repo="markbang/knowledge"
+  data-repo-id="R_kgDOKV8Tgg"
+  data-category="Q&A"
+  data-category-id="DIC_kwDOKV8Tgs4Cjdz9"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector('script[src*=giscus]');
 
+  // Set palette on initial load
+  var palette = __md_get('__palette');
+  if (palette && typeof palette.color === 'object') {
+    var theme = palette.color.scheme === 'slate' ? 'transparent_dark' : 'light';
+
+    // Instruct Giscus to set theme
+    giscus.setAttribute('data-theme', theme);
+  }
+
+  // Register event handlers after documented loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    var ref = document.querySelector('[data-md-component=palette]');
+    ref.addEventListener('change', function () {
+      var palette = __md_get('__palette');
+      if (palette && typeof palette.color === 'object') {
+        var theme =
+          palette.color.scheme === 'slate' ? 'transparent_dark' : 'light';
+
+        // Instruct Giscus to change theme
+        var frame = document.querySelector('.giscus-frame');
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          'https://giscus.app'
+        );
+      }
+    });
+  });
+</script>
                 
               </article>
             </div>
