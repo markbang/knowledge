@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 一人之下
 
 ![yrzx](https://cdn.bangwu.top/img/yrzx.jpg)
