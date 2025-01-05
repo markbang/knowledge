@@ -63,9 +63,15 @@ plugins:
       # prebuild_index: true # 预制索引，不成功
 markdown_extensions:
   - abbr
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - tables
   - pymdownx.details
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.zhihu.com/mathjax@3/es5/tex-mml-chtml.js
