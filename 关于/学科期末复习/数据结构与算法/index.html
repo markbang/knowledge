@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/joker.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -2707,6 +2707,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -2787,6 +2795,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86%E4%B8%8E%E7%BB%84%E7%BB%87/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息处理与组织
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2/" class="md-nav__link">
         
   
@@ -2813,6 +2842,27 @@
   
   <span class="md-ellipsis">
     信息管理概论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%9A%E5%BC%88%E8%AE%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博弈论
   </span>
   
 
@@ -3067,6 +3117,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E7%AB%9E%E4%BA%89%E6%83%85%E6%8A%A5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    竞争情报
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
         
   
@@ -3114,6 +3185,27 @@
   
   <span class="md-ellipsis">
     英语短篇小说佳作欣赏
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计量经济学
   </span>
   
 
@@ -4833,11 +4925,11 @@
 <ol>
 <li><strong>在实时系统中对操作的摊销边界是不可接受的</strong></li>
 </ol>
-<p>摊销分析（Amortized Analysis）是计算数据结构操作时间的一种方法，它将一系列操作的总成本平均分摊到每个操作上。对于动态数组来说，插入操作的摊销时间复杂度是 (O(1))，但在最坏情况下（当数组需要扩展时），单次插入的时间复杂度可以达到 (O(n))。在实时系统中，要求每个操作必须在严格的时间界限内完成，因此最坏情况的操作时间不可预测和不可接受。这意味着在实时系统中使用动态数组可能导致性能问题，因为你无法保证每个操作在规定时间内完成。</p>
+<p>摊销分析（Amortized Analysis）是计算数据结构操作时间的一种方法，它将一系列操作的总成本平均分摊到每个操作上。对于动态数组来说，插入操作的摊销时间复杂度是 <span class="arithmatex">\(O(1)\)</span>，但在最坏情况下（当数组需要扩展时），单次插入的时间复杂度可以达到 <span class="arithmatex">\(O(n)\)</span>。在实时系统中，要求每个操作必须在严格的时间界限内完成，因此最坏情况的操作时间不可预测和不可接受。这意味着在实时系统中使用动态数组可能导致性能问题，因为你无法保证每个操作在规定时间内完成。</p>
 <ol>
 <li><strong>在一个数组内部执行插入和删除操作的代价太高</strong></li>
 </ol>
-<p>动态数组在内部执行插入和删除操作时，需要移动数组中的元素。例如，要在数组的开头插入一个新元素，所有现有元素都必须向后移动一个位置，这样的操作的时间复杂度是 (O(n))。同样地，在数组中间删除一个元素也需要将后续的元素前移，这同样是 (O(n)) 的操作。对于频繁插入和删除的场景，这种操作代价太高，导致性能瓶颈。如果你的应用需要频繁在列表中间插入或删除元素，使用链表（Linked List）或双端队列（Deque）等数据结构可能会更高效。</p>
+<p>动态数组在内部执行插入和删除操作时，需要移动数组中的元素。例如，要在数组的开头插入一个新元素，所有现有元素都必须向后移动一个位置，这样的操作的时间复杂度是 <span class="arithmatex">\(O(n)\)</span>。同样地，在数组中间删除一个元素也需要将后续的元素前移，这同样是 <span class="arithmatex">\(O(n)\)</span> 的操作。对于频繁插入和删除的场景，这种操作代价太高，导致性能瓶颈。如果你的应用需要频繁在列表中间插入或删除元素，使用链表（Linked List）或双端队列（Deque）等数据结构可能会更高效。</p>
 <p>总结：</p>
 <ul>
 <li>动态数组的内存预留机制虽然提升了插入操作的效率，但会导致内存浪费。</li>
@@ -5538,7 +5630,11 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.zhihu.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
