@@ -2965,7 +2965,7 @@
         
   
   <span class="md-ellipsis">
-    第一章 宏观经济的基本指标及其衡量
+    宏观经济学
   </span>
   
 
@@ -3932,7 +3932,7 @@
 </code></pre></div>
 <h2 id="user-agent">User-Agent</h2>
 <p>对于User-Agent想必大家都不陌生，这是爬虫的第一步，大部分网站都有检查User-Agent，设置它很简单，就是打开开发者工具，在网络请求中找到复制粘贴即可。因为User-Agent一般都是固定的，里面包含的只是一些浏览器型号之类的，目的是确保你这个请求是真人，所以<code>my_fake_useragent</code>库也应运而生。</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">my_fake_useragent</span> <span class="kn">import</span> <span class="n">UserAgent</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">my_fake_useragent</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserAgent</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="n">UserAgent</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s1">&#39;chrome&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">random</span><span class="p">()}</span>
 </code></pre></div>
 <p>按照这个方式就可以随机User-Agent，更加方便而且会解决一些User-Agent反爬机制。</p>

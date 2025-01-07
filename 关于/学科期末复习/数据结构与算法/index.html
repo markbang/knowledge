@@ -2883,7 +2883,7 @@
         
   
   <span class="md-ellipsis">
-    第一章 宏观经济的基本指标及其衡量
+    宏观经济学
   </span>
   
 
@@ -4094,20 +4094,20 @@
 <li>迭代器和可迭代对象    P121
    可迭代对象：https://docs.pythontab.com/interpy/Generators/Iterable/</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Iterator</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Iterator</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">squence</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">squence</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_seq</span> <span class="o">=</span> <span class="n">squence</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
-    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_seq</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_seq</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">StopIteration</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
 
 
@@ -4121,9 +4121,9 @@
 </code></pre></div>
 <p>迭代器：https://docs.pythontab.com/interpy/Generators/Iterator/</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 任意对象，只要定义了__next__方法，它就是一个迭代器。</span>
-<span class="k">class</span> <span class="nc">Iterator</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Iterator</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -4133,7 +4133,7 @@
 <li>
 <p>迭代器和生成器    P125
     生成器：https://docs.pythontab.com/interpy/Generators/Generators/</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generator_function</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">generator_function</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">i</span>
 
@@ -4237,16 +4237,16 @@
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="c1"># 合并两个列表</span>
 </code></pre></div>
 <p>但是对于上述的加法，应用于python内置类还行，自己定义的类是不能直接这样相加的。但可以通过定义来实现类的运算：</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
     <span class="c1"># change add</span>
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Point(x:</span><span class="si">%d</span><span class="s2">, y:</span><span class="si">%d</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
     <span class="c1"># change print</span>
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Point(x:</span><span class="si">%s</span><span class="s2">, y:</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="bangwu_20240620190209" src="https://cdn.bangwu.top/img/bangwu_20240620190209.webp" /></p>
@@ -4325,7 +4325,7 @@
     问题：如果一个字符串只是重排了另一个字符串的字符，那么这个字符串就是另一
     个的异序词，比如 heart 与 earth，以及 python 与 typhon。简化问题：两个字符串的长度相同，并且都由26个英文字母的小写组成。</p>
 <div class="highlight"><pre><span></span><code><span class="n">words</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">st2</span><span class="p">):</span> <span class="c1"># O(n*log(n))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">solution</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">st2</span><span class="p">):</span> <span class="c1"># O(n*log(n))</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">st2</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)):</span>
             <span class="k">if</span> <span class="n">st1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span> <span class="ow">or</span> <span class="n">st2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
@@ -4336,7 +4336,7 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-<span class="k">def</span> <span class="nf">solution2</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">st2</span><span class="p">):</span> <span class="c1"># O(n^2)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">solution2</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">st2</span><span class="p">):</span> <span class="c1"># O(n^2)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">st2</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)):</span>
             <span class="k">if</span> <span class="n">st1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span> <span class="ow">or</span> <span class="n">st2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
@@ -4349,7 +4349,7 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-<span class="k">def</span> <span class="nf">solution3</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">st2</span><span class="p">):</span> <span class="c1"># O(n)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">solution3</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">st2</span><span class="p">):</span> <span class="c1"># O(n)</span>
     <span class="n">dic1</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">dic2</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">st1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">st2</span><span class="p">):</span>
@@ -4384,7 +4384,7 @@
 <p>计算一列数之和的递归解法    P9</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">list_sum</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">list_sum</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">num_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
@@ -4393,7 +4393,7 @@
 <ol>
 <li>阶乘的递归解法    P14</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
@@ -4402,7 +4402,7 @@
 <ol>
 <li>将整数转换成任意进制字符串的递归解法    P20</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_str</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">to_str</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
     <span class="n">covert_string</span> <span class="o">=</span> <span class="s1">&#39;0123456789ABCDEF&#39;</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">base</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">covert_string</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
@@ -4412,7 +4412,7 @@
 <ol>
 <li>二分查找    P25</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">low</span> <span class="o">&gt;</span> <span class="n">high</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">else</span><span class="p">:</span>
@@ -4427,7 +4427,7 @@
 <ol>
 <li>汉诺塔问题    P37-P42</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hannouta</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hannouta</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;移到&#39;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -4458,40 +4458,40 @@
 <ol>
 <li>动态数组的实现    P27</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ctypes</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">ctypes</span>
 
-<span class="k">class</span> <span class="nc">DynamicArray</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DynamicArray</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span>
 
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">&#39;invalid index&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="k">def</span> <span class="nf">_make_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_make_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">py_object</span><span class="p">)()</span>
 
-    <span class="k">def</span> <span class="nf">_resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
         <span class="n">B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_array</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">):</span>
             <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_A</span> <span class="o">=</span> <span class="n">B</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span> <span class="o">=</span> <span class="n">c</span>
 
-    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">):</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
@@ -4500,7 +4500,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">-=</span> <span class="mi">1</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;value not found&#39;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -4562,29 +4562,29 @@
 <ol>
 <li>栈的实现    P61</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ArrayStack</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ArrayStack</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Stack is empty&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Stack is empty&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
@@ -4592,7 +4592,7 @@
 <ol>
 <li>括号匹配的代码实现    P69</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_matched</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_matched</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
     <span class="n">lefty</span> <span class="o">=</span> <span class="s1">&#39;([{&#39;</span>
     <span class="n">righty</span> <span class="o">=</span> <span class="s1">&#39;)]}&#39;</span>
     <span class="n">S</span> <span class="o">=</span> <span class="n">ArrayStack</span><span class="p">()</span>
@@ -4609,7 +4609,7 @@
 <ol>
 <li>
 <p>标记语言的标签匹配的代码实现    P72</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_matched_html</span><span class="p">(</span><span class="n">raw</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_matched_html</span><span class="p">(</span><span class="n">raw</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
     <span class="n">S</span> <span class="o">=</span> <span class="n">ArrayStack</span><span class="p">()</span>
     <span class="n">j</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span>
     <span class="k">while</span> <span class="n">j</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
@@ -4630,7 +4630,7 @@
 </li>
 <li>
 <p>十进制转换成任意进制数的代码实现    P75</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">base_converter</span><span class="p">(</span><span class="n">dec_number</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">base_converter</span><span class="p">(</span><span class="n">dec_number</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
     <span class="n">digits</span> <span class="o">=</span> <span class="s2">&quot;0123456789ABCDEF&quot;</span>
     <span class="n">rem_stack</span> <span class="o">=</span> <span class="n">ArrayStack</span><span class="p">()</span>
 
@@ -4649,10 +4649,10 @@
 <li>
 <p>实现python的运算：先从中序转后序，再计算后序    P87，P93</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 这段大概率是不会出的</span>
-<span class="kn">from</span> <span class="nn">array_stack</span> <span class="kn">import</span> <span class="n">ArrayStack</span>
-<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">array_stack</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrayStack</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 
-<span class="k">def</span> <span class="nf">infix_to_post_fix</span><span class="p">(</span><span class="n">infix_expr</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">infix_to_post_fix</span><span class="p">(</span><span class="n">infix_expr</span><span class="p">):</span>
     <span class="n">prec</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">prec</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="n">prec</span><span class="p">[</span><span class="s2">&quot;/&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
@@ -4730,26 +4730,26 @@
 </li>
 <li>
 <p>队列的实现    P101</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ArrayQueue</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ArrayQueue</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;FIFO Queue implementation using a Python list as underlying storage.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create an empty queue.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of elements in the queue.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the queue is empty.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add element e to the back of the queue.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>  <span class="c1"># new item stored at end of list</span>
 
-    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return (but do not remove) the element at the front of the queue.</span>
 
 <span class="sd">        Raise Empty exception if the queue is empty.</span>
@@ -4758,7 +4758,7 @@
             <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Queue is empty&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># the last item in the list</span>
 
-    <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove and return the first element of the queue (i.e., FIFO).</span>
 
 <span class="sd">        Raise Empty exception if the queue is empty.</span>
@@ -4770,7 +4770,7 @@
 </li>
 <li>
 <p>传土豆的代码实现    P105</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hot_potato</span><span class="p">(</span><span class="n">name_list</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hot_potato</span><span class="p">(</span><span class="n">name_list</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
     <span class="n">sim_queue</span> <span class="o">=</span> <span class="n">ArrayQueue</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">:</span>
         <span class="n">sim_queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -4842,38 +4842,38 @@
 </li>
 <li>
 <p>双端队列的实现    P110</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Deque</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Deque</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">add_first</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_first</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">add_last</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_last</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">delete_first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
             <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Deque is empty&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">delete_last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
             <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Deque is empty&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
             <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Deque is empty&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
             <span class="k">raise</span> <span class="n">Empty</span><span class="p">(</span><span class="s1">&#39;Deque is empty&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -4882,7 +4882,7 @@
 <li>
 <p>回文检测器的实现    P113</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 回文是指从前往后读和从后往前读是一样的。例如radar, toot</span>
-<span class="k">def</span> <span class="nf">palchecker</span><span class="p">(</span><span class="n">a_string</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">palchecker</span><span class="p">(</span><span class="n">a_string</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a_string</span><span class="p">)</span>
     <span class="n">char_deque</span> <span class="o">=</span> <span class="n">Deque</span><span class="p">()</span>
 
@@ -4991,36 +4991,36 @@
 <li>
 <p>链表的实现    P121-P139</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 首先构建Node类</span>
-<span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initdata</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initdata</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">initdata</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
 
-    <span class="k">def</span> <span class="nf">get_next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">next</span>
 
-    <span class="k">def</span> <span class="nf">set_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_data</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_data</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">new_data</span>
 
-    <span class="k">def</span> <span class="nf">set_next</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_next</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_next</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_next</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">new_next</span>       
 <span class="c1"># 构建链表</span>
-<span class="k">class</span> <span class="nc">UnordredList</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UnordredList</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">==</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
         <span class="n">temp</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">temp</span>
 
-    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
@@ -5028,7 +5028,7 @@
             <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">count</span>
 
-    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
@@ -5037,7 +5037,7 @@
                 <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="n">previous</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
@@ -5052,13 +5052,13 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">previous</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="k">while</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
         <span class="n">current</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="n">previous</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -5070,7 +5070,7 @@
         <span class="n">insert_item</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
         <span class="n">previous</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">insert_item</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">current</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span> <span class="o">!=</span> <span class="n">item</span><span class="p">:</span>
@@ -5081,7 +5081,7 @@
                 <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">count</span>
 
-    <span class="k">def</span> <span class="nf">pop</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pop</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
             <span class="n">previous</span> <span class="o">=</span> <span class="kc">None</span>
@@ -5113,7 +5113,7 @@
 <li>无序的顺序搜索的实现和分析    P9-P10</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="c1"># 无序列表的顺序搜索</span>
-<span class="k">def</span> <span class="nf">sequential_search</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sequential_search</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">while</span> <span class="n">pos</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
@@ -5128,7 +5128,7 @@
 <li>有序的顺序搜索的实现和分析    P12-P13</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="c1"># 有序列表的顺序搜索</span>
-<span class="k">def</span> <span class="nf">ordered_sequential_search</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ordered_sequential_search</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">stop</span> <span class="o">=</span> <span class="kc">False</span>
@@ -5147,7 +5147,7 @@
 <li>三种二分搜索的实现和分析    P16-P21</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="c1"># 循环实现</span>
-<span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">binary_search</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
     <span class="n">first</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">last</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
@@ -5162,7 +5162,7 @@
                 <span class="n">first</span> <span class="o">=</span> <span class="n">mid_point</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">found</span>
 <span class="c1"># 递归实现1</span>
-<span class="k">def</span> <span class="nf">binary_search_r</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">binary_search_r</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">else</span><span class="p">:</span>
@@ -5175,7 +5175,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">binary_search_r</span><span class="p">(</span><span class="n">a_list</span><span class="p">[</span><span class="n">mid_point</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span> <span class="n">item</span><span class="p">)</span>
 <span class="c1"># 递归实现2</span>
-<span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">binary_search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">low</span> <span class="o">&gt;</span> <span class="n">high</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>    <span class="c1"># interval is empty; no match</span>
     <span class="k">else</span><span class="p">:</span>
@@ -5201,14 +5201,14 @@
 <ol>
 <li>常用的散列函数    P32-P37</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hash</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a_string</span><span class="p">)):</span>
         <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">a_string</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
 
     <span class="k">return</span> <span class="nb">sum</span> <span class="o">%</span> <span class="n">table_size</span>
 
-<span class="k">def</span> <span class="nf">hash_pro</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hash_pro</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a_string</span><span class="p">)):</span>
         <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">a_string</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
@@ -5231,13 +5231,13 @@
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># slots用于存储key, data用来存储value</span>
-<span class="k">class</span> <span class="nc">HashTable</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">HashTable</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">11</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">slots</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
 
-    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">hash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_function</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
@@ -5256,13 +5256,13 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">next_slot</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span> <span class="c1"># replace the old data</span>
 
-    <span class="k">def</span> <span class="nf">hash_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hash_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">key</span> <span class="o">%</span> <span class="n">size</span>
 
-    <span class="k">def</span> <span class="nf">rehash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old_hash</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rehash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old_hash</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">old_hash</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span>
 
-    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="n">start_slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_function</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
         <span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">stop</span> <span class="o">=</span> <span class="kc">False</span>
@@ -5278,10 +5278,10 @@
                     <span class="n">stop</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="n">data</span>
 
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span> <span class="c1"># 允许对象通过索引访问其元素</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span> <span class="c1"># 允许对象通过索引访问其元素</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span> <span class="c1"># 允许对象通过索引设置其元素的值</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span> <span class="c1"># 允许对象通过索引设置其元素的值</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </code></pre></div>
 <ol>
@@ -5315,7 +5315,7 @@
 <p><img alt="img" src="https://cdn.bangwu.top/img/849589-20171015223238449-2146169197.gif" /></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 时间复杂度O(n2)，总共比较了n(n-1)/2次 也就是1+2+3+...+n-1</span>
 <span class="c1"># 通常被认为是效率最低的排序算法</span>
-<span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">pass_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pass_num</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a_list</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
@@ -5347,7 +5347,7 @@
 <p>说明：此动图为优化后的选择排序，每趟只交换一次</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 时间复杂度O(n2)</span>
 <span class="c1"># 相比于冒泡排序，降低了交换次数</span>
-<span class="k">def</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">selection_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">fill_slot</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">position_of_max</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">location</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">fill_slot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -5380,7 +5380,7 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># 时间复杂度依然是O(n2)，在基准测试中，插入排序算法的性能很不错</span>
 <span class="c1"># 最好的情况下（列表已经是有序的），每轮秩序比较一次</span>
 <span class="c1"># 移动操作和交换操作有一个重要的不同点。总体来说，交换操作的处理时间大约是移动操作的 3 倍，因为后者只需进行一次赋值</span>
-<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">insertion_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)):</span>
         <span class="n">current_value</span> <span class="o">=</span> <span class="n">a_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
         <span class="n">position</span> <span class="o">=</span> <span class="n">index</span>
