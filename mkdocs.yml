@@ -63,6 +63,7 @@ plugins:
       # prebuild_index: true # 预制索引，不成功
 markdown_extensions:
   - abbr
+  - admonition
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.snippets
