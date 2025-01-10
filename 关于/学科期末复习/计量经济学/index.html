@@ -4590,9 +4590,9 @@ R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS}
 <p>准则：</p>
 </li>
 </ul>
-<p>​ ——线性性，即参数估计量是另一个随机变量的线性函数。</p>
-<p>​ ——无偏性，即参数估计量的均值或期望值等于总体的真实值。</p>
-<p>​ ——有效性，即参数估计量在所有线性无偏估计量中具有最小方差。</p>
+<p>——线性性，即参数估计量是另一个随机变量的线性函数。</p>
+<p>——无偏性，即参数估计量的均值或期望值等于总体的真实值。</p>
+<p>——有效性，即参数估计量在所有线性无偏估计量中具有最小方差。</p>
 <ul>
 <li>这三个准则也称为估计量的小样本性质。拥有这类性质的估计量称为最佳线性无偏性(Best Liner Unbiased Estimator, BLUE)</li>
 </ul>
@@ -4604,7 +4604,7 @@ R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS}
 <ul>
 <li><span class="arithmatex">\({假定SLR.2：随机抽样（独立同分布）}\)</span></li>
 </ul>
-<p>​ <span class="arithmatex">\(\{(x_i,y_i):i = 1, 2, 3..., n\}\)</span>为来自总体中的随机样本，样本容量为 n。</p>
+<p><span class="arithmatex">\(\{(x_i,y_i):i = 1, 2, 3..., n\}\)</span>为来自总体中的随机样本，样本容量为 n。</p>
 <ul>
 <li><span class="arithmatex">\({假定SLR.3：解释变量取值有变异。}\)</span></li>
 </ul>
@@ -4767,7 +4767,6 @@ sd(\hat{\beta_1} =\text{var}(\hat{\beta}_1|x_i)= \sqrt{\frac{\sigma_u^2}{\sum(x_
 <li>结论：<span class="arithmatex">\(\hat{\beta}|x \sim N[\beta, \text{var}(\hat{\beta})]\)</span></li>
 </ul>
 <h5 id="_3">标准变换</h5>
-<p>​</p>
 <div class="arithmatex">\[
 \hat{\beta_0}|x \sim N(\beta_0, \frac{\sum x_i^2}{\sum n(x_i-\bar{x})^2}\sigma_u^2)\quad\quad\hat{\beta_1}|x \sim N(\beta_1, \frac{\sigma_u^2}{\sum(x_i-\bar{x})^2})
 \]</div>
@@ -5291,15 +5290,15 @@ F=\frac{\frac{ESS}{k}}{\frac{SSR}{n-k-1}}\sim F(k,n-k-1)
 <p>若<span class="arithmatex">\(F\ge F_{\alpha}(k, n-k-1) <span class="arithmatex">\(，则拒绝\)</span>H_0\)</span>，认为<span class="arithmatex">\(\beta_1,\beta_2,...\beta_k\)</span>不同时为零，</p>
 </li>
 </ul>
-<p>​ 说明因变量 y 和自变量<span class="arithmatex">\(x_1,x_2,...,x_k\)</span>之间整体的线性关系显著</p>
+<p>说明因变量 y 和自变量<span class="arithmatex">\(x_1,x_2,...,x_k\)</span>之间整体的线性关系显著</p>
 <ul>
 <li>第四步：做出统计决策。</li>
 </ul>
 <div class="arithmatex">\[
 F=\frac{\frac{ESS}{k}}{\frac{SSR}{n-k-1}}=\frac{R^2}{1-R^2}\frac{n-k-1}{k}
 \]</div>
-<p>​ 可以看出，伴随着样本可决系数的增加，F 统计量的值夜将不断增加，说明两者之间具有一致性。</p>
-<p>​ 结论：对方程联合显著性检验的<strong>F</strong>检验，实际上也是对<span class="arithmatex">\(R^2\)</span>的显著性检验。</p>
+<p>可以看出，伴随着样本可决系数的增加，F 统计量的值夜将不断增加，说明两者之间具有一致性。</p>
+<p>结论：对方程联合显著性检验的<strong>F</strong>检验，实际上也是对<span class="arithmatex">\(R^2\)</span>的显著性检验。</p>
 <div class="arithmatex">\[
 \bar{R}^2=1-(1-R^2)\frac{n-1}{n-k-1}
 \]</div>
@@ -5419,7 +5418,7 @@ gEMP_t=\beta_0+\beta_1gMIN_t+\beta_2gPOP_t+\beta_3gGSP_t+\beta_4gGDP_t+u_t
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月7日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月10日</span>
   </span>
 
     
