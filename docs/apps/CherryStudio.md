@@ -1,6 +1,6 @@
-## CherryStudio
+# CherryStudio
 
-https://github.com/CherryHQ/cherry-studio
+[https://github.com/CherryHQ/cherry-studio]
 
 ```css
 /* Claude 主题 2.0 */

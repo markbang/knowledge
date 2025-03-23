@@ -3,6 +3,19 @@ site_url: https://base.bangwu.top
 site_author: 棒无
 site_description: 红温小丑：一个小白友好的教程网站，作者：棒无
 copyright: Copyright © 2023-present <a href="https://github.com/markbang">棒无</a>
+
+nav:
+  - 主页:
+      - 首页: index.md
+      - 代码: code.md
+  - 代码: code/index.md
+  - 软件:
+      - 软件: apps/index.md
+      - APIfox: apps/APIfox.md
+  - 环境: env/index.md
+  - 一人之下: yrzx/index.md
+  - 关于: about/index.md
+
 theme:
   name: material
   logo: assets/joker.png
