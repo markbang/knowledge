@@ -8,13 +8,58 @@ nav:
   - 主页:
       - 首页: index.md
       - 代码: code.md
-  - 代码: code/index.md
+  - 后端:
+      - 后端: backend/index.md
+      - Python:
+          - Python: backend/Python/index.md
+          - 爬虫: backend/Python/spider/index.md
+          - 反爬虫: backend/Python/spider/anti-spider.md
+          - FastAPI: backend/Python/fastapi.md
+          - 常用库:
+              - Httpx: backend/Python/libs/httpx.md
+              - 词云: backend/Python/libs/wordcloud.md
+              - Matplotlib: backend/Python/libs/matplotlib.md
+      - Go: backend/Go/index.md
+      - 数据库: backend/SQL/index.md
+  - 前端:
+      - 前端: frontend/index.md
+      - Vue: frontend/Vue/index.md
+      - Nextjs: frontend/Nextjs/index.md
+      - TailwindCSS: frontend/TailwindCSS/index.md
   - 软件:
       - 软件: apps/index.md
-      - APIfox: apps/APIfox.md
-  - 环境: env/index.md
-  - 一人之下: yrzx/index.md
-  - 关于: about/index.md
+      - Apifox: apps/Apifox.md
+      - CherryStudio: apps/CherryStudio.md
+      - iTab: apps/iTab.md
+      - Pyenv: apps/Pyenv.md
+      - Rclone: apps/Rclone.md
+      - Rye: apps/Rye.md
+      - ShareX: apps/ShareX.md
+      - Typora: apps/Typora.md
+  - 环境:
+      - 环境: env/index.md
+      - 笔试: env/笔试.md
+      - 面经: env/面经.md
+      - 博客:
+          - Fuwarui: env/Fuwari.md
+          - 图床: env/imgbed.md
+      - Docker:
+          - Docker: env/docker.md
+          - Docker Compose: env/docker-compose.md
+      - Jupyter: env/Jupyter.md
+  - 一人之下:
+      - 一人之下: yrzx/index.md
+      - 人物:
+          - 张楚岚: yrzx/zcl.md
+          - 冯宝宝: yrzx/fbb.md
+      - 漫画: yrzx/yiren.md
+      - 锈铁篇: yrzx/xiutie.md
+  - 关于:
+      - 关于: about/index.md
+      - 站点: about/site.md
+      - 课程复习:
+          - 电子商务: about/courses/电子商务.md
+          - 管理信息系统: about/courses/管理信息系统.md
 
 theme:
   name: material
@@ -28,8 +73,10 @@ theme:
     - navigation.indexes
     - navigation.footer
     - navigation.top
+    - navigation.tracking
     - search.highlight
     - search.share
+    - search.suggest
     - content.code.copy
     - content.code.annotate
     - content.tabs.link

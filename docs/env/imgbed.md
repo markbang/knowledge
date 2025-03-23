@@ -3,4 +3,4 @@
 
 1. 传图软件[PicGo](https://picgo.github.io/PicGo-Doc/)
 2. 截图软件[ShareX](https://base.bangwu.top/软件/ShareX/)
-3. [CDN 配置](https://base.bangwu.top/environment/CDN%E6%97%A5%E8%AE%B0/)
+3. [CDN 配置](https://base.bangwu.top/env/CDN/)
