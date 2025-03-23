@@ -1,0 +1,1408 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="红温小丑：一个小白友好的教程网站，作者：棒无">
+      
+      
+        <meta name="author" content="棒无">
+      
+      
+        <link rel="canonical" href="https://base.bangwu.top/about/courses/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/joker.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>数据挖掘 - 棒无の知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="棒无の知识库" class="md-header__button md-logo" aria-label="棒无の知识库" data-md-component="logo">
+      
+  <img src="../../../assets/joker.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            棒无の知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数据挖掘
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label=""  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label=""  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label=""  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  主页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../code/index.md" class="md-tabs__link">
+        
+  
+    
+  
+  代码
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../apps/" class="md-tabs__link">
+          
+  
+    
+  
+  软件
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../env/" class="md-tabs__link">
+        
+  
+    
+  
+  环境
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../yrzx/" class="md-tabs__link">
+        
+  
+    
+  
+  一人之下
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="棒无の知识库" class="md-nav__button md-logo" aria-label="棒无の知识库" data-md-component="logo">
+      
+  <img src="../../../assets/joker.png" alt="logo">
+
+    </a>
+    棒无の知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            主页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../apps/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    软件
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            软件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../apps/APIfox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APIfox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../env/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环境
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../yrzx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    一人之下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.数据挖掘概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.数据挖掘概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 数据挖掘的定义与数据挖掘过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 基本数据类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 数据挖掘的分类与常用技术
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.数据准备与相似度计算
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.数据准备与相似度计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 数据的详细理解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 特征提取与类型转换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 数据清洗
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 相似度与距离
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3、4.关联模式挖掘
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.聚类分析
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.聚类分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 聚类分析概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2K-means 聚类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Means 算法里,当邻近度函数采用(？ )的时候,合适的质心是簇中各点的中位数。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 层次聚类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 密度聚类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 聚类算法评估
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.分类算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.分类算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 分类算法概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 分类算法评估
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 朴素贝叶斯分类器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4 决策树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.5 神经网络
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.文本挖掘
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.文本挖掘">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 文本挖掘概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 文本特征提取
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 文本表示技术
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 文本相似度计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 文本分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.6 情感分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.7 主题模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">数据挖掘</h1>
+<p>以下是根据课件所示的总结，推荐看完课件再看总结。大体上还是以理解为主，自行斟酌。</p>
+<h2 id="1">1.数据挖掘概述</h2>
+<p>数据挖掘概述、数据准备与数据相似度计算、关联模式挖掘、聚类分析、数据分类技术、文本挖掘技术。</p>
+<h3 id="11">1.1 数据挖掘的定义与数据挖掘过程</h3>
+<p>背景：新时代，数据越来越多——数据是数据时代生产力的革命性要素。【技术进步的推动：存储器的飞速发展与处理器的发展】，但是出现的问题就是淹没在数据中，不能定制合适的决策。随着各个领域的发展，数据挖掘渐渐形成。</p>
+<p><code>数据挖掘</code>(Data Mining)的定义：从大量的、不完全的、有噪声的、模糊的、随机的实际应用数据中，提取隐含在其中的、人们事先不知道的、但又是潜在有用的信息和知识的过程。</p>
+<ul>
+<li>数据源必须是真实的、大量的、含有噪声的</li>
+<li>发现的是用户感兴趣的知识</li>
+<li>发现的知识要可接受、可理解、可运用</li>
+<li>并不要求发现放之四海皆准的知识，仅支持特定的问题的发现</li>
+</ul>
+<p>数据挖掘标准流程：<code>CRISP-DM</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">商业理解</span><span class="o">-&gt;</span><span class="n">数据理解</span><span class="o">-&gt;</span><span class="n">数据准备</span><span class="p">(</span><span class="n">最花费时间</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">建立模型</span><span class="o">-&gt;</span><span class="n">模型评估</span><span class="o">-&gt;</span><span class="n">模型部署</span>
+</code></pre></div>
+<h3 id="12">1.2 基本数据类型</h3>
+<p>非依赖型数据和依赖型数据</p>
+<ol>
+<li><code>非依赖型数据</code>：二维表，行是一组记录，列是一组字段</li>
+<li><code>依赖型数据</code>：具有时间、空间或结构上的依赖关系，改变次序、位置有影响。如时间序列数据、图数据等</li>
+</ol>
+<h3 id="13">1.3 数据挖掘的分类与常用技术</h3>
+<p>有监督又被称为“有老师的学习”，无监督被称为“没有老师的学习”。还有一个强化学习。</p>
+<p><img alt="bangwu_20240622142834" src="https://cdn.bangwu.top/img/bangwu_20240622142834.webp" /></p>
+<p>常用技术有：<code>分类技术</code>、<code>回归分析</code>、<code>关联规则</code>、<code>聚类分析</code>、<code>偏差检测</code>。</p>
+<p>数据分析是“后见之明”，数据挖掘是“先见之明”</p>
+<h2 id="2">2.数据准备与相似度计算</h2>
+<h3 id="21">2.1 数据的详细理解</h3>
+<p>数据-&gt;信息-&gt;知识-&gt;智慧【不是，怎么又是这个。。。。】</p>
+<p><code>数据</code>是数据对象和它们属性的集合。</p>
+<p><code>属性值</code>是赋给一个属性的<strong>数字的</strong>或<strong>字符的</strong>值。</p>
+<h3 id="22">2.2 特征提取与类型转换</h3>
+<p><code>特征提取</code>是将低级特征类型转换为高级特征类型的过程。【说白了就是说白了】</p>
+<p>类型转换可以用到的方法有：离散化、二元化、特征词量化等</p>
+<h3 id="23">2.3 数据清洗</h3>
+<p>数据预处理的功能之一，就是发现并纠正数据文件中可识别错误的步骤，包括对噪声、缺失值、异常值的处理。</p>
+<h3 id="24">2.4 相似度与距离</h3>
+<p><code>相似性度量</code> (Similarity Measurement) 用于衡量两个元素之间的相似性程度或两者之间的距离 (Distance)。<code>距离度量</code>的是指元素之间的不相似性 (Dissimilarity)。</p>
+<ol>
+<li>
+<p>简单属性之间的相似性或相异性
+   <img alt="bangwu_20240622150002" src="https://cdn.bangwu.top/img/bangwu_20240622150002.webp" /></p>
+</li>
+<li>
+<p>数据对象之间的相异性（距离度量）</p>
+</li>
+</ol>
+<p>​ 注：以下的 x, y 不是点值，而是向量 x(x1, x2, x3)</p>
+<ul>
+<li>
+<p>欧氏距离</p>
+<p>$$
+ d \left(x, y\right) = \sqrt{\sum_{i=1}^{n} \left(x_i - y_i\right)^2}
+ $$</p>
+</li>
+<li>
+<p>闵氏距离（闵可夫斯基距离）
+  $$
+  d \left(x, y\right) = \left(\sum_{i=1}^{n} |x_i - y_i|^p\right)^{\frac{1}{p}}
+  $$
+  p = 1 时，称为曼哈顿距离
+  $$
+  d \left(x, y\right) = \sum_{i=1}^{n} |x_i - y_i|
+  $$
+  p = 2 时，就是欧氏距离 ⬆️
+  例如：(7, 2)和(4, 6)两个点的距离</p>
+</li>
+</ul>
+<h2 id="34">3、4.关联模式挖掘</h2>
+<p>目标是确定数据项之间的关联性，常见的如商品之间的关联。</p>
+<p><code>项集</code>：项的集合，K 项集就是恰好包含 k 个项的项集</p>
+<p><code>支持度计数</code>：σ，指这个项集在总事务中出现的次数</p>
+<p><code>支持度</code>：就是支持度计数除以总事务数</p>
+<div class="arithmatex">\[
+% 支持度的公式
+\text{Support}(A) = \frac{\text{事务中包含项集 } A \text{ 的数量}}{\text{总事务数量}}
+\]</div>
+<p><code>频繁项集</code>：一个项集的支持度大于等于预先设定的最小支持度</p>
+<p><code>置信度</code>：T 事务中已经包含 X 的情况下，包含 Y 的百分比，即条件概率。</p>
+<div class="arithmatex">\[
+% 置信度的公式
+\text{Confidence}(A \rightarrow B) = \frac{\text{Support}(A \cap B)}{\text{Support}(A)}
+\]</div>
+<p><code>提升度</code>：指 A 项和 B 项一同出现的频率，但同时要考虑这两项各自出现的频率。</p>
+<div class="arithmatex">\[
+% 提升度的公式
+\text{Lift}(A \rightarrow B) = \frac{\text{Support}(A \cap B)}{\text{Support}(A) \times \text{Support}(B)}
+\]</div>
+<p>频繁项集的生成</p>
+<ul>
+<li><code>Apriori</code>算法：先找频繁一项集，再找二项，以此类推。</li>
+<li><code>FP-growth</code>FP 增长算法：两次扫描数据库建立一个 FP 树，避免了产生大量的候选项集。效率更高</li>
+</ul>
+<p>关联规则的评估：看提升度，支持度和置信度仅用于度量</p>
+<p><img alt="bangwu_20240622154249" src="https://cdn.bangwu.top/img/bangwu_20240622154249.webp" /></p>
+<h2 id="5">5.聚类分析</h2>
+<h3 id="51">5.1 聚类分析概述</h3>
+<p>“物以类聚，人以群分”，<code>聚类</code>就是在预先不知道欲划分类的情况下，根据信息
+相似度原则进行信息集聚的一种方法。主要用到的是相异性的距离度量。</p>
+<p>常用的聚类方法：基于划分的 K-means 聚类，层次聚类，DBSACN 等</p>
+<h3 id="52k-means">5.2K-means 聚类</h3>
+<p>K-means 是基于划分的聚类，将样本划分成 k 个不重合的类（cluster）每个簇关联一个质心，每个点都分配给离质心最近的簇，K 的数量必须事先人工指定。<img alt="动图" src="https://cdn.bangwu.top/img/v2-169818722555497ae9d461a7352fabd1_b.webp" /></p>
+<p>由于初始质心的选择对结果有影响，可以有以下解决方案：</p>
+<ol>
+<li>多次运行聚类</li>
+<li>选择多于 K 的初始质心，然后在其中选择二</li>
+<li>二分 K-means 聚类（不易受到初始化问题的影响）</li>
+</ol>
+<p><strong>K-means 的评估</strong>：</p>
+<div class="arithmatex">\[
+% SSE 公式
+\text{SSE} = \sum_{i=1}^{k} \sum_{x \in C_i} \| x - \mu_i \|^2
+\]</div>
+<p>其中: k 是簇的数量 C_i 是第 i 个簇 x 是簇 C_i 中的一个数据点 u_i 是簇 C_i 的中心 | x - u_i |^2 表示数据点 x 与簇中心 u_i 之间的欧氏距离的平方</p>
+<p><strong>SSE 值越小，表示聚类效果越好</strong>，减少 SSE 的一个简单方法是增加 K，即簇的数量</p>
+<p>二分 K-means 算法步骤：【<strong>理解</strong>】</p>
+<ol>
+<li>
+<p><strong>初始化</strong>：将所有数据点作为一个簇。</p>
+</li>
+<li>
+<p>迭代过程：</p>
+</li>
+<li>
+<p>对当前簇进行二分（即将簇分成两个子簇）。</p>
+</li>
+<li>使用传统的 K-means 算法对这两个子簇进行优化。</li>
+<li>
+<p>选择使得总平方误差和（SSE）最小的二分结果。</p>
+</li>
+<li>
+<p><strong>重复</strong>：继续对簇进行二分，直到达到预定的簇数量 𝑘<em>k</em> 为止。</p>
+</li>
+</ol>
+<h3 id="k-means">K-Means 算法里,当邻近度函数采用(？ )的时候,合适的质心是簇中各点的中位数。</h3>
+<ol>
+<li>曼哈顿距离。质心：中位数。目标函数：最小化对象到其簇质心的距离和</li>
+<li>平方欧几里德距离。质心：均值。目标函数：最小化对象到其簇质心的距离的平方 和</li>
+<li>余弦。质心：均值。最大化对象与其质心的余弦相似度和</li>
+<li>Bregman 散度。质心：均值。目标函数：最 小化对象到其簇质心的 Bregma n 散度和</li>
+</ol>
+<h3 id="53">5.3 层次聚类</h3>
+<p><code>层次聚类</code>(Hierarchical Clustering)是聚类算法的一种，通过计算不同类别数据点间的相似度来创建一棵有层次的嵌套聚类树。</p>
+<p>论数据集应该聚类成多少个簇，通常是在讨论我们在什么尺度上关注这个数据集。层次聚类算法相比划分聚类算法的优点之一是可以在不同的尺度上（层次）展示数据集的聚类情况。层次聚类使用欧式距离来计算不同类别数据点间的距离（相似度）。</p>
+<p><img alt="img" src="https://cdn.bangwu.top/img/1180120-20180721004137992-1540374438.png" /></p>
+<p>基于层次的聚类算法（Hierarchical Clustering）可以是凝聚的（Agglomerative）或者分裂的（Divisive），取决于层次的划分是“自底向上”还是“自顶向下”。</p>
+<p>凝聚的层次聚类计算两个组合数据点间距离的方法有三种，Min-单链或最短边、Max-全链或最长边、Average-组平均或平均边。方法的优劣自行斟酌。</p>
+<p>层次聚类的问题：</p>
+<ul>
+<li>算法复杂度较高</li>
+<li>一旦决定合并两个簇，就不能撤销</li>
+<li>没有可以直接最小化的目标函数</li>
+<li>对噪声和异常值的<strong>敏感</strong>难以处理大小不同的簇和凸形状的簇</li>
+</ul>
+<h3 id="54">5.4 密度聚类</h3>
+<p>DBSCAN 作为一种典型的密度聚类方法，它的聚类原理当然是和密度有关。简单来讲，DBSCAN 一般假定样本的类别可以通过样本分布的紧密程度决定，于是先发现密度较高的点，然后把相近的高密度点逐步连成一片，进而找到不同的类别（簇）。</p>
+<p><img alt="" src="https://cdn.bangwu.top/img/document-uid214893labid6102timestamp1531806243633.png" /></p>
+<p>如上图所示，假设我们指定密度阈值 <code>MinPts = 4</code>，那么图中的红色点就是核心点，因为它们的 𝜀-邻域里包含最少 4 个点（包括自己），由于它们之间相互可达，它们形成了一个聚类。图中蓝色的点不是核心点，但它们在核心点的圆圈内，所以也属于同一个聚类，也就是边界点。而紫色点既不是核心点，又不是边界点，即被称之为异常点（噪声点）。</p>
+<h3 id="55">5.5 聚类算法评估</h3>
+<p>有效性度量：</p>
+<ul>
+<li>外部指标：有监督的，提供标签（一般是人工标记）</li>
+<li>内部标记：无监督的，SSE，凝聚度(WSS)和分离度(BSS)，轮廓系数</li>
+<li>相对指标：用于比较两个不同的聚类过程或簇，综合内外部指标</li>
+</ul>
+<div class="arithmatex">\[
+% 凝聚度 (WSS) 公式
+\text{WSS} = \sum_{i=1}^{k} \sum_{x \in C_i} \| x - \mu_i \|^2
+\]</div>
+<div class="arithmatex">\[
+% 分离度 (BSS) 公式
+\text{BSS} = \sum_{i=1}^{k} n_i \| \mu_i - \mu \|^2
+\]</div>
+<h2 id="6">6.分类算法</h2>
+<h3 id="61">6.1 分类算法概述</h3>
+<p>分类是在一群已经知道类别标号的样本中，训练一种分类器，让其能够对某种未知的样本进行分类。分类算法属于一种有监督的学习。分类算法的分类过程就是建立一种分类模型来描述预定的数据集或概念集，通过分析由属性描述的数据库元组来构造模型。分类的目的就是使用分类对新的数据集进行划分，其主要涉及分类规则的准确性、过拟合、矛盾划分的取舍等。</p>
+<p>常用的分类算法包括：NBC（Naive Bayesian Classifier，朴素贝叶斯分类）算法、LR（Logistic Regress，逻辑回归）算法、ID3（Iterative Dichotomiser 3 迭代二叉树 3 代）决策树算法、C4.5 决策树算法、C5.0 决策树算法、SVM（Support Vector Machine，支持向量机）算法、KNN(K-Nearest Neighbor，K 最近邻近)算法、ANN（Artificial Neural Network，人工神经网络）算法等</p>
+<h3 id="62">6.2 分类算法评估</h3>
+<p>推荐阅读：https://www.cnblogs.com/guoyaohua/p/classification-metrics.html</p>
+<h3 id="63">6.3 朴素贝叶斯分类器</h3>
+<p>分类原理：利用贝叶斯公式根据某特征的先验概率计算出其后验概率，然后选择具有最大后验概率的类作为该特征所属的类。</p>
+<p>之所以称之为”朴素”，是因为贝叶斯分类只做最原始、最简单的假设：所有的特征之间是统计独立的。</p>
+<p>朴素贝叶斯分类器的特点：</p>
+<ul>
+<li>对孤立噪声点、不相关属性的鲁棒性，可以忽略缺失值</li>
+<li>条件独立性假设问题，采用贝叶斯网络</li>
+</ul>
+<h3 id="64">6.4 决策树</h3>
+<p><code>决策树</code>分为<code>分类决策树</code>和<code>回归决策树</code>。有两大核心问题：</p>
+<ol>
+<li>决策树的生长：决策树的分枝准则，有 C5.0、CHAID、QUEST、CART。【根部节点，中间节点，停止分支】</li>
+<li>决策树的剪枝：预修剪、后修剪</li>
+</ol>
+<p><code>ID3算法</code>：计算信息增益/信息获利</p>
+<p><code>C4.5算法</code>：是<code>ID3</code>的修订版，采用 GainRatio 来加以改进方法，选取有最大 GainRatio 的分割变量作为准则，避免 ID3 算法过度配适的问题。</p>
+<p><code>C5.0算法</code>：是 C4.5 算法的修订版 ，适用在处理大数据集，采用 Boosting 方式提高模型准确率，又称为 Boosting Trees，在软件上的计算速度比较快，占用的内存资源较少。</p>
+<p><code>CART算法</code>：这种算法即可以用于分类，也可以用于回归问题。CART 算法使用了基尼系数取代了信息熵模型。CART 与 C4.5/C5.0 算法的最大相异之处是其在每一个节点上都是采用二分法，也就是一次只能够有两个子节点，C4.5/5.0 则在每一个节点上可以产生不同数量的分枝。</p>
+<p>各个算法的计算可能会考到，请自行查阅。</p>
+<h3 id="65">6.5 神经网络</h3>
+<p>人工神经网络——<code>ANN</code>：</p>
+<p><img alt="bangwu_20240622182337" src="https://cdn.bangwu.top/img/bangwu_20240622182337.webp" /></p>
+<ol>
+<li>ANN 是由人工神经元连接的多层网络结构。一般组成：输入层、隐藏层、输出层。</li>
+<li>网络是由一些列的结点和连接节点的线组成。</li>
+<li>节点是运算单元，接受输入、处理输入、进行输出。</li>
+<li>连线代表了节点间信息流动，可以单向、可以双向。</li>
+</ol>
+<p>神经元模型<strong>五要素</strong>：权重、激活函数、前向传播、<a href="https://blog.csdn.net/weixin_37641832/article/details/104917847">反向传播</a>、训练。</p>
+<p>对 ANN 权重的理解：</p>
+<ol>
+<li>一个连接总是带有一个权重值</li>
+<li>权重初始化问题</li>
+<li>如果某个连接重要，那么它将具有比那些不重要的连接更大的权重值</li>
+<li>ANN 的学习或训练就是基于输入和期望的输出来改变连接的权重</li>
+<li>ANN 中输入数据与输出数据不能改变，能改变的只有权重</li>
+</ol>
+<p>训练过程就是反向传播误差，调整权重，让误差越来越小。</p>
+<blockquote>
+<p>看到这里可以去浏览一遍<a href="https://alist.bangwu.top/%E9%98%BF%E9%87%8C%E4%BA%91-%E6%A3%92%E6%97%A0/%E8%AF%BE%E4%BB%B6/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC7%E8%AE%B2%20%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%8E%E5%88%86%E7%BB%84%E9%A1%B9%E7%9B%AE%E8%AE%A8%E8%AE%BA.pdf">要点回顾</a></p>
+</blockquote>
+<h2 id="7">7.文本挖掘</h2>
+<h3 id="71">7.1 文本挖掘概述</h3>
+<p><code>文本挖掘</code>是抽取有效、新颖、有用、可理解的、散布在文本文件中的有价值知识，并且利用这些知识更好地组织信息的过程。</p>
+<h3 id="72">7.2 文本特征提取</h3>
+<p>把从文本中抽取出的特征词进行量化来表示文本信息，转换成计算机可以识别处理的信息。</p>
+<p>目前大多数中文文本挖掘系统都采用词作为特征项，作为特征项的词称作<code>特征词</code>。</p>
+<p>通过构造评估函数，对特征集合中的每个特征进行评估，并对每个特征打分，这样每个词语都获得一个评估值，又称为<code>权值</code>。</p>
+<p><strong>决定文本特征提取效果的主要因素是评估函数的质量</strong>，<code>TF-IDF</code>就是一个评估函数</p>
+<p>分词-&gt;词性标注</p>
+<h3 id="73">7.3 文本表示技术</h3>
+<p><img alt="bangwu_20240622184908" src="https://cdn.bangwu.top/img/bangwu_20240622184908.webp" /></p>
+<p><code>文本表示</code>就是将文本转化成数学上的向量表示。如何把字符串转化为向量，就是文本表示的核心问题。【one-hot，word2vec】</p>
+<h3 id="74">7.4 文本相似度计算</h3>
+<p>相似度是相关度的一种特殊情况,包括上下位关系和同义关系。由此得出, 文本相似度越高, 则相关度越大, 但是相关度越大并不能说明相似度高。</p>
+<p>文本相似度计算：基于字符串、基于语料库、基于知识组织、其他方法。</p>
+<h3 id="75">7.5 文本分类</h3>
+<p>文本分类是指根据预先定义的主题类别，按照一定的规则给文档集合中未知类别的文本自动确定一个类别。</p>
+<p><img alt="bangwu_20240622185558" src="https://cdn.bangwu.top/img/bangwu_20240622185558.webp" /></p>
+<h3 id="76">7.6 情感分析</h3>
+<p>情感分析是对文本进行上下文挖掘，识别和提取文本中的主观信息（积极、消极和中性），帮助企业了解其品牌、产品或服务的用户情感。</p>
+<p><img alt="bangwu_20240622185720" src="https://cdn.bangwu.top/img/bangwu_20240622185720.webp" /></p>
+<h3 id="77">7.7 主题模型</h3>
+<p><strong>主题模型</strong>（Topic Model）在机器学习和自然语言处理等领域是用来在一系列文档中发现抽象主题的一种统计模型。直观来讲，如果一篇文章有一个中心思想，那么一些特定词语会更频繁的出现。比方说，如果一篇文章是在讲狗的，那“狗”和“骨头”等词出现的频率会高些。如果一篇文章是在讲猫的，那“猫”和“鱼”等词出现的频率会高些。而有些词例如“这个”、“和”大概在两篇文章中出现的频率会大致相等。但真实的情况是，一篇文章通常包含多种主题，而且每个主题所占比例各不相同。因此，如果一篇文章 10%和猫有关，90%和狗有关，那么和狗相关的关键字出现的次数大概会是和猫相关的关键字出现次数的 9 倍。一个主题模型试图用数学框架来体现文档的这种特点。主题模型自动分析每个文档，统计文档内的词语，根据统计的信息来断定当前文档含有哪些主题，以及每个主题所占的比例各为多少。</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月23日 13:42:51">2025年3月23日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2024年4月18日 14:22:23">2024年4月18日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+<!-- Insert generated snippet here -->
+<script
+  src="https://giscus.app/client.js"
+  data-repo="markbang/knowledge"
+  data-repo-id="R_kgDOKV8Tgg"
+  data-category="Q&A"
+  data-category-id="DIC_kwDOKV8Tgs4Cjdz9"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector('script[src*=giscus]');
+
+  // Set palette on initial load
+  var palette = __md_get('__palette');
+  if (palette && typeof palette.color === 'object') {
+    var theme = palette.color.scheme === 'slate' ? 'transparent_dark' : 'light';
+
+    // Instruct Giscus to set theme
+    giscus.setAttribute('data-theme', theme);
+  }
+
+  // Register event handlers after documented loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    var ref = document.querySelector('[data-md-component=palette]');
+    ref.addEventListener('change', function () {
+      var palette = __md_get('__palette');
+      if (palette && typeof palette.color === 'object') {
+        var theme =
+          palette.color.scheme === 'slate' ? 'transparent_dark' : 'light';
+
+        // Instruct Giscus to change theme
+        var frame = document.querySelector('.giscus-frame');
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          'https://giscus.app'
+        );
+      }
+    });
+  });
+</script>
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2023-present <a href="https://github.com/markbang">棒无</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/markbang" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/markbangwu" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://mastodon.social/@bangwu" target="_blank" rel="noopener me" title="mastodon.social" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://bangwu.top" target="_blank" rel="noopener" title="bangwu.top" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M192 32c0 17.7 14.3 32 32 32 123.7 0 224 100.3 224 224 0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32m0 96c0 17.7 14.3 32 32 32 70.7 0 128 57.3 128 128 0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192-17.7 0-32 14.3-32 32m-96 16c0-26.5-21.5-48-48-48S0 117.5 0 144v224c0 79.5 64.5 144 144 144s144-64.5 144-144-64.5-144-144-144h-16v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.zhihu.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

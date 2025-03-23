@@ -1,0 +1,2180 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="红温小丑：一个小白友好的教程网站，作者：棒无">
+      
+      
+        <meta name="author" content="棒无">
+      
+      
+        <link rel="canonical" href="https://base.bangwu.top/backend/SQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86%E7%82%B9/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/joker.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>数据库原理与应用考试相关-2023 - 棒无の知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-2023" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="棒无の知识库" class="md-header__button md-logo" aria-label="棒无の知识库" data-md-component="logo">
+      
+  <img src="../../../assets/joker.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            棒无の知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数据库原理与应用考试相关-2023
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label=""  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label=""  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label=""  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  主页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../code/index.md" class="md-tabs__link">
+        
+  
+    
+  
+  代码
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../apps/" class="md-tabs__link">
+          
+  
+    
+  
+  软件
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../env/" class="md-tabs__link">
+        
+  
+    
+  
+  环境
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../yrzx/" class="md-tabs__link">
+        
+  
+    
+  
+  一人之下
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="棒无の知识库" class="md-nav__button md-logo" aria-label="棒无の知识库" data-md-component="logo">
+      
+  <img src="../../../assets/joker.png" alt="logo">
+
+    </a>
+    棒无の知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            主页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../apps/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    软件
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            软件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../apps/APIfox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APIfox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../env/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环境
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../yrzx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    一人之下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="-2023">数据库原理与应用考试相关-2023</h1>
+<p>----------------------------------------</p>
+<p><strong>考试题型</strong></p>
+<p><strong>一. 选择题（10分，5题，每题2分）</strong></p>
+<p><strong>二. 填空题（15分，5题，每题3分）</strong></p>
+<p><strong>三. 简答题（15分，3题，每题5分，要求尽量详细，逻辑清晰，层次分明）</strong></p>
+<p><strong>四. 设计题（60分。第一题10分；第二题50分，共10道编程题，每题5分）</strong></p>
+<hr />
+<p><strong>* 出题思路：从以下重点中出相应的题目，然后再随机选择上述题型和数目，再做微调。</strong></p>
+<p>----------------------------------------</p>
+<p>考试重点：</p>
+<h1 id="_1">一. 绪论</h1>
+<ol>
+<li>
+<p><code>数据库的4个基本概念 P10</code></p>
+</li>
+<li>
+<p>数据，数据库，数据库管理系统，数据库系统</p>
+</li>
+<li>
+<p><code>数据库的定义 P14</code></p>
+</li>
+<li>
+<p>数据库是长期存储在计算机内有组织、大量、共享的数据集合</p>
+</li>
+<li>
+<p><code>数据库（系统）的基本特征 P14 / P37 - P41</code></p>
+</li>
+<li>
+<p>可供用户共享，冗余度低且易扩充，较高的数据独立性</p>
+</li>
+<li>
+<p><code>数据库管理系统的主要功能 P17 - P19</code></p>
+</li>
+<li>
+<p>数据定义功能（DDL），数据组织、存储和管理，数据操纵功能（DML），数据库的事务管理和远行管理，数据库的建立和维护功能，数据库和网络中其他软件系统的通信功能</p>
+</li>
+<li>
+<p><code>数据库系统的构成 P20 - P21</code></p>
+</li>
+<li>
+<p>数据库，数据库管理系统（及其开发工具），应用程序和数据库管理员</p>
+</li>
+<li>
+<p><code>数据库系统的特点 P37-P41</code></p>
+</li>
+<li>
+<p>数据结构化，数据的共享性高、冗余度低、易扩充，数据独立性高，数据由DBMS统一管理和控制</p>
+</li>
+<li>
+<p><code>数据独立性高如何理解 P40</code></p>
+</li>
+<li>
+<p>指一个应用程序的数据库模式和数据存储方式不依赖于其他应用程序或操作系统平台的特定实现</p>
+</li>
+<li>
+<p><code>数据库管理系统如何控制数据共享 P41</code></p>
+</li>
+<li>
+<p>数据库访问权限控制，数据库元数据控制，数据加密，数据库复制，数据库分区，</p>
+</li>
+<li>
+<p><code>概念模型、逻辑模型和物理模型的概念 P47</code></p>
+</li>
+<li>
+<p>概念模型是对现实世界的抽象和简化，它用于描述数据库中的数据和数据之间的关系，是数据库设计的核心，是数据库建模的基础；</p>
+</li>
+<li>
+<p>逻辑模型是概念模型的逻辑表示，它用于存储数据库中的数据和数据之间的关系；</p>
+</li>
+<li>
+<p>物理模型是逻辑模型在物理存储设备上的表示，它用于存储和管理数据库中的数据；</p>
+</li>
+<li>
+<p><code>数据模型的组成要素 P57</code></p>
+</li>
+<li>
+<p>实体，属性，关系，实体间的约束，数据类型和精度</p>
+</li>
+<li>
+<p><code>数据模型中的数据结构 P58</code></p>
+</li>
+<li>
+<p>数据模型中的数据结构是指数据在数据库中的存储方式和表示方式；</p>
+</li>
+<li>
+<p>表，视图，索引，主键和外键，</p>
+</li>
+<li>
+<p><code>数据模型中的数据操作 P59</code></p>
+</li>
+<li>
+<p>增加、删除和修改，插入操作，查询操作，数据备份和恢复操作，事务操作</p>
+</li>
+<li>
+<p><code>数据模型中的完整性约束条件 P60</code></p>
+</li>
+<li>
+<p>是指用于保证数据库中数据完整性的一组规则；</p>
+</li>
+<li>
+<p>实体完整性，属性完整性，参照完整性，用户定义完整性</p>
+</li>
+<li>
+<p><code>关系模型谁提出的？ P84</code></p>
+</li>
+<li>
+<p>美国IBM公司San Jose研究室的研究员E.F.Codd</p>
+</li>
+<li>
+<p><code>类型和值的概念 P95 - P96</code></p>
+</li>
+<li>
+<p>类型：类型是用来描述数据结构和数据类型的标识符，它们通常以关键字的形式出现；</p>
+</li>
+<li>
+<p>常见类型：整数型，字符型和日期型;</p>
+</li>
+<li>
+<p>值：值是指数据的具体内容和值，通常是用户输入或程序产生的数据；</p>
+</li>
+<li>
+<p><code>数据库系统的三级模式结构 P99 - P105</code></p>
+</li>
+<li>
+<p>物理层：物理层是指数据存储数据的实际物理设备，确保数据的可靠性和安全性；</p>
+</li>
+<li>概念层：概念层是指数据库中的数据模型和数据结构，是数据库设计和实现的核心；</li>
+<li>
+<p>逻辑层：逻辑层是指数据库管理系统中的应用程序，是数据库管理和维护的直接对象</p>
+</li>
+<li>
+<p><code>数据库系统的两级映射功能 P107 - P114</code></p>
+</li>
+</ol>
+<p>是指数据库管理系统将数据存储在物理设备上，并将数据提供给用户进行查询和操作；</p>
+<p>数据库：是数据库管理系统中存储数据的地方，是数据库管理系统的物理实现；</p>
+<p>数据库管理系统应用程序：是数据库管理系统中的应用程序。数据库管理和维护的直接对象</p>
+<h1 id="_2">二. 关系数据库</h1>
+<ol>
+<li>
+<p><code>关系数据库的提出者和时间 P4</code></p>
+</li>
+<li>
+<p>E.F.Codd</p>
+</li>
+<li>
+<p><code>何为关系 P7</code></p>
+</li>
+<li>
+<p>是数据库的一种基本概念，用于描述数据库中数据之间的关系，是实体之间的关系，描述了实体之间的联系和交互，可以是一对一，一对多，多对多</p>
+</li>
+<li>
+<p><code>域 P9</code></p>
+</li>
+<li>
+<p>域是一组具有相同数据类型的值的集合</p>
+</li>
+<li>
+<p><code>笛卡尔积 P10 - P14</code></p>
+</li>
+<li>
+<p>笛卡尔积是域上的一种集合运算</p>
+</li>
+<li>
+<p><code>关系和笛卡尔积的关系 P17，P19</code></p>
+</li>
+<li>
+<p>关系是笛卡尔积的有限子集</p>
+</li>
+<li>
+<p><code>码 P18</code></p>
+</li>
+<li>
+<p>码是指一种编码方式，用于表示特定的数据或者实体，通常有一组数字、字母或者其他符号组成</p>
+</li>
+<li>
+<p><code>三类关系 P20</code></p>
+</li>
+<li>
+<p>一对一：两个表之间一对一的关系；</p>
+</li>
+<li>一对多：两个表之间的一对多的关系；</li>
+<li>
+<p>多对多：指三个表及以上表之间的多对多的关系；</p>
+</li>
+<li>
+<p><code>基本关系的性质 P22</code></p>
+</li>
+<li>
+<p>1.列是同质的，即每一列中的分量是同一类型的数据，来自同一个域</p>
+</li>
+<li>2.不同的列可出自同一个域，称其中的每一列为一个属性，不同的属性要给予不同的属性名</li>
+<li>3.列的顺序无所谓，即列的次序可以任意交换</li>
+<li>4.任意两个元组的候选码不能取相同的值</li>
+<li>5.行的顺序无所谓，即列的次序可以任意交换</li>
+<li>
+<p>6.分量必须取原子值，即每一个分量都必须是不可分的数据项</p>
+</li>
+<li>
+<p><code>关系模式的定义 P26</code></p>
+</li>
+<li>
+<p>关系的描述称为关系描述</p>
+</li>
+<li>
+<p><code>基本的关系操作 P36</code></p>
+</li>
+<li>
+<p>查询操作，插入、删除、修改操作两大部分</p>
+</li>
+<li>
+<p>查询操作又可以分为选择，投影，连接，除，并，差，交，笛卡尔积</p>
+</li>
+<li>
+<p><code>SQL的4大功能 P39</code></p>
+</li>
+<li>
+<p>数据定义，数据查询，数据操纵，数据控制</p>
+</li>
+<li>
+<p><code>三类完整性约束 P41</code></p>
+</li>
+<li>
+<p>实体完整性，参照完整性，用户定义完整性</p>
+</li>
+<li>
+<p><code>实体完整性规则 P43 - P44</code></p>
+</li>
+<li>
+<p>若属性（指一个或一组属性）A是基本关系R的主属性，则A不能取空值</p>
+</li>
+<li>
+<p><code>外码 P50</code></p>
+</li>
+<li>
+<p>设F是基本关系R的一个或一组属性，但不是关系R的码，KS是S的主码。如果F与KS相对应，则称F是R的外码，并称基本关系R为参照关系，基本关系S为被参照关系或目标关系</p>
+</li>
+<li>
+<p><code>参照完整性 P55 - P56</code></p>
+</li>
+<li>
+<p>又称引用完整性，是相关联的两个表之间的约束</p>
+</li>
+<li>
+<p><code>用户定义的完整性 P60</code></p>
+</li>
+<li>
+<p>用户定义的完整性就是针对某一具体关系数据库的约束条件，它反映某一具体应用所涉及的数据必须满足的语义要求</p>
+</li>
+<li>
+<p><code>关系代数运算符 P64</code></p>
+</li>
+<li>
+<p>并，差，交，笛卡尔积和选择，投影，连接，除运算</p>
+</li>
+<li>
+<p><code>传统的集合运算 P66 - P74</code></p>
+</li>
+<li>
+<p>并，差，交，笛卡尔积</p>
+</li>
+<li>
+<p><code>专门的关系运算（除运算除外） P85 - P103</code></p>
+</li>
+<li>
+<p>选择，投影，连接，除运算</p>
+</li>
+<li>
+<p><code>关系运算符的运用 P110</code></p>
+</li>
+<li>
+<p>自己学</p>
+</li>
+</ol>
+<h1 id="sql">三. SQL</h1>
+<ol>
+<li>
+<p><code>SQL的中文和英文 1P51</code></p>
+</li>
+<li>
+<p>结构化查询语言，Structured Query Language SQL</p>
+</li>
+<li>
+<p><code>SQL的功能和特点 1P55 - 1P61</code></p>
+</li>
+<li>
+<p>综合统一，高度非过程化，面向集合的操作方式，以同一种语法结构提供多种使用方式，</p>
+</li>
+<li>语言简洁，易学易用</li>
+<li>
+<p>数据查询，数据操纵，数据定义，数据控制</p>
+</li>
+<li>
+<p><code>内模式/模式/外模式 与 存储文件/基本表/视图 之间概念关联 1P64 - 1P67</code></p>
+</li>
+<li>
+<p>外模式：又称子模式或用户模式，是用户可以看见和使用的局部数据的逻辑结构和特征的描述；</p>
+</li>
+<li>模式：又称逻辑模式，是数据库中全体数据的逻辑结构和特征的描述，是所有数据的公共数据视图</li>
+<li>
+<p>内模式：又称为存储模式，是数据库物理结构和存储方式的描述，是数据在数据库内部的表示方式</p>
+</li>
+<li>
+<p>数据按外模式的描述提供给用户，按内模式的描述存储在硬盘上，而模式介于外，内模式之间，既不涉及外部的访问，也不涉及内部的存储，从而起到隔离作用，有利于数据的独立性，内模式依赖于全局逻辑结构，但可以独立于具体的存储设备。</p>
+</li>
+<li>
+<p>基本表：独立存在的表；</p>
+</li>
+<li>视图：一个虚拟的表，是从一个或几个基本表导出的表；</li>
+<li>
+<p>数据库中只存放视图的定义而不存放视图对应的数据，这些数据仍存放在导出视图的基本表中，当基本表的数据发生变化时，从视图中查询出来的数据也随之改变</p>
+</li>
+<li>
+<p><code>数据定义的所有代码 1P74 - 1P99</code></p>
+</li>
+<li>
+<p>创建：create schema; create table; create view; create index;</p>
+</li>
+<li>删除：drop schema; drop table; drop view; drop index;</li>
+<li>
+<p>修改：alter table; alter index</p>
+</li>
+<li>
+<p><code>数据字典是什么 1P101</code></p>
+</li>
+<li>
+<p>数据字典是关系数据库管理系统内部的一组系统表，它记录了数据库中所有的定义信息，包括关系模式定义，视图定义，索引定义，完整性约束定义，各类用户对数据库的操作权限，统计信息等。</p>
+</li>
+<li>
+<p><code>单表查询 1P106 - 1P137</code></p>
+</li>
+<li>
+<p>单表查询是指仅涉及一个表的查询</p>
+</li>
+<li>
+<p><code>连接查询 2P8 - 2P24</code></p>
+</li>
+<li>
+<p>若一个查询同时涉及到两个以上的表，则称之为连接查询。</p>
+</li>
+<li>
+<p><code>嵌套查询（EXISTS除外） 2P26 - 2P48</code></p>
+</li>
+<li>
+<p>一个SELECT-FROM-WHERE语句称为一个查询块，将一个查询块嵌套在另一个查询块的WHERE子句或HAVING短语的条件中的查询称为嵌套查询。</p>
+</li>
+<li>
+<p>如果子查询的查询条件依赖父查询，则称为相关子查询，整个查询语句称为相关嵌套查询，</p>
+</li>
+<li>
+<p>反之则称为不相关子查询，</p>
+</li>
+<li>
+<p><code>集合查询 2P58 - 2P63</code></p>
+</li>
+<li>
+<p>并操作：UNION，交操作：INTERSECT，差操作：EXCEPT</p>
+</li>
+<li>
+<p><code>基于派生表的查询 2P65 - 2P66</code></p>
+</li>
+<li>
+<p>子查询不仅可以出现在WHERE子句中，还可以出现在FROM子句中，这时子查询生成的临时派生表成为主查询的查询对象。</p>
+</li>
+<li>
+<p><code>插入数据 3P6 - 3P13</code></p>
+</li>
+<li>
+<p>INSERT INTO（表名）VALUES（值）</p>
+</li>
+<li>
+<p>INSERT INTO（表名）子查询</p>
+</li>
+<li>
+<p><code>修改数据 3P15 - 3P20</code></p>
+</li>
+<li>
+<p>UPDATE（表名）SET（列名）WHERE（条件）</p>
+</li>
+<li>
+<p><code>删除数据 3P22 - 3P27</code></p>
+</li>
+<li>
+<p>DELETE FROM（表名）WHERE（条件）</p>
+</li>
+<li>
+<p><code>Drop和DELETE的区别</code></p>
+</li>
+<li>
+<p>Drop一般用于删除整体性数据，如表，模式，索引，视图和完整性限制，</p>
+</li>
+<li>
+<p>DELETE用于删除局部性数据，如表中的某一元组</p>
+</li>
+<li>
+<p><code>空值相关 3P29 - 3P37</code></p>
+</li>
+<li>
+<p>空值是一个很特殊的值，含有不确定性，</p>
+</li>
+<li>
+<p>属性定义（域定义）中有NOT NULL约束条件的不能取空值，加了UNIQUE限制的属性不能取空值，码属性不能取空值</p>
+</li>
+<li>
+<p><code>视图的特点 3P39</code></p>
+</li>
+<li>
+<p>视图：一个虚拟的表，是从一个或几个基本表导出的表；</p>
+</li>
+<li>数据库中只存放视图的定义而不存放视图对应的数据，这些数据仍存放在导出视图的基本表中，当基本表的数据发生变化时，从视图中查询出来的数据也随之改变</li>
+<li>
+<ol>
+<li><code>建立视图 3P42 - 3P52</code></li>
+</ol>
+</li>
+<li>
+<p>CREATE VIEW（视图名）AS（子查询）[WITH CHECK OPTION]</p>
+</li>
+<li>
+<p><code>删除视图 3P53</code></p>
+</li>
+<li>
+<p>DROP VIEW（视图名）[CASCADE]</p>
+</li>
+<li>
+<p>CASCADE可以将该视图导出的其他视图一并删除</p>
+</li>
+<li>
+<p><code>视图更新的限制 3P66 - 3P68</code></p>
+</li>
+<li>
+<p>1.若视图是由两个以上基本表导出的，则此视图不允许更新；</p>
+</li>
+<li>2.若视图的字段来自字段表达式或常数，则不允许对此视图执行INSERT和UPDATE操作，但允许使用DELETE操作；</li>
+<li>3.若视图的字段来自聚集函数，则此视图不允许更新；</li>
+<li>4,若视图定义中含有GROUP BY语句，则此视图不允许更新；</li>
+<li>5.若视图定义中含有DISTINCT短语，则此视图不允许更新；</li>
+<li>6.若视图定义中有嵌套查询，并且内层查询的FROM子句中涉及的表也是导出该视图的基本表，则此视图不允许更新；</li>
+<li>
+<p>7.一个不允许更新的视图上定义的视图也不允许更新。</p>
+</li>
+<li>
+<p><code>视图的作用 P72</code></p>
+</li>
+<li>
+<p>1.简化用户的操作；</p>
+</li>
+<li>2.使用户能以多种角度看待同一数据；</li>
+<li>3.对重构数据库提供了一定程度的逻辑独立性；</li>
+<li>4.能够对机密数据提供安全保护；</li>
+<li>5.适当利用视图可以更清晰地表达查询。</li>
+</ol>
+<h1 id="_3">四. 数据库安全性</h1>
+<ol>
+<li>
+<p><code>数据库安全性问题的提出 P4</code></p>
+</li>
+<li>
+<p>数据库的安全性是指保护数据库以防止不合法使用所造成的数据泄露、更改或破坏</p>
+</li>
+<li>
+<p><code>数据库的不安全因素 P8 - P11</code></p>
+</li>
+<li>
+<p>1.非授权用户对数据库的恶意存取和破坏；</p>
+</li>
+<li>2.数据库中重要或敏感的数据被泄露；</li>
+<li>
+<p>3.安全环境的脆弱性；</p>
+</li>
+<li>
+<p><code>数据库安全性控制的流程 P35</code></p>
+</li>
+<li>
+<p>1.用户标识和鉴定（静态口令鉴别，动态口令鉴别，生物特征鉴别，智能卡鉴别）；</p>
+</li>
+<li>2.存取控制（自主存取控制，强制存取控制）；</li>
+<li>3.授权：授予和回收（grant，revoke，创建数据库模式的权限）；</li>
+<li>
+<p>4.数据库角色（角色的创建，给角色授权，将一个角色授予其他的角色或用户，角色权限的收回）；</p>
+</li>
+<li>
+<p><code>用户身份鉴定的概念和方法 P38 - P43</code></p>
+</li>
+<li>
+<p>静态口令鉴别：</p>
+</li>
+<li>动态口令鉴别：</li>
+<li>生物特征鉴别：</li>
+<li>
+<p>智能卡鉴别：</p>
+</li>
+<li>
+<p><code>存取控制 P46</code></p>
+</li>
+<li>
+<p>存取控制机制主要包括定义用户权限和合法权限检查两部分；</p>
+</li>
+<li>
+<p><code>常用的两种存取控制方法 P47 - P48</code></p>
+</li>
+<li>
+<p>自主存取控制：用户对于不同的数据库对象有不同的存取权限，不同的用户也对同一对象也有不同的权限，而且用户还可将其拥有的存取权限转授给其他用户，因此自主存取控制十分灵活；</p>
+</li>
+<li>强制存取控制：每一个数据库对象被标以一定的密级，每一个以后也被授予某一个级别的许可证。对于任意一个对象，只有具有合法许可证的用户才可以存取，因此强制存取控制相比比较严格。</li>
+<li>
+<ol>
+<li><code>权限授予的SQL代码 P54 - P68</code></li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">GRANT</span><span class="err">（权限）</span><span class="k">ON</span><span class="err">（对象类型）（对象名）</span><span class="k">TO</span><span class="err">（用户）</span><span class="p">[</span><span class="k">WITH</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">OPTION</span><span class="p">]</span>
+</code></pre></div>
+<ol>
+<li><code>权限回收的SQL代码 P69 - P73</code></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">REVOKE</span><span class="err">（权限）</span><span class="k">ON</span><span class="err">（对象类型）（对象名）</span><span class="k">FROM</span><span class="err">（用户）</span><span class="p">[</span><span class="k">CASCADE</span><span class="o">|</span><span class="k">RESTRICT</span><span class="p">]</span>
+</code></pre></div>
+<ol>
+<li>
+<p><code>数据库角色的概念 P76</code></p>
+</li>
+<li>
+<p>数据库角色是被命名的一组与数据库操作相关的权限，角色是权限的集合。</p>
+</li>
+<li>
+<p><code>数据库角色的SQL代码 P77 - P83</code></p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">ROLE</span><span class="err">（角色名）；</span>
+
+<span class="k">GRANT</span><span class="err">（权限）</span><span class="k">ON</span><span class="err">（对象类型）（对象名）</span><span class="k">TO</span><span class="err">（用户）</span><span class="p">[</span><span class="k">WITH</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">OPTION</span><span class="p">]</span><span class="err">；</span>
+
+<span class="k">REVOKE</span><span class="err">（权限）</span><span class="k">ON</span><span class="err">（对象类型）（对象名）</span><span class="k">FROM</span><span class="err">（用户）</span><span class="p">[</span><span class="k">CASCADE</span><span class="o">|</span><span class="k">RESTRICT</span><span class="p">]</span>
+</code></pre></div>
+<p><code>视图机制在安全性控制中的作用</code></p>
+<ul>
+<li>视图机制间接地实现支持存取谓词的用户权限定义，通过视图机制把要保密的数据对无权存取的用户隐藏起来，从而自动对数据提供一定程度的安全保护</li>
+</ul>
+<h1 id="_4">五. 数据库完整性</h1>
+<ol>
+<li>
+<p><code>数据库完整性的概念 P4</code></p>
+</li>
+<li>
+<p>数据库的完整性是指数据的正确性和相容性；</p>
+</li>
+<li>数据的正确性是指数据是符合现实世界语义、反映当前实际状况的；</li>
+<li>
+<p>数据的相容性是指数据库同一对象在不同关系表中的数据是符合逻辑的</p>
+</li>
+<li>
+<p><code>数据库完整性和安全性的异同 P5</code></p>
+</li>
+<li>
+<p>数据的完整性是为了防止数据库中存在不符合语义的数据，也就是防止数据库中存在不正确的数据；</p>
+</li>
+<li>
+<p>数据的安全性是保护数据库防止恶意破坏和非法存取。</p>
+</li>
+<li>
+<p><code>数据库管理系统如何维护数据库的完整性 P6 - P10</code></p>
+</li>
+<li>
+<p>1.提供定义完整性约束条件的机制；</p>
+</li>
+<li>2.提供完整性检查的方法；</li>
+<li>
+<p>3.进行违约处理；</p>
+</li>
+<li>
+<p><code>实体完整性定义的代码 P13 - P16</code></p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="err">（列名）</span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="err">；</span>
+
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="err">（列名）（必须设置列名不为空值）</span>
+</code></pre></div>
+<ol>
+<li><code>实体完整性的检查和违约处理 P18</code></li>
+</ol>
+<p>自动检查：</p>
+<p>1.检查主码值是否唯一，如果不唯一则拒绝插入或修改；</p>
+<p>2.检查主码的各个属性是否为空，只要有一个为空就拒绝插入或修改</p>
+<p>检查记录中主码是否唯一的一种方法就是进行全表扫描，依次判断表中每一条记录的主码值与将插入记录的主码值（或者修改的新主码值）是否相同</p>
+<ol>
+<li>
+<p><code>参照完整性定义的代码 P24 - P25</code></p>
+</li>
+<li>
+<p>参照完整性在CREATE TABLE中用FOREIGN KEY短语定义哪些列为外码，用REFERENCES短语指明这些外码参照哪些表的主码</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="err">（列名）</span><span class="k">REFERENCES</span><span class="w"> </span><span class="err">（表名）（列名）</span>
+</code></pre></div>
+<ol>
+<li>
+<p><code>参照完整性的检查和违约处理 P27 - P35</code></p>
+</li>
+<li>
+<p>拒绝（NO ACTION）执行：不允许改操作执行。该策略一般设置为默认策略；</p>
+</li>
+<li>级联（CASCADE）操作：当删除或修改被参照表的一个元组导致与参照表的不一致时，删除或修改参照表中所有导致不一致的元组</li>
+<li>
+<p>设置为空值：当删除或修改被参照表的一个元组时造成了不一致，则将参照表中的所有造成不一致的元组的对应属性设置为空值</p>
+</li>
+<li>
+<p><code>用户定义完整性 P40 - P50</code></p>
+</li>
+<li>
+<p>用户定义的完整性就是针对某一具体应用的数据必须满足的语义要求。</p>
+</li>
+</ol>
+<p>一.  <strong>属性上的约束条件p163</strong></p>
+<ol>
+<li>属性上约束条件的定义</li>
+<li>属性上约束条件的检查和违约处理</li>
+</ol>
+<p>二.  <strong>元组上的约束条件p163</strong></p>
+<ol>
+<li>元组上约束条件的定义</li>
+<li>元组上约束条件的检查和违约处理</li>
+<li>完整性约束命名的SQL P53 - P57</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">CONSTRAINT</span><span class="err">（完整性约束条件名）（完整性约束条件）</span>
+
+<span class="err">完整性约束条件包括</span>
+<span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="err">，</span><span class="k">UNIQUE</span><span class="err">，</span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="err">，</span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="err">，</span><span class="n">CHECK短语</span>
+<span class="err">可以使用</span><span class="k">ALTER</span><span class="w"> </span><span class="n">TABLE语句修改表中的完整性限制</span>
+
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">C4</span><span class="p">;</span>
+
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">C1</span><span class="w"> </span><span class="k">CHECK</span><span class="p">(</span><span class="n">Sno</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">900000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">999999</span><span class="p">);</span>
+</code></pre></div>
+<ol>
+<li><code>触发器的定义、激活与删除 P68 - P78</code></li>
+</ol>
+<p><strong>触发器</strong>是一种特殊类型的<a href="https://so.csdn.net/so/search?q=存储过程&amp;spm=1001.2101.3001.7020">存储过程</a>，它不同于存储过程，主要是通过事件触发而被执行的，即不是主动调用而执行的；而存储过程则需要主动调用其名字执行</p>
+<p><a href="https://so.csdn.net/so/search?q=触发器&amp;spm=1001.2101.3001.7020">触发器</a>：trigger，是指事先为某张表绑定一段代码，当表中的某些内容发生改变（增、删、改）的时候，系统会自动触发代码并执行。</p>
+<div class="highlight"><pre><span></span><code><span class="k">delimiter</span><span class="w"> </span><span class="err">自定义结束符号</span>
+<span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="err">触发器名字</span><span class="w"> </span><span class="err">触发时间</span><span class="w"> </span><span class="err">触发事件</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="err">表</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span>
+<span class="k">begin</span>
+<span class="w">    </span><span class="c1">-- 触发器内容主体，每行用分号结尾</span>
+<span class="k">end</span>
+<span class="err">自定义的结束符合</span>
+
+<span class="k">delimiter</span><span class="w"> </span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>触发器是用户定义在关系表上的一类由事件驱动的特殊过程。</li>
+<li>触发器的定义P168</li>
+<li>触发器的执行是由触发事件激活，并由数据库服务器自动执行的。</li>
+<li>
+<ol>
+<li>执行该表上的BEFORE触发器</li>
+</ol>
+</li>
+<li>激活触发器的SQL语句</li>
+<li>执行该表上的AFTER触发器</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="err">删除触发器的</span><span class="n">SQL语法</span><span class="err">：</span><span class="k">DROP</span><span class="w"> </span><span class="k">TRIGGER</span><span class="err">（触发器名）</span><span class="k">ON</span><span class="err">（表名）</span>
+</code></pre></div>
+<h1 id="_5">六. 关系数据理论</h1>
+<ul>
+<li>
+<p>数据依赖是一个关系内部属性与属性之间的一种约束关系。这种约束关系是通过属性间值的相等与否体现出来的数据间相关联系。它是现实世界属性间相互联系的抽象，是数据内在的性质，是语义的体现。</p>
+</li>
+<li>
+<p><code>现实世界已知语义得到的函数依赖 P13 - P14</code></p>
+</li>
+<li>
+<p>函数依赖是普遍存在的一种数据依赖</p>
+</li>
+<li>不合适的函数依赖关系会导致很多问题：</li>
+<li>1.数据冗余</li>
+<li>2.更新异常</li>
+<li>3.插入异常</li>
+<li>
+<p>4.删除异常</p>
+</li>
+<li>
+<p><code>函数依赖 P22 - P26</code></p>
+</li>
+<li>
+<p>函数依赖和别的数据依赖一样是语义范畴的概念，只能根据语义来确定一个函数依赖。</p>
+</li>
+<li>
+<p><code>平凡函数依赖与非平凡函数依赖 P27 - P28</code></p>
+</li>
+<li>
+<p><code>完全函数依赖与部分函数依赖 P29 - P30</code></p>
+</li>
+<li>
+<p><code>传递函数依赖 P31</code></p>
+</li>
+</ul>
+<p><img alt="image-20230618223115913" src="https://bangwu.oss-cn-shanghai.aliyuncs.com/img/202306182243473.png" /></p>
+<ol>
+<li><code>1NF、2NF、3NF、BCNF的定义以及判断 P41 - P56，P81</code></li>
+</ol>
+<p><strong>第一范式（1NF）</strong></p>
+<p>定义</p>
+<blockquote>
+<p>(1NF, Normal Form) 如果一个关系模式R中的每个属性A的域值都是原子的，即属性值是不可再分的，则关系模式R属于第一范式，简记为R ∈ 1NF。若数据库模式R中的每个关系模式都是1NF，数据库模式 R∈1NF。</p>
+</blockquote>
+<p>这个非常好理解，基本上，只要题目给了，他就是一个满足第一范式的关系模式</p>
+<p><strong>第二范式（2NF）</strong></p>
+<p>定义</p>
+<p><img alt="第二范式" src="https://img-blog.csdnimg.cn/20181125213408784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbmRsZV9saWdodA==,size_16,color_FFFFFF,t_70" /></p>
+<p>2NF指的就是，我们的关系模式中的所有非主属性完全依赖于每个键。什么意思呢，这里呢最重要的是理解什么是<code>非主属性</code>，什么是<code>主属性</code>，什么是<code>键</code></p>
+<p>推荐看另外一个博客的总结，理解一下键的含义： https://blog.csdn.net/fjxcsdn/article/details/76549751
+看我之前写的博客理解完全依赖和部分依赖的含义： <a href="https://blog.csdn.net/Candle_light/article/details/84424505">数据库基础（3）函数依赖-平凡依赖，完全依赖，部分依赖，传递依赖</a>
+那非主属性和主属性怎么理解呢，举个例子：关系模式R=｛A,B,C,D｝ ,已知R的候选键是AD ， 那么AD中的A和D就是主属性，而B和C就是非主属性。<strong><code>包含在候选键里的属性就是主属性！</code></strong></p>
+<p>现在理解键和依赖关系的含义之后，我们就可以好好看看2NF是个什么了</p>
+<p><strong><code>举例子1：</code></strong></p>
+<blockquote>
+<h4 id="rabc-f-b-c-ac-b-2nf">已知，R=｛A，B，C｝，函数依赖集为 F ={ B →C, AC →B } ，判断关系模式是不是2NF</h4>
+</blockquote>
+<p>那么我们<strong>首先</strong>看这个R关系模式里面的键是谁</p>
+<p>利用<code>数据库基础（4）中我们学习的属性闭包算法</code>求出R的候选键为：AC</p>
+<p>所以<strong>第二步</strong> 就是看是否有非主属性部分依赖于主属性AC （我们这里的非主属性就是B）</p>
+<p>很明显并没有B部分依赖于A或者C ，所以R是2NF</p>
+<p><strong><code>举例子2</code></strong></p>
+<blockquote>
+<h4 id="rabcdf-a-cad-b-2nf">已知，R=｛A，B，C，D｝，函数依赖集为F ={ A →C,AD →B }，判断关系模式是不是2NF</h4>
+</blockquote>
+<p>和第一个例子一样，我们首先看这个R中的键是谁</p>
+<p>用属性闭包算法，求出R的候选键为：AD （AD+ = ABCD） ，所以C和B都是非主属性，A和D是主属性</p>
+<p>所以，很明显，我们发现 AD中的A竟然可以单独决定C（A-&gt;C），所以C部分依赖于AC ，存在非主属性部分依赖于主属性，R不是2NF</p>
+<p><strong>第三范式（3NF）</strong></p>
+<p>定义</p>
+<p><img alt="3NF" src="https://img-blog.csdnimg.cn/20181125213645372.png" /></p>
+<p>第三范式的意思就是，<strong>R中<code>没有非主属性传递依赖</code>于R的键</strong>,R才是3NF</p>
+<p>这里也隐含了一个条件，那就是，如果是R中的<code>主属性传递依赖</code>于R的键，那么R也是满足3NF的</p>
+<p><strong>注意区分主属性传递依赖和非主属性传递依赖喔</strong></p>
+<p><code>举例子1</code></p>
+<blockquote>
+<h4 id="rabc-f-b-c-ac-b-3">已知R(A,B,C), 其函数依赖集为 F ={ B →C, AC →B };该关系模式是否第3范式</h4>
+</blockquote>
+<p>我们来判断判断，首先第一步，找键！我们发现AC是候选键（AC+=ABC，通过属性闭包算法求的候选键）</p>
+<p>同时由于AC-&gt;B , B-&gt;C ，所以C传递依赖于AC ，那么R是不是3NF呢？</p>
+<p>R 当然是3NF啦，因为R的候选键是AC，所以C是主属性，因此 这里是<code>主属性C</code>传递依赖于键AC，R是3NF</p>
+<p>注意！<code>只有当非主属性传递依赖于R的时候,R才不是3NF</code></p>
+<p><code>举例子2</code></p>
+<blockquote>
+<h4 id="rabcd-f-ab-c-c-d-3">R(A,B,C，D), 其函数依赖集为 F ={AB →C, C →D };该关系模式是否第3范式</h4>
+</blockquote>
+<p>首先第一步，还是找键！ 发现AB是候选键， 但是由于AB -&gt; C , C -&gt; D ，所以D传递依赖于AB</p>
+<p>那么R是3NF吗？</p>
+<p>R当然不是3NF啦，因为D是非主属性，所以这里是非主属性D传递依赖于主属性AB，因此就不满足3NF的定义啦</p>
+<p><strong><code>Boyce-Codd范式（BCNF）</code></strong></p>
+<p>定义</p>
+<p><img alt="BCNF" src="https://img-blog.csdnimg.cn/20181125213719359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NhbmRsZV9saWdodA==,size_16,color_FFFFFF,t_70" /></p>
+<p>BCNF最高级了，它指的是R中<code>没有任何属性传递依赖于R中的任何一个键</code>。所以联想到上面我们3NF中的举例1，它虽然满足3NF，但是由于有主属性传递依赖于键，它就不是BCNF。</p>
+<p>看例题，判断是几范式</p>
+<p><img alt="例题" src="https://img-blog.csdnimg.cn/20181125213738319.png" /></p>
+<p>很明显，两个都是BCNF，因为都没有任何属性存在传递依赖</p>
+<p>最后说一下，满足BCNF的关系模式，肯定也满足3NF；同理，满足3NF的关系模式，肯定也满足2NF</p>
+<h1 id="_6">七. 数据库设计</h1>
+<ol>
+<li><code>数据库设计的概念 1P6</code></li>
+</ol>
+<p>数据库设计是指对于一个给定的应用环境，构造（设计）优化的数据库逻辑模式和物理结构，并据此建立数据库及其应用系统，使之能够有效地存储和管理数据，满足各种用户的应用需求，包括信息管理系统要求和数据操作要求。</p>
+<ol>
+<li><code>数据库高效率的运行环境 1P7</code></li>
+</ol>
+<p>数据库数据的存取效率，数据库存储空间的利用率，数据库系统运行管理的效率</p>
+<ol>
+<li><code>数据库设计的特点 1P10 - 1P12</code></li>
+</ol>
+<p>试探性，反复性，多步性，面向数据</p>
+<ol>
+<li>
+<p><code>数据库设计的基本步骤 1P18</code></p>
+</li>
+<li>
+<p>需求设计</p>
+</li>
+<li>概念结构设计</li>
+<li>逻辑结构设计</li>
+<li>物理结构设计</li>
+<li>数据库实施</li>
+<li>
+<p>数据库运行和维护</p>
+</li>
+<li>
+<p><code>数据库设计各个阶段的数据设计描述 1P25</code></p>
+</li>
+<li>
+<p>P 209</p>
+</li>
+<li>
+<p><code>需求分析的任务 1P36 - 1P38</code></p>
+</li>
+</ol>
+<p>需求分析的任务是通过详细调查现实世界要处理的对象（组织、部门、企业等），充分了解原系统（手工系统或计算机系统）的工作概况，明确用户的各种需求，然后在此基础上确实新系统的功能。调查的重点是“数据”和“处理”，通过调查、收集与分析，获得用户对数据库的如下要求：</p>
+<ul>
+<li>信息要求</li>
+<li>处理要求</li>
+<li>
+<p>安全性与完整性要求</p>
+</li>
+<li>
+<p><code>需求分析的方法 1P40</code></p>
+</li>
+<li>
+<p>调查组织机构的情况</p>
+</li>
+<li>调查各部门的业务活动情况</li>
+<li>在熟悉业务活动的基础上，协助用户明确对新系统的各种要求，包括信息要求，处理要求，安全性与完整性要求</li>
+<li>确定新系统的边界</li>
+</ul>
+<p>常见的调查方法：</p>
+<ul>
+<li>跟班作业</li>
+<li>开调查会</li>
+<li>请专人介绍</li>
+<li>询问</li>
+<li>设计调查表请用户填写</li>
+<li>
+<p>查阅记录</p>
+</li>
+<li>
+<p><code>E-R模型的提出者 1P58</code></p>
+</li>
+<li>
+<p>P.P.S.Chen</p>
+</li>
+<li>
+<p><code>实体之间联系的类型 1P59 - 1P67</code></p>
+</li>
+<li>
+<p>两个实体型之间的联系：一对一，一对多，多对多</p>
+</li>
+<li>两个以上的实体型之间的联系</li>
+<li>
+<p>单个实体型内的联系</p>
+</li>
+<li>
+<p><code>E-R图 1P68 - 1P74</code></p>
+</li>
+</ul>
+<p>实体用矩形，属性用椭圆形，联系用菱形</p>
+<ol>
+<li><code>实体与属性的划分原则 1P77</code></li>
+</ol>
+<p>能作为属性对待的尽量作为属性对待</p>
+<ol>
+<li>
+<p><code>E-R图的集成 1P87 - 1P94</code></p>
+</li>
+<li>
+<p>合并，解决各分E-R图之间的冲突</p>
+</li>
+<li>修改和重构，消除不必要的冗余</li>
+<li>
+<p>冲突类型：1.属性冲突，2.命名冲突，3.结构冲突</p>
+</li>
+<li>
+<p><code>E-R图向关系模型的转换 2P7 - 2P13</code></p>
+</li>
+<li>
+<p>一个实体型转换为一个关系模式，关系的属性就是实体的属性，关系的码就是实体的码</p>
+</li>
+<li>
+<p><code>优化数据模型的方法 2P19</code></p>
+</li>
+<li>
+<p>确定数据依赖</p>
+</li>
+<li>对于各个关系模式之间的数据依赖进行极小化处理</li>
+<li>按照数据依赖的理论对关系模式逐一进行分析</li>
+<li>根据需求分析阶段得到的处理要求分析对于这样的应用环境这些模式是否合适，确定是否要对某些模式进行合并或分解</li>
+<li>
+<p>对关系模型进行必要分解，提高数据操作效率和存储空间利用率。常用的两种分解方法是水平分解和垂直分解</p>
+</li>
+<li>
+<p><code>数据库物理设计的步骤 2P32</code></p>
+</li>
+<li>
+<p>为一个给定的逻辑数据模型选取一个最适合应用要求的物理结构的过程，就是数据库的物理设计。</p>
+</li>
+<li>
+<ol>
+<li>确定数据库的物理结构，在关系数据库中主要指存取方法和存储结构</li>
+</ol>
+</li>
+<li>对物理结构进行评价，评价的重点是时间和空间效率</li>
+<li>数据库管理系统的常用存取方法 2P39</li>
+<li>
+<p>索引方法和聚簇(clustering)方法，B+树索引和hash索引 P236</p>
+</li>
+<li>
+<p><code>影响数据存放位置和存储结构的因素 2P53</code></p>
+</li>
+<li>
+<p>存取时间，存储空间利用率，维护代价，硬件环境，应用需求</p>
+</li>
+</ol>
+<h1 id="_7">八. 数据库编程</h1>
+<ol>
+<li>
+<p><code>python关联MySQL的包（Package）是什么 P9</code></p>
+</li>
+<li>
+<p>PyMySQL</p>
+</li>
+<li>
+<p><code>游标的好处 P22</code></p>
+</li>
+<li>
+<p>游标是系统为用户开设的一个数据缓冲区，存放SQL语句的执行结果，每个游标区都有一个名字。</p>
+</li>
+<li>
+<p>用户可以通过游标逐一获取记录并赋给主变量，交由主语言进一步处理。</p>
+</li>
+<li>
+<p>使用游标功能后，我们可以将得到的结果先保存起来，然后可以随意进行自己的编程，得到我们最终想要的结果集。</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">Cursor</span> <span class="o">=</span> <span class="p">(</span><span class="n">数据库名</span><span class="p">)</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">cursor</span>
+</code></pre></div>
+<ol>
+<li>
+<p><code>tornado web服务器的四大组件 P62-P63</code></p>
+</li>
+<li>
+<p>ioloop实例，app实例，handler类，路由表</p>
+</li>
+<li>
+<p><code>GET和POST的区别 P65</code></p>
+</li>
+<li>
+<p>传参方式不同：Get把参数包含在URL中，Post通过request body传递参数；</p>
+</li>
+<li>URL可见性不同：get请求的参数可以直接看到，而post请求的参数URL不可见；</li>
+<li>传递数据大小不同：get请求对传递的数据长度受到URL大小的限制，而post请求没有长度限制</li>
+<li>后退页面影响不同：get后退不会有影响，而post后退会重新进行提交；</li>
+<li>
+<p>编码方式不同：get请求只支持URL编码，而post请求支持多种编码方式；</p>
+</li>
+<li>
+<p><code>SQL 变量的定义 P73 - P76</code></p>
+</li>
+</ol>
+<p>在SQL中，变量是一种用于存储数据的容器</p>
+<ol>
+<li>
+<p><code>流程控制 P80 - P97</code></p>
+</li>
+<li>
+<p>在存储过程和自定义函数中可以使用流程控制语句来控制程序的流程。</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="err">流程控制语句：</span>
+<span class="k">IF</span><span class="w"> </span><span class="err">语句；</span>
+<span class="n">CASE语句</span><span class="err">；</span>
+<span class="n">LOOP语句</span><span class="err">；</span>
+<span class="n">LEAVE语句</span><span class="err">；</span>
+<span class="n">ITERATE语句</span><span class="err">；</span>
+<span class="n">REPEAT语句</span><span class="err">；</span>
+<span class="n">WHILE语句</span><span class="err">；</span>
+</code></pre></div>
+<ol>
+<li>
+<p><code>匿名块与命名块 P100</code></p>
+</li>
+<li>
+<p>匿名块：每次执行时都要进行编译，它不能被存储在数据库中，也不能在其他过程化SQL块中调用；</p>
+</li>
+<li>
+<p>命名块：编译后保存在数据库中，称为持久性存储模块，可以被反复调用，运行速度较快，过程和函数时命名块。</p>
+</li>
+<li>
+<p><code>存储过程的定义 P102</code></p>
+</li>
+<li>
+<p>存储过程是一种在数据库中存储复杂程序，以便外部程序调用的一种数据库对象</p>
+</li>
+<li>
+<p><code>存储过程的优点 P103</code></p>
+</li>
+<li>
+<p>远行效率高</p>
+</li>
+<li>降低了客户机和服务器之间的通信量</li>
+<li>
+<p>方便实施企规则</p>
+</li>
+<li>
+<p><code>存储过程的缺点 P104</code></p>
+</li>
+<li>
+<p>存储过程，往往定制化与特定的数据库上，因为支持的编程语言不同。当切换到其他厂商的数据库系统时，需要重写原有的存储过程</p>
+</li>
+<li>
+<p>存储过程的性能调校与撰写，受限于各种数据库系统</p>
+</li>
+<li>
+<p><code>存储过程的SQL代码 P107 - P117</code></p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="err">创建存储过程：</span><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="err">（过程名）（参数）（过程化</span><span class="n">SQL块</span><span class="err">）</span>
+
+<span class="err">声明语句结束符，可以自定义：</span><span class="k">DELIMITER</span><span class="w"> </span><span class="err">$$或</span><span class="k">DELIMITER</span><span class="o">//</span>
+
+<span class="k">DELIMITER</span><span class="w"> </span><span class="err">$$</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">delete_sno</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="n">p_sno</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+
+<span class="k">BEGIN</span>
+
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_sno</span><span class="w"> </span><span class="p">;</span>
+
+<span class="k">END</span><span class="err">$$</span>
+
+<span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
+
+<span class="err">执行存储过程：</span><span class="k">CALL</span><span class="err">（过程名）（参数）</span>
+
+<span class="k">CALL</span><span class="w"> </span><span class="n">delete__sno</span><span class="p">(</span><span class="err">‘</span><span class="mi">201215122</span><span class="err">’</span><span class="p">);</span>
+
+<span class="err">删除存储过程：</span><span class="k">DROP</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="err">（过程名）</span>
+</code></pre></div>
+<ol>
+<li>
+<p><code>函数与存储过程的异同 P119</code></p>
+</li>
+<li>
+<p>同：都是持久存储模块</p>
+</li>
+<li>
+<p>异：函数必须指定返回的类型</p>
+</li>
+<li>
+<p><code>函数的SQL代码 P120 - P122</code></p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="mi">1</span><span class="p">.</span><span class="err">定义语句格式：</span><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="err">（函数名）（参数）</span><span class="k">RETURN</span><span class="err">（类型）（过程化</span><span class="n">SQL块</span><span class="err">）</span>
+
+<span class="k">DELIMITER</span><span class="w"> </span><span class="o">//</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">func_student</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">f_Sno</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+
+<span class="k">RETURNS</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">DETERMINISTIC</span><span class="w"> </span>
+
+<span class="k">COMMENT</span><span class="w"> </span><span class="err">’</span><span class="w"> </span><span class="err">查</span><span class="w"> </span><span class="err">询</span><span class="w"> </span><span class="err">某</span><span class="w"> </span><span class="err">个</span><span class="w"> </span><span class="err">学</span><span class="w"> </span><span class="err">生</span><span class="w"> </span><span class="err">的</span><span class="w"> </span><span class="err">姓</span><span class="w"> </span><span class="err">名</span><span class="w"> </span><span class="err">’</span>
+
+<span class="k">BEGIN</span><span class="w"> </span>
+
+<span class="k">RETURN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">Sname</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Sno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f_Sno</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+
+<span class="k">END</span><span class="w"> </span><span class="o">//</span><span class="w"> </span>
+
+<span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
+
+<span class="mi">2</span><span class="p">.</span><span class="err">函数的执行语句格式：</span><span class="k">SELECT</span><span class="err">（函数名）（参数）</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="n">func_student</span><span class="p">(</span><span class="err">‘</span><span class="mi">201215123</span><span class="err">’</span><span class="p">);</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="n">func_student</span><span class="p">(</span><span class="n">sno</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Stduent</span><span class="p">;</span>
+
+<span class="mi">3</span><span class="p">.</span><span class="err">删除函数：</span><span class="k">DROP</span><span class="w"> </span><span class="k">FUNCTION</span><span class="err">（函数名）</span>
+</code></pre></div>
+<h1 id="mysql">九. MySQL优化原理</h1>
+<ol>
+<li>
+<p><code>MySQL各组件之间协同工作的逻辑架构 P6 - P9</code></p>
+</li>
+<li>
+<p>9-MySQL优化原理.pdf</p>
+</li>
+<li>
+<p><code>MySQL的查询过程 P12，P38</code></p>
+</li>
+<li>
+<p>1.客户端/服务端通信协议</p>
+</li>
+<li>2.查询缓存</li>
+<li>3.语法解析和预处理</li>
+<li>4.查询优化</li>
+<li>5.查询执行引擎</li>
+<li>6.返回结果给客户端</li>
+</ol>
+<h1 id="_8">十. 数据库恢复技术</h1>
+<ol>
+<li>
+<p><code>事务的概念 P7</code></p>
+</li>
+<li>
+<p>事务是用户定义的一个数据库操作系统序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位；</p>
+</li>
+<li>
+<p>事务是数据库恢复和并发控制的基本单位</p>
+</li>
+<li>
+<p><code>事务的显示控制 P8 - P9</code></p>
+</li>
+<li>
+<p>10-数据库恢复技术.pdf</p>
+</li>
+<li>
+<p><code>事务的ACID特性 P13 - P19</code></p>
+</li>
+<li>
+<p>原子性：事务是数据库的逻辑工作单位，要么都做，要么都不做；</p>
+</li>
+<li>一致性：事务执行的结果必须是使数据库从一个一致性状态变到另一个一致性状态；</li>
+<li>隔离性：一个事务的执行不能被其他事务干扰；</li>
+<li>
+<p>持续性：持续性也称永久性，一个事务一旦提交，它对数据库中数据的改变就应该是永久性的，接下来的其他操作或故障不应该对其执行结果有任何影响</p>
+</li>
+<li>
+<p><code>数据库恢复的背景和原因 P21</code></p>
+</li>
+<li>
+<p>故障是不可避免的：</p>
+</li>
+<li>
+<ol>
+<li>计算机硬件故障；</li>
+</ol>
+</li>
+<li>软件的错误；</li>
+<li>操作员的失误</li>
+<li>恶意的破坏</li>
+<li>故障的影响：</li>
+<li>
+<ol>
+<li>运行事务的非正常中断，影响数据库中数据的正确性</li>
+</ol>
+</li>
+<li>
+<p>破坏数据库，全部或部分丢失数据</p>
+</li>
+<li>
+<p><code>数据库恢复的概念 P22</code></p>
+</li>
+<li>
+<p>数据库恢复：数据库管理必须具有把数据库从错误状态恢复到某一已知的正确状态（亦称为一致状态或完整状态）的功能，这就是数据库的恢复管理系统对故障的对策；恢复子系统是数据库管理系统的一个重要组成部分；恢复技术是衡量系统优劣的重要指标。</p>
+</li>
+<li>
+<p><code>故障的种类 P24 - P38</code></p>
+</li>
+<li>
+<p>事故内部的故障</p>
+</li>
+<li>系统故障</li>
+<li>介质故障</li>
+<li>
+<p>计算机病毒</p>
+</li>
+<li>
+<p><code>恢复机制的两个关键问题 P40</code></p>
+</li>
+<li>
+<p>如何建立冗余数据（1.数据转储2.登记日志文件3.两者常常一起使用）</p>
+</li>
+<li>
+<p>如何利用这些冗余数据实施数据库恢复</p>
+</li>
+<li>
+<p><code>数据转储的概念 P43 - P44</code></p>
+</li>
+<li>
+<p>数据转储是数据库恢复中采用的基本技术</p>
+</li>
+<li>转储是指数据库管理员定期地将整个数据库复制到磁带、磁盘或其他存储介质上保存起来的过程</li>
+<li>
+<p>这些备用的数据文本称为后备副本或后援副本</p>
+</li>
+<li>
+<p><code>数据转储的方法 P47 - P52</code></p>
+</li>
+<li>
+<p>静态转储与动态转储</p>
+</li>
+<li>海量转储与增量转储</li>
+<li>
+<p>转储方法小结（动态海量转储，静态海量转储，动态增量转储，静态增量转储）</p>
+</li>
+<li>
+<p><code>日志文件的概念 P55</code></p>
+</li>
+<li>
+<p>日志文件是用来记录事务与数据库的更新操作的文件</p>
+</li>
+<li>
+<p><code>以记录为单位的日志文件内容 P56 - P57</code></p>
+</li>
+<li>
+<p>各个事务的开始标记</p>
+</li>
+<li>各个事务的结束标记</li>
+<li>
+<p>各个事务的所有更新操作</p>
+</li>
+<li>
+<p>这里每个事务的开始标记、每个事务的结束标记和每个更新操作均作为日志文件中的一个日志记录</p>
+</li>
+</ol>
+<p>日志记录的内容：</p>
+<ol>
+<li>事务标识</li>
+<li>操作类型</li>
+<li>操作对象</li>
+<li>更新前数据的旧值</li>
+<li>
+<p>更新后数据的新值</p>
+</li>
+<li>
+<p><code>以数据块为单位的日志文件内容 P58</code></p>
+</li>
+<li>
+<p>事务标记</p>
+</li>
+<li>
+<p>被更新的数据块</p>
+</li>
+<li>
+<p><code>日志文件的作用 P59 - P61</code></p>
+</li>
+<li>
+<p>进行事务故障恢复</p>
+</li>
+<li>进行系统故障恢复</li>
+<li>
+<p>协助后备副本进行介质故障恢复</p>
+</li>
+<li>
+<p><code>登记日志文件的原则 P63</code></p>
+</li>
+<li>
+<p>登记的次序严格按并发事务执行的时间次序</p>
+</li>
+<li>
+<p>必须先写日志文件，后写数据库</p>
+</li>
+<li>
+<p>(写日志文件操作：把表示这个修改的日志记录写到日志文件中；</p>
+</li>
+<li>写数据库操作：把对数据的修改写到数据库中；</li>
+</ol>
+<p>​     这就“先写日志文件”的原则)</p>
+<ol>
+<li>
+<p><code>先写日志文件的原因 P64</code></p>
+</li>
+<li>
+<p>写数据库和写日志是两个不同的操作</p>
+</li>
+<li>在这两个操作之间可能发生故障</li>
+<li>如果先写了数据库修改，而在日志文件中没有登记下这个修改，则以后就无法恢复这个修改了</li>
+<li>如果先写日志，但没有修改数据库，按日志文件恢复时只不过是多执行一次不必要的UNDO操作，并不会影响数据库的正确性</li>
+<li>
+<p>所以为了安全，一定要先写日志文件，即首先把日志记录写到日志文件中，然后写数据库的修改。</p>
+</li>
+<li>
+<p><code>事务故障的恢复方法 P67</code></p>
+</li>
+<li>
+<p>由恢复子系统利用日志文件撤销（UNDO）此事务已对数据库进行的修改</p>
+</li>
+<li>
+<p><code>事务故障恢复的步骤 P68 - P69</code></p>
+</li>
+<li>
+<p>反向扫描文件日志（即从最后向前扫描日志文件），查找该事务的更新操作</p>
+</li>
+<li>
+<p>对该事务的更新操作执行逆操作。即将日志记录中“更新前的值”写入数据库</p>
+</li>
+<li>
+<p>（插入操作：“更新前的值”为空，则相当于做删除操作；</p>
+</li>
+<li>删除操作：“更新后的值”为空，则相当于做插入操作；</li>
+<li>
+<p>若是修改操作，则相当于用修改前值代替修改后值）</p>
+</li>
+<li>
+<p><code>系统故障的恢复方法 P71</code></p>
+<ol>
+<li>
+<p>Undo（撤销）故障发生时未完成的事务；</p>
+</li>
+<li>
+<p>Redo（重做）已完成的事务</p>
+</li>
+</ol>
+</li>
+<li>
+<p><code>系统故障的恢复步骤 P72 - P73</code></p>
+<ol>
+<li>
+<p>正向扫描日志文件（即从头扫描日志文件），找出在故障发生前已经提交的事务</p>
+</li>
+<li>
+<p>对撤销（UNDO）队列事务进行撤销（UNDO）处理</p>
+</li>
+<li>
+<p>对重做（REDO）队列事务进行重做（REDO）处理</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>20.<code>介质故障的恢复方法 P75</code></p>
+<ol>
+<li>
+<p>重装数据库</p>
+</li>
+<li>
+<p>重做已完成的事务</p>
+</li>
+<li>
+<p><code>介质故障的恢复步骤 P76 - P77</code></p>
+</li>
+<li>
+<p>装入最新的后备数据库副本（离故障发生时刻最近的转储副本），使数据库恢复到最近一次转储时的一致性状态</p>
+</li>
+<li>
+<p>装入有关的日志文件副本（转储结束时刻的日志文件副本），重做已完成的事务</p>
+</li>
+<li>
+<p><code>为什么要具有检查点的恢复技术 P81</code></p>
+</li>
+<li>
+<p>搜索整个日志将耗费大量的时间</p>
+</li>
+<li>
+<p>很多需要重做处理的事务实际上已经将它们的更新操作结果写到了数据库中，然而恢复子系统又重新执行了这些操作，浪费了大量时间</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月23日 13:42:51">2025年3月23日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2023年9月22日 16:37:57">2023年9月22日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+<!-- Insert generated snippet here -->
+<script
+  src="https://giscus.app/client.js"
+  data-repo="markbang/knowledge"
+  data-repo-id="R_kgDOKV8Tgg"
+  data-category="Q&A"
+  data-category-id="DIC_kwDOKV8Tgs4Cjdz9"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector('script[src*=giscus]');
+
+  // Set palette on initial load
+  var palette = __md_get('__palette');
+  if (palette && typeof palette.color === 'object') {
+    var theme = palette.color.scheme === 'slate' ? 'transparent_dark' : 'light';
+
+    // Instruct Giscus to set theme
+    giscus.setAttribute('data-theme', theme);
+  }
+
+  // Register event handlers after documented loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    var ref = document.querySelector('[data-md-component=palette]');
+    ref.addEventListener('change', function () {
+      var palette = __md_get('__palette');
+      if (palette && typeof palette.color === 'object') {
+        var theme =
+          palette.color.scheme === 'slate' ? 'transparent_dark' : 'light';
+
+        // Instruct Giscus to change theme
+        var frame = document.querySelector('.giscus-frame');
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          'https://giscus.app'
+        );
+      }
+    });
+  });
+</script>
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2023-present <a href="https://github.com/markbang">棒无</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/markbang" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/markbangwu" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://mastodon.social/@bangwu" target="_blank" rel="noopener me" title="mastodon.social" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://bangwu.top" target="_blank" rel="noopener" title="bangwu.top" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M192 32c0 17.7 14.3 32 32 32 123.7 0 224 100.3 224 224 0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32m0 96c0 17.7 14.3 32 32 32 70.7 0 128 57.3 128 128 0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192-17.7 0-32 14.3-32 32m-96 16c0-26.5-21.5-48-48-48S0 117.5 0 144v224c0 79.5 64.5 144 144 144s144-64.5 144-144-64.5-144-144-144h-16v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.indexes", "navigation.footer", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.zhihu.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
