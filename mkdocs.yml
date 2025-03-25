@@ -34,12 +34,15 @@ nav:
       - Pyenv: apps/Pyenv.md
       - Rclone: apps/Rclone.md
       - Rye: apps/Rye.md
+      - Scoop: apps/Scoop.md
       - ShareX: apps/ShareX.md
+      - starship: apps/starship.md
       - Typora: apps/Typora.md
   - 环境:
       - 环境: env/index.md
       - 笔试: env/笔试.md
       - 面经: env/面经.md
+      - markdown: env/markdown.md
       - 博客:
           - Fuwarui: env/Fuwari.md
           - 图床: env/imgbed.md
@@ -121,6 +124,7 @@ plugins:
         - ja # 日文，也勉强支持中文
       separator: '[\s\-\.]+' # 分词分隔符
       # prebuild_index: true # 预制索引，不成功
+  - gh-admonitions
 markdown_extensions:
   - abbr
   - admonition

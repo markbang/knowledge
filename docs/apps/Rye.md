@@ -67,6 +67,7 @@ http = "http://127.0.0.1:10808"
 [behavior]
 global-python = true
 autosync = true
+use-uv = true
 
 [[sources]]
 name = "default"
@@ -77,7 +78,7 @@ url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
 
 ```bash
 rye pin 3.x
-rye init
+rye init // 或者 rye init -p cpython@3.x [project name]
 rye sync
 rye add [package]
 ```
