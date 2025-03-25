@@ -18,7 +18,7 @@
         <link rel="prev" href="../Rclone/">
       
       
-        <link rel="next" href="../ShareX/">
+        <link rel="next" href="../Scoop/">
       
       
       <link rel="icon" href="../../assets/joker.png">
@@ -1025,6 +1025,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1297,11 +1301,55 @@
   
   
     <li class="md-nav__item">
+      <a href="../Scoop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scoop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ShareX/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     ShareX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../starship/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    starship
     
   </span>
   
@@ -1352,6 +1400,8 @@
       
         
           
+        
+      
         
       
         
@@ -1456,6 +1506,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../env/markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -1473,10 +1545,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1488,8 +1560,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             博客
           </label>
@@ -1570,10 +1642,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1585,8 +1657,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             Docker
           </label>
@@ -2204,6 +2276,7 @@ rye config --set proxy.https=http://127.0.0.1:7890
 <span class="k">[behavior]</span>
 <span class="n">global-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 <span class="n">autosync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">use-uv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 
 <span class="k">[[sources]]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
@@ -2211,7 +2284,7 @@ rye config --set proxy.https=http://127.0.0.1:7890
 </code></pre></div>
 <h2 id="_2">开一个项目</h2>
 <div class="highlight"><pre><span></span><code>rye<span class="w"> </span>pin<span class="w"> </span><span class="m">3</span>.x
-rye<span class="w"> </span>init
+rye<span class="w"> </span>init<span class="w"> </span>//<span class="w"> </span>或者<span class="w"> </span>rye<span class="w"> </span>init<span class="w"> </span>-p<span class="w"> </span>cpython@3.x<span class="w"> </span><span class="o">[</span>project<span class="w"> </span>name<span class="o">]</span>
 rye<span class="w"> </span>sync
 rye<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>package<span class="o">]</span>
 </code></pre></div>
@@ -2237,7 +2310,7 @@ rye<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>pa
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月23日 13:42:51">2025年3月23日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月25日 12:31:45">2025年3月25日</span>
   </span>
 
     
@@ -2350,13 +2423,13 @@ rye<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>pa
         
         
           
-          <a href="../ShareX/" class="md-footer__link md-footer__link--next" aria-label="下一页: ShareX">
+          <a href="../Scoop/" class="md-footer__link md-footer__link--next" aria-label="下一页: Scoop">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                ShareX
+                Scoop
               </div>
             </div>
             <div class="md-footer__button md-icon">
