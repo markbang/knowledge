@@ -30,6 +30,7 @@ nav:
       - 软件: apps/index.md
       - Apifox: apps/Apifox.md
       - CherryStudio: apps/CherryStudio.md
+      - Cursor: apps/Cursor.md
       - iTab: apps/iTab.md
       - Pyenv: apps/Pyenv.md
       - Rclone: apps/Rclone.md
