@@ -1029,6 +1029,8 @@
       
         
       
+        
+      
     
     
       
@@ -1108,6 +1110,28 @@
   
   <span class="md-ellipsis">
     CherryStudio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cursor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cursor
     
   </span>
   
@@ -2205,9 +2229,28 @@
 <h2 id="scoop">Scoop</h2>
 <h2 id="_1">安装</h2>
 <h2 id="_2">配置</h2>
+<p>使用aria2</p>
+<div class="highlight"><pre><span></span><code>scoop<span class="w"> </span>install<span class="w"> </span>aria2
+scoop<span class="w"> </span>config<span class="w"> </span>aria2-warning-enabled<span class="w"> </span><span class="nb">false</span>
+</code></pre></div>
 <p>bucket</p>
 <p>proxy</p>
+<div class="highlight"><pre><span></span><code>❯<span class="w"> </span>scoop<span class="w"> </span>config
+
+last_update<span class="w">           </span>:<span class="w"> </span><span class="m">2025</span>-03-26T10:11:34.7723777+08:00
+gh_token<span class="w">              </span>:<span class="w"> </span>*****
+global_path<span class="w">           </span>:<span class="w"> </span>C:<span class="se">\G</span>lobalScoopApps
+root_path<span class="w">             </span>:<span class="w"> </span>C:<span class="se">\S</span>coop
+proxy<span class="w">                 </span>:<span class="w"> </span><span class="m">127</span>.0.0.1:10808
+scoop_repo<span class="w">            </span>:<span class="w"> </span>https://github.com/ScoopInstaller/Scoop
+scoop_branch<span class="w">          </span>:<span class="w"> </span>master
+aria2-warning-enabled<span class="w"> </span>:<span class="w"> </span>False
+</code></pre></div>
 <p>备份</p>
+<div class="highlight"><pre><span></span><code>scoop<span class="w"> </span><span class="nb">export</span><span class="w"> </span>&gt;<span class="w"> </span>app.json
+scoop<span class="w"> </span>import<span class="w"> </span>&gt;<span class="w"> </span>app.json
+<span class="c1"># 会备份bucket和app，不包括config</span>
+</code></pre></div>
 <h2 id="_3">常用应用</h2>
 
 
@@ -2231,7 +2274,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月25日 12:31:45">2025年3月25日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月26日 05:51:52">2025年3月26日</span>
   </span>
 
     
