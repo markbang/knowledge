@@ -26,9 +26,14 @@ nav:
       - Vue: frontend/Vue/index.md
       - Nextjs: frontend/Nextjs/index.md
       - TailwindCSS: frontend/TailwindCSS/index.md
+  - 算法:
+      - 算法: algo/index.md
+      - 滑动窗口: algo/sliding_window.md
+      - 位操作: algo/bit.md
   - 软件:
       - 软件: apps/index.md
       - Apifox: apps/Apifox.md
+      - Barrier: apps/Barrier.md
       - CherryStudio: apps/CherryStudio.md
       - Cursor: apps/Cursor.md
       - iTab: apps/iTab.md
@@ -39,11 +44,13 @@ nav:
       - ShareX: apps/ShareX.md
       - starship: apps/starship.md
       - Typora: apps/Typora.md
+      - 息知: apps/Xizhi.md
   - 环境:
       - 环境: env/index.md
       - 笔试: env/笔试.md
       - 面经: env/面经.md
       - markdown: env/markdown.md
+      - Github Workflow: env/github-workflow.md
       - 博客:
           - Fuwarui: env/Fuwari.md
           - 图床: env/imgbed.md

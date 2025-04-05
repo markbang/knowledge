@@ -8,8 +8,11 @@
 
 ## [starship](https://starship.rs/guide/)
 
+![starship-demo](https://raw.gitmirror.com/starship/starship/master/media/demo.gif)
+
 ```bash
 scoop install starship
+starship config command_timeout 3600 //解决超时问题 https://github.com/starship/starship/issues/5985
 ```
 
 ### 配置 power shell

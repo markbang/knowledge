@@ -1,10 +1,10 @@
-## Scoop
+# Scoop-Windows 中的 brew
 
 ## 安装
 
 ## 配置
 
-使用aria2
+使用 aria2
 
 ```bash
 scoop install aria2
@@ -37,3 +37,19 @@ scoop import > app.json
 ```
 
 ## 常用应用
+
+## 未找到的应用
+
+[雷神加速器](https://www.leigod.com/)
+
+[滴答清单](https://dida365.com/)
+
+[Cisco Anyconnect](https://www.cisco.com/c/zh_cn/support/security/anyconnect-secure-mobility-client-v4-x/model.html#~tab-downloads)
+
+[纯粹直播](https://github.com/liuchuancong/pure_live)
+
+[火绒](https://huorong.cn)
+
+[微信输入法](https://z.weixin.qq.com)
+
+[坚果云](https://www.jianguoyun.com)

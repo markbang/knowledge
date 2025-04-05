@@ -1,10 +1,10 @@
-目前使用的CDN方案来自：https://www.eallion.com/cdn-cname-cloudflare/
+目前使用的 CDN 方案来自：https://www.eallion.com/cdn-cname-cloudflare/
 
-一下是CDN结构图，目的就是解决全球CDN并且成本低
+一下是 CDN 结构图，目的就是解决全球 CDN 并且成本低
 
-![](https://cdn.bangwu.top/img/cdn_dns.png)
+![cdn_dns](https://cdn.bangwu.top/img/cdn_dns.png)
 
-::: details 前文备份
+前文备份
 
 ### 前言
 
@@ -23,10 +23,10 @@ Cloudflare 的 DNS 确实非常优秀，但 Cloudflare 不能分区解析，它�
 对于小网站，比如本博客，以上服务都是免费的，免费额度：
 
 - DNSPod：用的专业版，但免费版本也有分区解析
-- 腾讯云 COS：50G/月；200万请求
+- 腾讯云 COS：50G/月；200 万请求
 - 腾讯云 CDN：10G/月
 - Cloudflare CDN：正常使用无上限
-- Cloudflare R2: 10G/月； 100万/1000万请求
+- Cloudflare R2: 10G/月； 100 万/1000 万请求
 - Backblaze B2: 10G/月； 与 Cloudflare 有 [流量联盟](https://www.backblaze.com/cloud-storage/integrations)
 
 关于腾讯云的配置略过，这里只讲 Cloudflare 的部分。
@@ -39,19 +39,11 @@ Cloudflare 的 DNS 确实非常优秀，但 Cloudflare 不能分区解析，它�
 2. 创建 R2 存储桶的方法这里略过，如创建：`r2-blog-test`；
 3. 在 `R2` `设置` `公开访问` `自定义域` `连接域` 为刚才创建的 R2 添加自定义域名：
 
-
-
 [![/assets/images/posts/2023/07/r2_custom_hostname.png](https://www.eallion.com/assets/images/posts/2023/07/r2_custom_hostname.png)](https://www.eallion.com/assets/images/posts/2023/07/r2_custom_hostname.png)
-
-
 
 然后该域名的 DNS 就会自动出现一条解析：
 
-
-
 [![/assets/images/posts/2023/07/custom_hostname_dns.png](https://www.eallion.com/assets/images/posts/2023/07/custom_hostname_dns.png)](https://www.eallion.com/assets/images/posts/2023/07/custom_hostname_dns.png)
-
-
 
 ### 订阅 CloudFlare for SaaS
 
@@ -59,49 +51,29 @@ Cloudflare 的 DNS 确实非常优秀，但 Cloudflare 不能分区解析，它�
 2. 在该域名的 `SSL/TLS` 中选择 `自定义主机名`；
 3. 选择 Enable 订阅。可以使用 Paypal 订阅。
 
-
-
 [![/assets/images/posts/2023/07/enable_cloudflare_saas.png](https://www.eallion.com/assets/images/posts/2023/07/enable_cloudflare_saas.png)](https://www.eallion.com/assets/images/posts/2023/07/enable_cloudflare_saas.png)
-
-
 
 ### 添加自定义域名
 
 订阅成功后，先添加 `回退源`：`images.example.com`，这个回源域名是绑定在 R2 上的自定义域名。
 
-
-
 [![/assets/images/posts/2023/07/cf_callback_hostname.png](https://www.eallion.com/assets/images/posts/2023/07/cf_callback_hostname.png)](https://www.eallion.com/assets/images/posts/2023/07/cf_callback_hostname.png)
-
-
 
 然后点击 `添加自定义主机名` ，填入 CDN 域名，如 `images.eallion.com` ，验证方式推荐 TXT 验证。
 
-
-
 [![/assets/images/posts/2023/07/add_custom_hostname.png](https://www.eallion.com/assets/images/posts/2023/07/add_custom_hostname.png)](https://www.eallion.com/assets/images/posts/2023/07/add_custom_hostname.png)
-
-
 
 添加后，需要验证域名，去自己的域名解析控制台，如 DNSPod ，添加 2 条 TXT 记录。
 等待 `证书状态` 和 `主机名状态` 都变成 `有效`。
 
-
-
 [![/assets/images/posts/2023/07/cf_dns_txt_records.png](https://www.eallion.com/assets/images/posts/2023/07/cf_dns_txt_records.png)](https://www.eallion.com/assets/images/posts/2023/07/cf_dns_txt_records.png)
-
-
 
 ### 解析 CNAME
 
 `回退源状态` `证书状态` 和 `主机名状态` 都变成 `有效` 后，就去自己的域名解析控制台添加 CNAME 解析。
 把用于生产环境的 `images.eallion.com` CNAME 指向 `images.example.com`。
 
-
-
 [![/assets/images/posts/2023/07/dns_cname_records.png](https://www.eallion.com/assets/images/posts/2023/07/dns_cname_records.png)](https://www.eallion.com/assets/images/posts/2023/07/dns_cname_records.png)
-
-
 
 一般的教程到这里就结束了。
 但是这样是访问不了 R2 里面的资源的。
@@ -124,26 +96,24 @@ Use R2 from Workers：https://developers.cloudflare.com/r2/api/workers/workers-a
 ```javascript
 var worker_default = {
   async fetch(request, env) {
-    if (request.method !== "GET") {
-      return new Response("Only GET method allowed", { status: 405 });
+    if (request.method !== 'GET') {
+      return new Response('Only GET method allowed', { status: 405 });
     }
     const url = new URL(request.url);
     const key = url.pathname.slice(1);
     const object = await env.MY_BUCKET.get(key);
     if (!object) {
-      return new Response("Object not found", { status: 404 });
+      return new Response('Object not found', { status: 404 });
     }
     const headers = new Headers();
     object.writeHttpMetadata(headers);
-    headers.set("ETag", object.httpEtag);
+    headers.set('ETag', object.httpEtag);
     return new Response(object.body, {
-      headers
+      headers,
     });
-  }
+  },
 };
-export {
-  worker_default as default
-};
+export { worker_default as default };
 ```
 
 部署成功后返回。
@@ -152,11 +122,7 @@ export {
 - `变量名称`：`MY_BUCKET`
 - `R2 存储桶`：选择对应的桶
 
-
-
 [![/assets/images/posts/2023/07/r2_binding.png](https://www.eallion.com/assets/images/posts/2023/07/r2_binding.png)](https://www.eallion.com/assets/images/posts/2023/07/r2_binding.png)
-
-
 
 ### Workers 路由
 
@@ -166,11 +132,7 @@ export {
 - `Worker`：选择上一步创建的 Worker；
 - `环境`：Production。
 
-
-
 [![/assets/images/posts/2023/07/r2_worker_router.png](https://www.eallion.com/assets/images/posts/2023/07/r2_worker_router.png)](https://www.eallion.com/assets/images/posts/2023/07/r2_worker_router.png)
-
-
 
 至此，你应该就能以 CNAME 的方式访问 Cloudflare R2 里面的内容了。
 
@@ -194,34 +156,43 @@ Docs：[Integrate Cloudflare Workers with Backblaze B2](https://www.backblaze.co
   // node_modules/aws4fetch/dist/aws4fetch.esm.mjs
   var encoder = new TextEncoder();
   var HOST_SERVICES = {
-    appstream2: "appstream",
-    cloudhsmv2: "cloudhsm",
-    email: "ses",
-    marketplace: "aws-marketplace",
-    mobile: "AWSMobileHubService",
-    pinpoint: "mobiletargeting",
-    queue: "sqs",
-    "git-codecommit": "codecommit",
-    "mturk-requester-sandbox": "mturk-requester",
-    "personalize-runtime": "personalize"
+    appstream2: 'appstream',
+    cloudhsmv2: 'cloudhsm',
+    email: 'ses',
+    marketplace: 'aws-marketplace',
+    mobile: 'AWSMobileHubService',
+    pinpoint: 'mobiletargeting',
+    queue: 'sqs',
+    'git-codecommit': 'codecommit',
+    'mturk-requester-sandbox': 'mturk-requester',
+    'personalize-runtime': 'personalize',
   };
   var UNSIGNABLE_HEADERS = /* @__PURE__ */ new Set([
-    "authorization",
-    "content-type",
-    "content-length",
-    "user-agent",
-    "presigned-expires",
-    "expect",
-    "x-amzn-trace-id",
-    "range",
-    "connection"
+    'authorization',
+    'content-type',
+    'content-length',
+    'user-agent',
+    'presigned-expires',
+    'expect',
+    'x-amzn-trace-id',
+    'range',
+    'connection',
   ]);
   var AwsClient = class {
-    constructor({ accessKeyId, secretAccessKey, sessionToken, service, region, cache, retries, initRetryMs }) {
+    constructor({
+      accessKeyId,
+      secretAccessKey,
+      sessionToken,
+      service,
+      region,
+      cache,
+      retries,
+      initRetryMs,
+    }) {
       if (accessKeyId == null)
-        throw new TypeError("accessKeyId is a required option");
+        throw new TypeError('accessKeyId is a required option');
       if (secretAccessKey == null)
-        throw new TypeError("secretAccessKey is a required option");
+        throw new TypeError('secretAccessKey is a required option');
       this.accessKeyId = accessKeyId;
       this.secretAccessKey = secretAccessKey;
       this.sessionToken = sessionToken;
@@ -235,19 +206,27 @@ Docs：[Integrate Cloudflare Workers with Backblaze B2](https://www.backblaze.co
       if (input instanceof Request) {
         const { method, url, headers, body } = input;
         init = Object.assign({ method, url, headers }, init);
-        if (init.body == null && headers.has("Content-Type")) {
-          init.body = body != null && headers.has("X-Amz-Content-Sha256") ? body : await input.clone().arrayBuffer();
+        if (init.body == null && headers.has('Content-Type')) {
+          init.body =
+            body != null && headers.has('X-Amz-Content-Sha256')
+              ? body
+              : await input.clone().arrayBuffer();
         }
         input = url;
       }
-      const signer = new AwsV4Signer(Object.assign({ url: input }, init, this, init && init.aws));
+      const signer = new AwsV4Signer(
+        Object.assign({ url: input }, init, this, init && init.aws)
+      );
       const signed = Object.assign({}, init, await signer.sign());
       delete signed.aws;
       try {
         return new Request(signed.url.toString(), signed);
       } catch (e) {
         if (e instanceof TypeError) {
-          return new Request(signed.url.toString(), Object.assign({ duplex: "half" }, signed));
+          return new Request(
+            signed.url.toString(),
+            Object.assign({ duplex: 'half' }, signed)
+          );
         }
         throw e;
       }
@@ -262,20 +241,39 @@ Docs：[Integrate Cloudflare Workers with Backblaze B2](https://www.backblaze.co
         if (res.status < 500 && res.status !== 429) {
           return res;
         }
-        await new Promise((resolve) => setTimeout(resolve, Math.random() * this.initRetryMs * Math.pow(2, i)));
+        await new Promise((resolve) =>
+          setTimeout(resolve, Math.random() * this.initRetryMs * Math.pow(2, i))
+        );
       }
-      throw new Error("An unknown error occurred, ensure retries is not negative");
+      throw new Error(
+        'An unknown error occurred, ensure retries is not negative'
+      );
     }
   };
   var AwsV4Signer = class {
-    constructor({ method, url, headers, body, accessKeyId, secretAccessKey, sessionToken, service, region, cache, datetime, signQuery, appendSessionToken, allHeaders, singleEncode }) {
-      if (url == null)
-        throw new TypeError("url is a required option");
+    constructor({
+      method,
+      url,
+      headers,
+      body,
+      accessKeyId,
+      secretAccessKey,
+      sessionToken,
+      service,
+      region,
+      cache,
+      datetime,
+      signQuery,
+      appendSessionToken,
+      allHeaders,
+      singleEncode,
+    }) {
+      if (url == null) throw new TypeError('url is a required option');
       if (accessKeyId == null)
-        throw new TypeError("accessKeyId is a required option");
+        throw new TypeError('accessKeyId is a required option');
       if (secretAccessKey == null)
-        throw new TypeError("secretAccessKey is a required option");
-      this.method = method || (body ? "POST" : "GET");
+        throw new TypeError('secretAccessKey is a required option');
+      this.method = method || (body ? 'POST' : 'GET');
       this.url = new URL(url);
       this.headers = new Headers(headers || {});
       this.body = body;
@@ -284,179 +282,245 @@ Docs：[Integrate Cloudflare Workers with Backblaze B2](https://www.backblaze.co
       this.sessionToken = sessionToken;
       let guessedService, guessedRegion;
       if (!service || !region) {
-        [guessedService, guessedRegion] = guessServiceRegion(this.url, this.headers);
+        [guessedService, guessedRegion] = guessServiceRegion(
+          this.url,
+          this.headers
+        );
       }
-      this.service = service || guessedService || "";
-      this.region = region || guessedRegion || "us-east-1";
+      this.service = service || guessedService || '';
+      this.region = region || guessedRegion || 'us-east-1';
       this.cache = cache || /* @__PURE__ */ new Map();
-      this.datetime = datetime || new Date().toISOString().replace(/[:-]|\.\d{3}/g, "");
+      this.datetime =
+        datetime || new Date().toISOString().replace(/[:-]|\.\d{3}/g, '');
       this.signQuery = signQuery;
-      this.appendSessionToken = appendSessionToken || this.service === "iotdevicegateway";
-      this.headers.delete("Host");
-      if (this.service === "s3" && !this.signQuery && !this.headers.has("X-Amz-Content-Sha256")) {
-        this.headers.set("X-Amz-Content-Sha256", "UNSIGNED-PAYLOAD");
+      this.appendSessionToken =
+        appendSessionToken || this.service === 'iotdevicegateway';
+      this.headers.delete('Host');
+      if (
+        this.service === 's3' &&
+        !this.signQuery &&
+        !this.headers.has('X-Amz-Content-Sha256')
+      ) {
+        this.headers.set('X-Amz-Content-Sha256', 'UNSIGNED-PAYLOAD');
       }
       const params = this.signQuery ? this.url.searchParams : this.headers;
-      params.set("X-Amz-Date", this.datetime);
+      params.set('X-Amz-Date', this.datetime);
       if (this.sessionToken && !this.appendSessionToken) {
-        params.set("X-Amz-Security-Token", this.sessionToken);
+        params.set('X-Amz-Security-Token', this.sessionToken);
       }
-      this.signableHeaders = ["host", ...this.headers.keys()].filter((header) => allHeaders || !UNSIGNABLE_HEADERS.has(header)).sort();
-      this.signedHeaders = this.signableHeaders.join(";");
-      this.canonicalHeaders = this.signableHeaders.map((header) => header + ":" + (header === "host" ? this.url.host : (this.headers.get(header) || "").replace(/\s+/g, " "))).join("\n");
-      this.credentialString = [this.datetime.slice(0, 8), this.region, this.service, "aws4_request"].join("/");
+      this.signableHeaders = ['host', ...this.headers.keys()]
+        .filter((header) => allHeaders || !UNSIGNABLE_HEADERS.has(header))
+        .sort();
+      this.signedHeaders = this.signableHeaders.join(';');
+      this.canonicalHeaders = this.signableHeaders
+        .map(
+          (header) =>
+            header +
+            ':' +
+            (header === 'host'
+              ? this.url.host
+              : (this.headers.get(header) || '').replace(/\s+/g, ' '))
+        )
+        .join('\n');
+      this.credentialString = [
+        this.datetime.slice(0, 8),
+        this.region,
+        this.service,
+        'aws4_request',
+      ].join('/');
       if (this.signQuery) {
-        if (this.service === "s3" && !params.has("X-Amz-Expires")) {
-          params.set("X-Amz-Expires", "86400");
+        if (this.service === 's3' && !params.has('X-Amz-Expires')) {
+          params.set('X-Amz-Expires', '86400');
         }
-        params.set("X-Amz-Algorithm", "AWS4-HMAC-SHA256");
-        params.set("X-Amz-Credential", this.accessKeyId + "/" + this.credentialString);
-        params.set("X-Amz-SignedHeaders", this.signedHeaders);
+        params.set('X-Amz-Algorithm', 'AWS4-HMAC-SHA256');
+        params.set(
+          'X-Amz-Credential',
+          this.accessKeyId + '/' + this.credentialString
+        );
+        params.set('X-Amz-SignedHeaders', this.signedHeaders);
       }
-      if (this.service === "s3") {
+      if (this.service === 's3') {
         try {
-          this.encodedPath = decodeURIComponent(this.url.pathname.replace(/\+/g, " "));
+          this.encodedPath = decodeURIComponent(
+            this.url.pathname.replace(/\+/g, ' ')
+          );
         } catch (e) {
           this.encodedPath = this.url.pathname;
         }
       } else {
-        this.encodedPath = this.url.pathname.replace(/\/+/g, "/");
+        this.encodedPath = this.url.pathname.replace(/\/+/g, '/');
       }
       if (!singleEncode) {
-        this.encodedPath = encodeURIComponent(this.encodedPath).replace(/%2F/g, "/");
+        this.encodedPath = encodeURIComponent(this.encodedPath).replace(
+          /%2F/g,
+          '/'
+        );
       }
       this.encodedPath = encodeRfc3986(this.encodedPath);
       const seenKeys = /* @__PURE__ */ new Set();
-      this.encodedSearch = [...this.url.searchParams].filter(([k]) => {
-        if (!k)
-          return false;
-        if (this.service === "s3") {
-          if (seenKeys.has(k))
-            return false;
-          seenKeys.add(k);
-        }
-        return true;
-      }).map((pair) => pair.map((p) => encodeRfc3986(encodeURIComponent(p)))).sort(([k1, v1], [k2, v2]) => k1 < k2 ? -1 : k1 > k2 ? 1 : v1 < v2 ? -1 : v1 > v2 ? 1 : 0).map((pair) => pair.join("=")).join("&");
+      this.encodedSearch = [...this.url.searchParams]
+        .filter(([k]) => {
+          if (!k) return false;
+          if (this.service === 's3') {
+            if (seenKeys.has(k)) return false;
+            seenKeys.add(k);
+          }
+          return true;
+        })
+        .map((pair) => pair.map((p) => encodeRfc3986(encodeURIComponent(p))))
+        .sort(([k1, v1], [k2, v2]) =>
+          k1 < k2 ? -1 : k1 > k2 ? 1 : v1 < v2 ? -1 : v1 > v2 ? 1 : 0
+        )
+        .map((pair) => pair.join('='))
+        .join('&');
     }
     async sign() {
       if (this.signQuery) {
-        this.url.searchParams.set("X-Amz-Signature", await this.signature());
+        this.url.searchParams.set('X-Amz-Signature', await this.signature());
         if (this.sessionToken && this.appendSessionToken) {
-          this.url.searchParams.set("X-Amz-Security-Token", this.sessionToken);
+          this.url.searchParams.set('X-Amz-Security-Token', this.sessionToken);
         }
       } else {
-        this.headers.set("Authorization", await this.authHeader());
+        this.headers.set('Authorization', await this.authHeader());
       }
       return {
         method: this.method,
         url: this.url,
         headers: this.headers,
-        body: this.body
+        body: this.body,
       };
     }
     async authHeader() {
       return [
-        "AWS4-HMAC-SHA256 Credential=" + this.accessKeyId + "/" + this.credentialString,
-        "SignedHeaders=" + this.signedHeaders,
-        "Signature=" + await this.signature()
-      ].join(", ");
+        'AWS4-HMAC-SHA256 Credential=' +
+          this.accessKeyId +
+          '/' +
+          this.credentialString,
+        'SignedHeaders=' + this.signedHeaders,
+        'Signature=' + (await this.signature()),
+      ].join(', ');
     }
     async signature() {
       const date = this.datetime.slice(0, 8);
-      const cacheKey = [this.secretAccessKey, date, this.region, this.service].join();
+      const cacheKey = [
+        this.secretAccessKey,
+        date,
+        this.region,
+        this.service,
+      ].join();
       let kCredentials = this.cache.get(cacheKey);
       if (!kCredentials) {
-        const kDate = await hmac("AWS4" + this.secretAccessKey, date);
+        const kDate = await hmac('AWS4' + this.secretAccessKey, date);
         const kRegion = await hmac(kDate, this.region);
         const kService = await hmac(kRegion, this.service);
-        kCredentials = await hmac(kService, "aws4_request");
+        kCredentials = await hmac(kService, 'aws4_request');
         this.cache.set(cacheKey, kCredentials);
       }
       return buf2hex(await hmac(kCredentials, await this.stringToSign()));
     }
     async stringToSign() {
       return [
-        "AWS4-HMAC-SHA256",
+        'AWS4-HMAC-SHA256',
         this.datetime,
         this.credentialString,
-        buf2hex(await hash(await this.canonicalString()))
-      ].join("\n");
+        buf2hex(await hash(await this.canonicalString())),
+      ].join('\n');
     }
     async canonicalString() {
       return [
         this.method.toUpperCase(),
         this.encodedPath,
         this.encodedSearch,
-        this.canonicalHeaders + "\n",
+        this.canonicalHeaders + '\n',
         this.signedHeaders,
-        await this.hexBodyHash()
-      ].join("\n");
+        await this.hexBodyHash(),
+      ].join('\n');
     }
     async hexBodyHash() {
-      let hashHeader = this.headers.get("X-Amz-Content-Sha256") || (this.service === "s3" && this.signQuery ? "UNSIGNED-PAYLOAD" : null);
+      let hashHeader =
+        this.headers.get('X-Amz-Content-Sha256') ||
+        (this.service === 's3' && this.signQuery ? 'UNSIGNED-PAYLOAD' : null);
       if (hashHeader == null) {
-        if (this.body && typeof this.body !== "string" && !("byteLength" in this.body)) {
-          throw new Error("body must be a string, ArrayBuffer or ArrayBufferView, unless you include the X-Amz-Content-Sha256 header");
+        if (
+          this.body &&
+          typeof this.body !== 'string' &&
+          !('byteLength' in this.body)
+        ) {
+          throw new Error(
+            'body must be a string, ArrayBuffer or ArrayBufferView, unless you include the X-Amz-Content-Sha256 header'
+          );
         }
-        hashHeader = buf2hex(await hash(this.body || ""));
+        hashHeader = buf2hex(await hash(this.body || ''));
       }
       return hashHeader;
     }
   };
   async function hmac(key, string) {
     const cryptoKey = await crypto.subtle.importKey(
-      "raw",
-      typeof key === "string" ? encoder.encode(key) : key,
-      { name: "HMAC", hash: { name: "SHA-256" } },
+      'raw',
+      typeof key === 'string' ? encoder.encode(key) : key,
+      { name: 'HMAC', hash: { name: 'SHA-256' } },
       false,
-      ["sign"]
+      ['sign']
     );
-    return crypto.subtle.sign("HMAC", cryptoKey, encoder.encode(string));
+    return crypto.subtle.sign('HMAC', cryptoKey, encoder.encode(string));
   }
   async function hash(content) {
-    return crypto.subtle.digest("SHA-256", typeof content === "string" ? encoder.encode(content) : content);
+    return crypto.subtle.digest(
+      'SHA-256',
+      typeof content === 'string' ? encoder.encode(content) : content
+    );
   }
   function buf2hex(buffer) {
-    return Array.prototype.map.call(new Uint8Array(buffer), (x) => ("0" + x.toString(16)).slice(-2)).join("");
+    return Array.prototype.map
+      .call(new Uint8Array(buffer), (x) => ('0' + x.toString(16)).slice(-2))
+      .join('');
   }
   function encodeRfc3986(urlEncodedStr) {
-    return urlEncodedStr.replace(/[!'()*]/g, (c) => "%" + c.charCodeAt(0).toString(16).toUpperCase());
+    return urlEncodedStr.replace(
+      /[!'()*]/g,
+      (c) => '%' + c.charCodeAt(0).toString(16).toUpperCase()
+    );
   }
   function guessServiceRegion(url, headers) {
     const { hostname, pathname } = url;
-    if (hostname.endsWith(".r2.cloudflarestorage.com")) {
-      return ["s3", "auto"];
+    if (hostname.endsWith('.r2.cloudflarestorage.com')) {
+      return ['s3', 'auto'];
     }
-    if (hostname.endsWith(".backblazeb2.com")) {
-      const match2 = hostname.match(/^(?:[^.]+\.)?s3\.([^.]+)\.backblazeb2\.com$/);
-      return match2 != null ? ["s3", match2[1]] : ["", ""];
+    if (hostname.endsWith('.backblazeb2.com')) {
+      const match2 = hostname.match(
+        /^(?:[^.]+\.)?s3\.([^.]+)\.backblazeb2\.com$/
+      );
+      return match2 != null ? ['s3', match2[1]] : ['', ''];
     }
-    const match = hostname.replace("dualstack.", "").match(/([^.]+)\.(?:([^.]*)\.)?amazonaws\.com(?:\.cn)?$/);
-    let [service, region] = (match || ["", ""]).slice(1, 3);
-    if (region === "us-gov") {
-      region = "us-gov-west-1";
-    } else if (region === "s3" || region === "s3-accelerate") {
-      region = "us-east-1";
-      service = "s3";
-    } else if (service === "iot") {
-      if (hostname.startsWith("iot.")) {
-        service = "execute-api";
-      } else if (hostname.startsWith("data.jobs.iot.")) {
-        service = "iot-jobs-data";
+    const match = hostname
+      .replace('dualstack.', '')
+      .match(/([^.]+)\.(?:([^.]*)\.)?amazonaws\.com(?:\.cn)?$/);
+    let [service, region] = (match || ['', '']).slice(1, 3);
+    if (region === 'us-gov') {
+      region = 'us-gov-west-1';
+    } else if (region === 's3' || region === 's3-accelerate') {
+      region = 'us-east-1';
+      service = 's3';
+    } else if (service === 'iot') {
+      if (hostname.startsWith('iot.')) {
+        service = 'execute-api';
+      } else if (hostname.startsWith('data.jobs.iot.')) {
+        service = 'iot-jobs-data';
       } else {
-        service = pathname === "/mqtt" ? "iotdevicegateway" : "iotdata";
+        service = pathname === '/mqtt' ? 'iotdevicegateway' : 'iotdata';
       }
-    } else if (service === "autoscaling") {
-      const targetPrefix = (headers.get("X-Amz-Target") || "").split(".")[0];
-      if (targetPrefix === "AnyScaleFrontendService") {
-        service = "application-autoscaling";
-      } else if (targetPrefix === "AnyScaleScalingPlannerFrontendService") {
-        service = "autoscaling-plans";
+    } else if (service === 'autoscaling') {
+      const targetPrefix = (headers.get('X-Amz-Target') || '').split('.')[0];
+      if (targetPrefix === 'AnyScaleFrontendService') {
+        service = 'application-autoscaling';
+      } else if (targetPrefix === 'AnyScaleScalingPlannerFrontendService') {
+        service = 'autoscaling-plans';
       }
-    } else if (region == null && service.startsWith("s3-")) {
-      region = service.slice(3).replace(/^fips-|^external-1/, "");
-      service = "s3";
-    } else if (service.endsWith("-fips")) {
+    } else if (region == null && service.startsWith('s3-')) {
+      region = service.slice(3).replace(/^fips-|^external-1/, '');
+      service = 's3';
+    } else if (service.endsWith('-fips')) {
       service = service.slice(0, -5);
     } else if (region && /-\d$/.test(service) && !/-\d$/.test(region)) {
       [service, region] = [region, service];
@@ -465,68 +529,69 @@ Docs：[Integrate Cloudflare Workers with Backblaze B2](https://www.backblaze.co
   }
 
   // index.js
-  var UNSIGNABLE_HEADERS2 = [
-    "x-forwarded-proto",
-    "x-real-ip"
-  ];
+  var UNSIGNABLE_HEADERS2 = ['x-forwarded-proto', 'x-real-ip'];
   function filterHeaders(headers) {
-    return Array.from(headers.entries()).filter((pair) => !UNSIGNABLE_HEADERS2.includes(pair[0]) && !pair[0].startsWith("cf-"));
+    return Array.from(headers.entries()).filter(
+      (pair) =>
+        !UNSIGNABLE_HEADERS2.includes(pair[0]) && !pair[0].startsWith('cf-')
+    );
   }
   async function handleRequest(event, client2) {
     const request = event.request;
-    if (!["GET", "HEAD"].includes(request.method)) {
+    if (!['GET', 'HEAD'].includes(request.method)) {
       return new Response(null, {
         status: 405,
-        statusText: "Method Not Allowed"
+        statusText: 'Method Not Allowed',
       });
     }
     const url = new URL(request.url);
-    let path = url.pathname.replace(/^\//, "");
-    path = path.replace(/\/$/, "");
-    const pathSegments = path.split("/");
-    if (ALLOW_LIST_BUCKET !== "true") {
-      if (BUCKET_NAME === "$path" && pathSegments[0].length < 2 || BUCKET_NAME !== "$path" && path.length === 0) {
+    let path = url.pathname.replace(/^\//, '');
+    path = path.replace(/\/$/, '');
+    const pathSegments = path.split('/');
+    if (ALLOW_LIST_BUCKET !== 'true') {
+      if (
+        (BUCKET_NAME === '$path' && pathSegments[0].length < 2) ||
+        (BUCKET_NAME !== '$path' && path.length === 0)
+      ) {
         return new Response(null, {
           status: 404,
-          statusText: "Not Found"
+          statusText: 'Not Found',
         });
       }
     }
     switch (BUCKET_NAME) {
-      case "$path":
+      case '$path':
         url.hostname = B2_ENDPOINT;
         break;
         break;
-      case "$host":
-        url.hostname = url.hostname.split(".")[0] + "." + B2_ENDPOINT;
+      case '$host':
+        url.hostname = url.hostname.split('.')[0] + '.' + B2_ENDPOINT;
         break;
       default:
-        url.hostname = BUCKET_NAME + "." + B2_ENDPOINT;
+        url.hostname = BUCKET_NAME + '.' + B2_ENDPOINT;
         break;
     }
     const headers = filterHeaders(request.headers);
     const signedRequest = await client2.sign(url.toString(), {
       method: request.method,
       headers,
-      body: request.body
+      body: request.body,
     });
     return fetch(signedRequest);
   }
   var endpointRegex = /^s3\.([a-zA-Z0-9-]+)\.backblazeb2\.com$/;
   var [, aws_region] = B2_ENDPOINT.match(endpointRegex);
   var client = new AwsClient({
-    "accessKeyId": B2_APPLICATION_KEY_ID,
-    "secretAccessKey": B2_APPLICATION_KEY,
-    "service": "s3",
-    "region": aws_region
+    accessKeyId: B2_APPLICATION_KEY_ID,
+    secretAccessKey: B2_APPLICATION_KEY,
+    service: 's3',
+    region: aws_region,
   });
-  addEventListener("fetch", function(event) {
+  addEventListener('fetch', function (event) {
     event.respondWith(handleRequest(event, client));
   });
 })();
 ```
-
-
 
 ##### 2、设置 Worker 环境变量
 
@@ -540,21 +605,13 @@ APP KEY 和 ID 要去 Backblaze 后台生成，`B2_ENDPOINT` 要去自己的 B2 
 
 ##### 3、手动添加 CNAME 解析到 B2
 
-
-
 [![/assets/images/posts/2023/07/b2_cf_record.png](https://www.eallion.com/assets/images/posts/2023/07/b2_cf_record.png)](https://www.eallion.com/assets/images/posts/2023/07/b2_cf_record.png)
-
-
 
 - `类型`：选 `CNAME`
 - `名称`：用于 `回退源`，如：`b2.example.com` ，就填入 `b2`
 - `内容`：填入自己 B2 存储桶分配的 `S3 URL` ，有的教程这里写的是 `Friendly URL` ，没必要，还要多一步反代。
 
-
-
 [![/assets/images/posts/2023/07/backblaze_url.png](https://www.eallion.com/assets/images/posts/2023/07/backblaze_url.png)](https://www.eallion.com/assets/images/posts/2023/07/backblaze_url.png)
-
-
 
 ##### 4、配置回退源
 
@@ -578,18 +635,19 @@ APP KEY 和 ID 要去 Backblaze 后台生成，`B2_ENDPOINT` 要去自己的 B2 
 
 :::
 
-CDN证书自动更换
+CDN 证书自动更换
 
-以上算是解决了基本的问题，但是还有一个痛点就是SSL证书问题，CF是提供免费续签更新永不过期证书的，但是国内CDN厂商一般都需要手动上传自己申请的证书。。。这个确实不太方便，所以想着能不能找个解决方案：
+以上算是解决了基本的问题，但是还有一个痛点就是 SSL 证书问题，CF 是提供免费续签更新永不过期证书的，但是国内 CDN 厂商一般都需要手动上传自己申请的证书。。。这个确实不太方便，所以想着能不能找个解决方案：
 
 ::: details 自动更新证书脚本
 
-起因：因为配置国内CDN基本都是需要手动上传证书，但是我申请的域名证书都是基本三个月保质期的，所以就想着写个自动脚本自动更新证书。
+起因：因为配置国内 CDN 基本都是需要手动上传证书，但是我申请的域名证书都是基本三个月保质期的，所以就想着写个自动脚本自动更新证书。
 环境：
 1panel（国产面板，自动申请证书，还有其他强大功能，挺方便的）
 
-以我用的多吉云为例，其他厂家都可以去找到相应的SDK。
+以我用的多吉云为例，其他厂家都可以去找到相应的 SDK。
 代码如下：
+
 ```python
 from hashlib import sha1
 import hmac
@@ -662,6 +720,7 @@ api = dogecloud_api('/cdn/domain/config.json?domain=cdn.example.com', {
 }, True)
 
 ```
-基本实现思路就是先删除现有证书，然后添加读取的证书，然后上传并激活上传后的证书，这样就实现CDN证书自动配置了。可以利用1panel自动定时执行脚本功能每隔一个月执行一次，以此更新证书。真是又实现了一个奇奇怪怪的使用小技巧✊✊✊
+
+基本实现思路就是先删除现有证书，然后添加读取的证书，然后上传并激活上传后的证书，这样就实现 CDN 证书自动配置了。可以利用 1panel 自动定时执行脚本功能每隔一个月执行一次，以此更新证书。真是又实现了一个奇奇怪怪的使用小技巧 ✊✊✊
 
 :::
