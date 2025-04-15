@@ -26,6 +26,9 @@ nav:
       - Vue: frontend/Vue/index.md
       - Nextjs: frontend/Nextjs/index.md
       - TailwindCSS: frontend/TailwindCSS/index.md
+  - 客户端:
+      - 客户端: software/index.md
+      - Tauri: software/tauri.md
   - 算法:
       - 算法: algo/index.md
       - 滑动窗口: algo/sliding_window.md
@@ -51,6 +54,8 @@ nav:
       - 面经: env/面经.md
       - markdown: env/markdown.md
       - Github Workflow: env/github-workflow.md
+      - Caddy 服务器: env/Caddy.md
+      - Supervisor: env/supervisor.md
       - 博客:
           - Fuwarui: env/Fuwari.md
           - 图床: env/imgbed.md

@@ -26,7 +26,7 @@ jobs:
           - platform: 'macos-latest' # for Arm based macs (M1 and above).
             args: '--target aarch64-apple-darwin'
           - platform: 'macos-latest' # for Intel based macs.
-            args: '--target x86_64-apple-darwin'
+            args: '--target x86_64-apple-darwin --bundles app'
           - platform: 'ubuntu-22.04' # for Tauri v1 you could replace this with ubuntu-20.04.
             args: ''
           - platform: 'windows-latest'
@@ -168,3 +168,9 @@ changelog 生成使用的是[Antfu changelogithub](https://github.com/antfu/chan
 ### Github Action Release 仓库允许读写权限
 
 这样才能发布 Release 不然会有报错`Error permisson`
+
+## 解决 使用 Nextjs SSR window is not defined
+
+## 解决 Error: Cannot read properties of undefined (reading 'xxxxxx')
+
+这个报错很有可能是使用插件未加载导致的，在 main.rs 中初始化插件
