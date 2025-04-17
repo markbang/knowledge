@@ -1,5 +1,3 @@
 # 进程管理
 
-```bash
-nohup cmd &
-```
+[博客文章](https://bangwu.top/posts/supervisor)
