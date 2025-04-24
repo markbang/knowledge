@@ -76,6 +76,7 @@ nav:
       - 课程复习:
           - 电子商务: about/courses/电子商务.md
           - 管理信息系统: about/courses/管理信息系统.md
+          - 数据可视化: about/courses/数据可视化.md
 
 theme:
   name: material
