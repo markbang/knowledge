@@ -1,0 +1,104 @@
+/* extra.css */
+
+/* 基本的 audio 元素样式 */
+audio {
+  width: 100%; /* 或者你希望的宽度 */
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 4px; /* 与 Material Design 的卡片圆角类似 */
+  outline: none; /* 移除焦点时的默认轮廓，如果需要自定义焦点样式 */
+}
+
+/* Webkit 内核浏览器 (Chrome, Safari, Edge) 的控件样式 */
+audio::-webkit-media-controls-panel {
+  background-color: var(--md-default-bg-color); /* 使用主题的默认背景色 */
+  color: var(--md-default-fg-color); /* 使用主题的默认前景色 */
+  border-radius: 4px;
+  padding: 8px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+  background-color: transparent;
+  border-radius: 50%; /* 圆形按钮 */
+}
+
+audio::-webkit-media-controls-play-button:hover,
+audio::-webkit-media-controls-mute-button:hover {
+  background-color: rgba(
+    var(--md-primary-fg-color--rgb),
+    0.1
+  ); /* 鼠标悬停时使用主色的轻微透明背景 */
+}
+
+/* 播放按钮的图标颜色 - 可以尝试使用主题的主色 */
+audio::-webkit-media-controls-play-button {
+  color: var(--md-primary-fg-color);
+}
+
+/* 音量控制条轨道 */
+audio::-webkit-media-controls-volume-slider-container {
+  /* 可以根据需要添加样式 */
+}
+
+audio::-webkit-media-controls-volume-slider {
+  background-color: var(
+    --md-typeset-table-color
+  ); /* 使用表格线条或分割线的颜色作为轨道背景 */
+  border-radius: 2px;
+}
+
+/* 音量控制条滑块 */
+audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+  background-color: var(--md-primary-fg-color); /* 使用主题主色 */
+  border: none;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+}
+
+/* 进度条轨道 */
+audio::-webkit-media-controls-timeline {
+  background-color: var(
+    --md-typeset-table-color
+  ); /* 使用表格线条或分割线的颜色作为轨道背景 */
+  border-radius: 2px;
+  margin: 0 8px; /* 与其他控件保持一些间距 */
+}
+
+/* 进度条已播放部分 */
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: var(--md-default-fg-color--light); /* 使用稍浅的前景色 */
+  font-size: 0.9em;
+}
+
+/* 进度条滑块 (通常与音量滑块类似) */
+audio::-webkit-media-controls-timeline::-webkit-slider-thumb {
+  background-color: var(--md-primary-fg-color); /* 使用主题主色 */
+  border: none;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  margin-top: -4px; /* 微调垂直位置 */
+}
+
+/* Firefox 浏览器的控件样式 (部分可定制) */
+/* Firefox 对 audio 控件的 CSS 定制能力有限，主要通过 ::-moz-progress-bar 和 ::-moz-range-thumb 等伪元素 */
+audio::-moz-range-track {
+  background-color: var(--md-typeset-table-color);
+  border-radius: 2px;
+}
+
+audio::-moz-range-thumb {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+}
+
+audio::-moz-range-progress {
+  background-color: var(--md-accent-fg-color); /* 已播放部分可以使用强调色 */
+  border-radius: 2px;
+}

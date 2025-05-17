@@ -77,6 +77,7 @@ nav:
           - 电子商务: about/courses/电子商务.md
           - 管理信息系统: about/courses/管理信息系统.md
           - 数据可视化: about/courses/数据可视化.md
+          - 知识管理: about/courses/知识管理.md
 
 theme:
   name: material
@@ -127,6 +128,8 @@ extra:
       link: https://mastodon.social/@bangwu
     - icon: fontawesome/solid/blog
       link: https://bangwu.top
+extra_css:
+  - stylesheets/extra.css
 plugins:
   - git-revision-date-localized:
       enabled: true
