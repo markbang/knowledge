@@ -48,6 +48,12 @@ nav:
       - starship: apps/starship.md
       - Typora: apps/Typora.md
       - 息知: apps/Xizhi.md
+  - 工作:
+      - 工作: work/index.md
+      - 项目推进模式: work/project-management.md
+      - AI 编码规则: work/ai-coding.md
+      - 模型依赖风险: work/model-risk.md
+      - AI 使用边界: work/ai-boundary.md
   - 环境:
       - 环境: env/index.md
       - 笔试: env/笔试.md
