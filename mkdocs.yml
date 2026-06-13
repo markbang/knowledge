@@ -73,6 +73,7 @@ nav:
   - 关于:
       - 关于: about/index.md
       - 站点: about/site.md
+      - Folo 沉淀: about/folo.md
       - 课程复习:
           - 电子商务: about/courses/电子商务.md
           - 管理信息系统: about/courses/管理信息系统.md
